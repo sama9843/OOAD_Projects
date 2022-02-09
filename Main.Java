@@ -22,7 +22,8 @@ public class Main{
         p1.setDayArrived("Tuesday");
         System.out.println(p1.getDayArrived());
         System.out.println(p1.thisIs());
-*/
+        */
+        /*
         CD p2 = new CD("Name2","Band2","Album2");
         System.out.println(p2.getName());
         System.out.println(p2.getBand());
@@ -36,5 +37,21 @@ public class Main{
         p3.setDayArrived("Monday");
         System.out.println(p3.getDayArrived());
         System.out.println(p3.thisIs());
+        */
+        //tests the deal ratios first deal goes through 50%
+        //second deal goes through 75%
+        /*
+        int t1 =0;
+        int t2 =0;
+        for(int i=0; i<100; i++){
+            Seller test = new Seller();
+            if(test.getDeal1()){t1++;}
+            if(test.getDeal2()){t2++;}
+        }
+        //Seller s1 = new Seller();
+        //System.out.println(s1.getDeal1());
+        System.out.println(t1);
+        System.out.println(t2);
+        */
     }
 }
