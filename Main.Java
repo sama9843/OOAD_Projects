@@ -10,15 +10,13 @@ public class Main{
         Store str = new Store();
         Random rand = new Random();
         List<Item> items_sold = new ArrayList<Item>();
+        List<Item> shipments;
         System.out.println("initializing world...");
         for (int days = 0; days < 30; days++) {
             // store doesnt operate on sundays
             System.out.println("day " + days);
+            shipments.addAll(str.advance_day());
             if (days % 7 != 0) {
-                List<Item> shipment = str.advance_day(); // DAY SHIPMENTS WILL ARRIVE ON SUNDAYS AND STAY FOR THE NEXT DAY
-                System.out.println("Items arrived: ");
-                for (Item p : shipment) System.out.print(p.getName()+ " ");
-                System.out.println();
                 int num_buyers = rand.nextInt(7) + 4;
                 int num_sellers = rand.nextInt(4) + 1;
                 List<Buyer> buyers = new ArrayList<Buyer>();
@@ -30,6 +28,11 @@ public class Main{
                 */
                 // 
                 // orders
+                System.out.println("Items arrived: ");
+                for (Item p : shipments) System.out.print(p.getName()+ " ");
+                System.out.println();
+                // clerk consumes shipments here
+                shipments.clear();
             }
         }
         /*Clerk c1 = new Clerk("Shaggy",10.0,5.0);
