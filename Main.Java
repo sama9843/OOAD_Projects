@@ -1,9 +1,17 @@
+import java.util.List;
+
 public class Main{
 
     public static void main(String[] args){
         //run main
         Store store = new Store();
         System.out.println("Running");
+        for (int days = 0; days < 30; i++) {
+            // store doesnt operate on sundays
+            if (days % 7 != 0) {
+                List<Items> shipment = s.advance_days();
+            }
+        }
         /*Clerk c1 = new Clerk("Shaggy",10.0,5.0);
         System.out.println(c1.getName());
         System.out.println(c1.getWorkRate());
