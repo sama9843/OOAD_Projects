@@ -112,11 +112,43 @@ class Clerk extends Staff{
         }
     }
 
-    public void sell(){
+    public void sell(Customer c){
         //TODO
+        Item customerItem = c.getItem();
+        //check if in inventory
+        boolean inInventory = true; //TODO
+        if(inInventory){
+            Item inventoryItem = //TODO
+            if(c.getDeal1()){
+                double p= inventoryItem.getListPrice();
+                inventoryItem.setSalePrice(p);
+                System.out.format("Customer took the first deal and bought a %s for %s dollars.\n",inventoryItem.thisIs(),df.format(p));
+                //TODO 
+                //move from inventory to sold items
+                //update daySold
+                //update register
+            }
+            else if(c.getDeal2()){
+                inventoryItem.setSalePrice(inventoryItem.getListPrice() - (inventoryItem.getListPrice()*0.1));
+                double p= inventoryItem.getSalePrice();
+                System.out.format("Customer took the first deal and bought a %s for %s dollars.\n",inventoryItem.thisIs(),df.format(p));
+                //TODO 
+                //move from inventory to sold items
+                //update daySold
+                //update register
+            }
+            else{
+                System.out.format("Customer wanted to sell a %s but did not accept the offered deal.\n",customerItem.thisIs());
+            }
+        } 
+        else{
+            System.out.format("Customer wanted to buy a %s but none were in inventory, so they left.\n",customerItem.thisIs());
+        }
+
     }
 
-    public void buy(Item customerItem, Customer c){
+    public void buy(Customer c){
+        Item customerItem = c.getItem();
         //appraise
         Random rand = new Random();
         customerItem.setUsed(rand.nextBoolean());
@@ -141,7 +173,7 @@ class Clerk extends Staff{
         //buy
         if(c.getDeal1()){
             double p= customerItem.getPurchasePrice();
-            System.out.format("Customer took the first deal and sold a %s for %s dollars\n",customerItem.thisIs(),df.format(p));
+            System.out.format("Customer took the first deal and sold a %s for %s dollars.\n",customerItem.thisIs(),df.format(p));
             //TODO 
             //add item to inventory
             //pay from register
@@ -149,7 +181,7 @@ class Clerk extends Staff{
         else if(c.getDeal2()){
             customerItem.setPurchasePrice(customerItem.getPurchasePrice() + (customerItem.getPurchasePrice()*0.1));
             double p= customerItem.getPurchasePrice();
-            System.out.format("Customer took the second deal and sold a %s for %s dollars\n",customerItem.thisIs(),df.format(p));
+            System.out.format("Customer took the second deal and sold a %s for %s dollars.\n",customerItem.thisIs(),df.format(p));
             //TODO 
             //add item to inventory
             //pay from register
