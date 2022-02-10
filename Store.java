@@ -15,17 +15,19 @@ public class Store {
     int money;
     public Store() {
         money = 0;
+        orders = new ArrayList<List<Item>>();
+        order_days = new ArrayList<Integer>();
         // add starting inventory
         inventory = new ArrayList<Item>();
         // Paper Scores
-        inventory.add(new PaperScore("paper score 1", "paper cuts", "rock loses")); inventory.add(new PaperScore("octopus", "paper cuts", "ink drip"));
-        inventory.add(new PaperScore("paper score 3", "paper cuts", "rock loses"));
+        inventory.add(new PaperScore("paper scores. 1", "paper cuts", "rock loses")); inventory.add(new PaperScore("paper scores? 2", "paper cuts", "ink drip"));
+        inventory.add(new PaperScore("paper scores! 3", "paper cuts", "rock loses"));
         // CDs
-        inventory.add(new CD("banana","the monkeys","tropic plunder")); inventory.add(new CD("tail swing","the monkeys","tropic plunder"));
-        inventory.add(new CD("tree jumper","the monkeys","junglevania"));
+        inventory.add(new CD("banana CD","the monkeys","tropic plunder")); inventory.add(new CD("tail swing CD","the monkeys","tropic plunder"));
+        inventory.add(new CD("cheeky CD","the monkeys","junglevania"));
         // Vinyls
-        inventory.add(new Vinyl("vertex cover", "mr. graph", "NP complete")); inventory.add(new Vinyl("coloring", "mr. graph", "NP complete"));
-        inventory.add(new Vinyl("depth first search for you", "mr. graph", "vertex romance"));
+        inventory.add(new Vinyl("vertex cover Vinyl", "mr. graph", "NP complete")); inventory.add(new Vinyl("Color me k Vynil", "mr. graph", "NP complete"));
+        inventory.add(new Vinyl("depth first search for you Vinyl", "mr. graph", "vertex romance"));
         // CD Players
         inventory.add(new CDPlayer("CDplayer alpha")); inventory.add(new CDPlayer("CDplayer beta"));
         inventory.add(new CDPlayer("CDplayer omega"));
@@ -36,11 +38,11 @@ public class Store {
         inventory.add(new MP3Player("MP3 Player baby")); inventory.add(new VinylPlayer("MP3 Player teenager"));
         inventory.add(new MP3Player("MP3 Player elderly"));
         // Guitars
-        inventory.add(new Guitar("blue ice", true)); inventory.add(new Guitar("crimson flame", true));
-        inventory.add(new Guitar("yellow snow", false));
+        inventory.add(new Guitar("blue ice guitar", true)); inventory.add(new Guitar("crimson flame guitar", true));
+        inventory.add(new Guitar("yellow snow guitar", false));
         // Bass
-        inventory.add(new Bass("burpy bumper", false)); inventory.add(new Bass("clurpy clumper", true));
-        inventory.add(new Bass("durpy dumper", false));
+        inventory.add(new Bass("burpy bumper bass", false)); inventory.add(new Bass("clurpy clumper bass", true));
+        inventory.add(new Bass("durpy dumper bass", false));
         // Mandolins
         inventory.add(new Mandolin("forky", false)); inventory.add(new Mandolin("sporky", true));
         inventory.add(new Mandolin("forky sporky", false));
@@ -57,8 +59,8 @@ public class Store {
         inventory.add(new Shirts("cool shirt", "large")); inventory.add(new Shirts("school shirt", "medium"));
         inventory.add(new Shirts("pool shirt", "large"));
         // Bandanas
-        inventory.add(new Bandanas("baseballs")); inventory.add(new Bandanas("trucks"));
-        inventory.add(new Bandanas("donuts"));
+        inventory.add(new Bandanas("Striped Bandana")); inventory.add(new Bandanas("Trucks Bandana"));
+        inventory.add(new Bandanas("Donut Bandana"));
         // Practice Amps
         inventory.add(new PracticeAmps("Volume Amp", 28.7)); inventory.add(new PracticeAmps("Echo Amp", 13.9));
         inventory.add(new PracticeAmps("Reverb Amp", 30));
@@ -74,15 +76,10 @@ public class Store {
             i.setPrice(rand.nextDouble()*50);
         }
     }
+    // getters
     public List<Item> getInventory() {return this.inventory;}
     public int getMoney() {return this.money;}
-    // place an order, returns price
-    public int placeOrder(String item_type) {
-        Random rand = new Random();
-        order_days.add(rand.nextInt(3));
-        orders.add(random3Items(item_type));
-        return 0;
-    }
+    // setters
     public void remove_money(int diff) {
         this.money -= diff;
     }
@@ -92,6 +89,15 @@ public class Store {
     public void log(String s) {
         this.log.add(s);
     }
+
+    // place an order, returns price
+    public int placeOrder(String item_type) {
+        Random rand = new Random();
+        order_days.add(rand.nextInt(3));
+        orders.add(random3Items(item_type));
+        return 0;
+    }
+
     // advances the day and returns any orders that have been completed
     public List<Item> advance_day() {
         List<Item> arrivals = new ArrayList<Item>();
@@ -115,18 +121,19 @@ public class Store {
         Random rand = new Random();
         int n = rand.nextInt(100);
         for (int k = 0; k < 3; k++) {
+            n = rand.nextInt(100);
             switch (item_type) {
-                case "PaperScore": i.add(new PaperScore("random_monkey " + n, "random randies", "snowmen")); break;
-                case "CD": i.add(new CD("tree jumper " + n,"the" + n + " monkeys","junglevania")); break;
-                case "Vynil": i.add(new Vinyl("I have " + n + "nodes for you", "mr. graph", "vertex romance")); break;
+                case "PaperScore": i.add(new PaperScore("PaperScore Symphony " + n, "random randies", "snowmen")); break;
+                case "CD": i.add(new CD("monkey CD " + n,"the" + n + " monkeys","junglevania")); break;
+                case "Vynil": i.add(new Vinyl("Vynil:" + n + "nodes for you", "mr. graph", "vertex romance")); break;
                 case "CDPlayer": i.add(new CDPlayer("CD Player " + n)); break;
                 case "RecordPlayer": i.add(new RecordPlayer("Record Player " + n)); break;
                 case "MP3Player": i.add(new MP3Player("MP3 Player " + n)); break;
                 case "Guitar": i.add(new Guitar("style " + n + " guitar", rand.nextBoolean())); break;
                 case "Bass": i.add(new Bass("see " + n + " bass", rand.nextBoolean())); break;
                 case "Mandolin": i.add(new Guitar("number " + n + " mandolin", rand.nextBoolean())); break;
-                case "Flute": inventory.add(new Flute("random flute" + n, "type" + rand.nextInt())); break;
-                case "Harmonica": i.add(new Harmonica("Unpredictable Harmonica" + n, "key " + rand.nextInt())); break;
+                case "Flute": inventory.add(new Flute("random flute " + n, "type" + rand.nextInt())); break;
+                case "Harmonica": i.add(new Harmonica("Unpredictable Harmonica " + n, "key " + rand.nextInt())); break;
                 case "Hats": i.add(new Hats("number " + n + " hats", "size: " + rand.nextInt())); break;
                 case "Shirt": i.add(new Shirts("highway " + n + n +  " shirt", "size: " + rand.nextInt())); break;
                 case "Bandanas": i.add(new Bandanas("custom bandana" + n)); break;
