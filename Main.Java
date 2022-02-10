@@ -6,10 +6,11 @@ public class Main{
         //run main
         Store store = new Store();
         System.out.println("Running");
-        for (int days = 0; days < 30; i++) {
+        for (int days = 1; days < 31; days++) {
             // store doesnt operate on sundays
             if (days % 7 != 0) {
-                List<Items> shipment = s.advance_days();
+                List<Item> shipment = store.advance_day();
+                System.out.println(store.getClerk());
             }
         }
         /*Clerk c1 = new Clerk("Shaggy",10.0,5.0);
@@ -63,7 +64,7 @@ public class Main{
             if(test.getDeal2()){t2++;}
         }
         */
-        Store store = new Store();
+        // Store store = new Store();
         //Seller s1 = new Seller();
         //s1.setItem();
 
