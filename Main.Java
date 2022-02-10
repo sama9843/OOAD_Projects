@@ -4,18 +4,23 @@ public class Main{
         //run main
         Store store = new Store();
         System.out.println("Running");
+        //tests for clerks
         /*Clerk c1 = new Clerk("Shaggy",10.0,5.0);
         System.out.println(c1.getName());
         System.out.println(c1.getWorkRate());
         System.out.println(c1.getCarefulness());
         c1.arriveAtStore();
         c1.leaveTheStore();
+
+        //tests for buyers and sellers
         Buyer b1 = new Buyer();
         b1.buy();
         System.out.println(b1.getDeal1());
         Seller s1 = new Seller();
         s1.sell();
         System.out.println(s1.getDeal2());*/
+
+        //tests for items
         /*PaperScore p1 = new PaperScore("Name","Band","Album");
         System.out.println(p1.getName());
         System.out.println(p1.getBand());
@@ -39,6 +44,7 @@ public class Main{
         System.out.println(p3.getDayArrived());
         System.out.println(p3.thisIs());
         */
+        
         //tests the deal ratios first deal goes through 50%
         //second deal goes through 75%
         /*
@@ -49,10 +55,10 @@ public class Main{
             if(test.getDeal1()){t1++;}
             if(test.getDeal2()){t2++;}
         }
-        //Seller s1 = new Seller();
-        //System.out.println(s1.getDeal1());
-        System.out.println(t1);
-        System.out.println(t2);
         */
+        Store store = new Store();
+        //Seller s1 = new Seller();
+        //s1.setItem();
+
     }
 }
