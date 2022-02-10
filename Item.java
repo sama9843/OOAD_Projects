@@ -7,12 +7,13 @@ abstract class Item{
     private double salePrice;
     private boolean used;
     private String condition;
-    private String dayArrived;
-    private String daySold;
+    private int dayArrived;
+    private int daySold;
 
     //constructor
     public Item(String name){
         this.name = name;
+        dayArrived = 0;
     }
     //returns what class is
     public String thisIs(){return this.getClass().getSimpleName();}
@@ -23,17 +24,18 @@ abstract class Item{
     public double getSalePrice(){return salePrice;}
     public boolean getUsed(){return used;}
     public String getCondition(){return condition;}
-    public String getDayArrived(){return dayArrived;}
-    public String getDaySold(){return daySold;}
+    public int getDayArrived(){return dayArrived;}
+    public int getDaySold(){return daySold;}
     //setter methods for private attributes
     public void setName(String name){this.name = name;}
     public void setPurchasePrice(double purchasePrice){this.purchasePrice = purchasePrice;}
     public void setListPrice(double listPrice){this.listPrice = listPrice;}
+    public void setPrice(double purchasePrice) {this.purchasePrice = purchasePrice; this.listPrice = 2* purchasePrice;};
     public void setSalePrice(double salePrice){this.salePrice = salePrice;}
     public void setUsed(boolean used){this.used = used;}
     public void setCondition(String condition){this.condition = condition;}
-    public void setDayArrived(String dayArrived){this.dayArrived = dayArrived;}
-    public void setDaySold(String daySold){this.daySold = daySold;}
+    public void setDayArrived(int dayArrived){this.dayArrived = dayArrived;}
+    public void setDaySold(int daySold){this.daySold = daySold;}
 }
 //Music implements Item
 //all Music Items
