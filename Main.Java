@@ -11,6 +11,7 @@ public class Main{
             if (days % 7 != 0) {
                 List<Item> shipment = store.advance_day();
                 System.out.println(store.getClerk());
+                store.getClerk().cleanTheStore(store.getInventory());
             }
         }
         /*Clerk c1 = new Clerk("Shaggy",10.0,5.0);

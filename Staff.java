@@ -71,10 +71,16 @@ class Clerk extends Staff{
         // 
     }
 
-    public void cleanTheStore(Map<String, List<Item>> inventory){
+    public void cleanTheStore(Map<String, ArrayList<Item>> inventory){
         Random rand = new Random();
-        String itemType = (new ArrayList(inventory.keySet())[rand.nextInt(inventory.size() + 1)];
-        int toDelete = rand.nextInt(inventory.get(itemType).size() + 1);
+        ArrayList<String> keys = new ArrayList<String>(inventory.keySet());
+        String itemType = keys.get(rand.nextInt(keys.size()));
+        int toDelete = rand.nextInt(inventory.get(itemType).size());
+        switch (inventory.get(itemType).get(toDelete).getCondition()) {
+            case "Poor":
+                System.out.println(inventory.get(itemType).remove(toDelete));
+                // inventory.put(itemType, );
+        }
     }
 
     public void sell(){
