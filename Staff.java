@@ -75,11 +75,24 @@ class Clerk extends Staff{
         Random rand = new Random();
         ArrayList<String> keys = new ArrayList<String>(inventory.keySet());
         String itemType = keys.get(rand.nextInt(keys.size()));
-        int toDelete = rand.nextInt(inventory.get(itemType).size());
-        switch (inventory.get(itemType).get(toDelete).getCondition()) {
+        int toDamage = rand.nextInt(inventory.get(itemType).size());
+        switch (inventory.get(itemType).get(toDamage).getCondition()) {
             case "Poor":
-                System.out.println(inventory.get(itemType).remove(toDelete));
-                // inventory.put(itemType, );
+                inventory.get(itemType).remove(toDamage);
+                break;
+            case "Fair":
+                inventory.get(itemType).get(toDamage).setCondition("Poor");
+                break;
+            case "Good":
+                inventory.get(itemType).get(toDamage).setCondition("Fair");
+                break;
+            case "Very Good":
+                inventory.get(itemType).get(toDamage).setCondition("Good");
+                break;
+            case "Excellent":
+                inventory.get(itemType).get(toDamage).setCondition("Very Good");
+                break;
+            default: break;
         }
     }
 
