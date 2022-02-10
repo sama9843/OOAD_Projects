@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
@@ -241,9 +242,14 @@ public class Store {
         inventory.forEach((key,group) -> {
             group.forEach((it) -> {
                 System.out.println(it.getName());
-                invent_worth += it.getPurchasePrice();
             });
         });
+        // find total price of items
+        for (List<Item> list : inventory.values()) {
+            for (Item i : list) {
+                invent_worth += i.getPurchasePrice();
+            }
+        }
         System.out.println("Total Inventory Worth: " + invent_worth);
         System.out.println("Items sold:");
         double sales_worth = 0;
