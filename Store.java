@@ -252,8 +252,8 @@ public class Store {
             sales_worth += p.getSalePrice();
         }
         System.out.println("Sales Total: " + sales_worth);
-        System.out.println("Money In Register: " + str.getMoney());
-        System.out.println("Money Added From Bank: " + str.getDebt());
+        System.out.println("Money In Register: " + getMoney());
+        System.out.println("Money Added From Bank: " + getDebt());
     }
 
     private  String get_week_day(int day) {
