@@ -53,7 +53,23 @@ public class Main{
             else System.out.println();
         }
         System.out.println("Results!");
-        System.out.println("Inventory");
+        System.out.println("Inventory:");
+        double invent_worth = 0;
+        for (Item p : str.getInventory()) {
+            System.out.print(p.getName()+ ", ");
+            invent_worth += p.getPurchasePrice();
+        }
+        System.out.println("Total Inventory Worth: " + invent_worth);
+        System.out.println("Items sold:");
+        double sales_worth = 0;
+        for (Item p : items_sold) {
+            System.out.print(p.getName()+ ", ");
+            sales_worth += p.getSalePrice();
+        }
+        System.out.println("Sales Total: " + sales_worth);
+        System.out.println("Money In Register: " + str.getMoney());
+        System.out.println("Money Added From Bank: " + str.getDebt());
+
         Clerk c = str.getClerk();
         c.cleanTheStore(str.getInventory());
         // for (int days = 0; days < 30; days++) {

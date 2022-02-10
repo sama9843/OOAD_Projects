@@ -119,6 +119,7 @@ public class Store {
     // getters
     public Map<String, ArrayList<Item>> getInventory() {return this.inventory;}
     public float getMoney() {return this.money;}
+    public float getDebt() {return this.debt;}
     // setters
     public void remove_money(int diff) {
         this.money -= diff;
