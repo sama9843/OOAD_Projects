@@ -47,6 +47,7 @@ abstract class Customer{
         else{return false;}
     }
     public Item getItem(){return this.item;}
+    public String thisIs(){return this.getClass().getSimpleName();}
 }
 //Buyer implements Customer
 class Buyer extends Customer{public Buyer(){}}
