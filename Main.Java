@@ -1,17 +1,35 @@
 import java.util.List;
+import java.util.ArrayList;
+import java.util.Random;
 
 public class Main{
 
     public static void main(String[] args){
+
         //run main
-        Store store = new Store();
-        System.out.println("Running");
-        for (int days = 1; days < 31; days++) {
+        Store str = new Store();
+        Random rand = new Random();
+        List<Item> items_sold = new ArrayList<Item>();
+        System.out.println("initializing world...");
+        for (int days = 0; days < 30; days++) {
             // store doesnt operate on sundays
+            System.out.println("day " + days);
             if (days % 7 != 0) {
-                List<Item> shipment = store.advance_day();
-                System.out.println(store.getClerk());
-                store.getClerk().cleanTheStore(store.getInventory());
+                List<Item> shipment = str.advance_day(); // DAY SHIPMENTS WILL ARRIVE ON SUNDAYS AND STAY FOR THE NEXT DAY
+                System.out.println("Items arrived: ");
+                for (Item p : shipment) System.out.print(p.getName()+ " ");
+                System.out.println();
+                int num_buyers = rand.nextInt(7) + 4;
+                int num_sellers = rand.nextInt(4) + 1;
+                List<Buyer> buyers = new ArrayList<Buyer>();
+                for (int i = 0; i < num_buyers; i++) buyers.add(new Buyer());
+                List<Seller> sellers = new ArrayList<Seller>();
+                for (int i = 0; i < num_sellers; i++) sellers.add(new Seller());
+                /*
+                customer clerk interaction ;)
+                */
+                // 
+                // orders
             }
         }
         /*Clerk c1 = new Clerk("Shaggy",10.0,5.0);
