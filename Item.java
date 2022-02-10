@@ -66,8 +66,8 @@ class Players extends Item{public Players(String name){super(name);}}
 class CDPlayer extends Players{public CDPlayer(String name){super(name);}}
 //RecordPlayer
 class RecordPlayer extends Players{public RecordPlayer(String name){super(name);}}
-//VinylPlayer
-class VinylPlayer extends Players{public VinylPlayer(String name){super(name);}}
+//VinylPlayer THIS IS WRONG IS A MP3 PLAYER 
+class MP3Player extends Players{public MP3Player(String name){super(name);}}
 
 //Instruments implements Item
 //all Instruments items

@@ -32,8 +32,8 @@ public class Store {
         inventory.add(new RecordPlayer("Record Player01")); inventory.add(new RecordPlayer("Record Player10"));
         inventory.add(new RecordPlayer("Record Player11"));
         // Vinyl Players
-        inventory.add(new VinylPlayer("Vynil Player baby")); inventory.add(new VinylPlayer("Vynil Player teenager"));
-        inventory.add(new VinylPlayer("Vynil Player elderly"));
+        inventory.add(new MP3Player("MP3 Player baby")); inventory.add(new VinylPlayer("MP3 Player teenager"));
+        inventory.add(new MP3Player("MP3 Player elderly"));
         // Guitars
         inventory.add(new Guitar("blue ice", true)); inventory.add(new Guitar("crimson flame", true));
         inventory.add(new Guitar("yellow snow", false));
@@ -88,6 +88,24 @@ public class Store {
     public void add_money(int diff) {
         this.money += diff;
     }
+    // advances the day and returns any orders that have been completed
+    public List<Item> advance_day() {
+        List<Item> arrivals = new ArrayList<Item>();
+        for (int i = 0; i < orders.size(); i++) {
+            order_days.set(i, order_days.get(i) - 1);
+            if (order_days.get(i) == 0) {
+                order_days.remove(i);
+                for (Item product : orders.get(i)) {
+                    arrivals.add(product);
+                }
+                orders.remove(i);
+            }
+        }
+        assert (order_days.size() == orders.size()); // make sure same size
+        return arrivals;
+    }
+
+
     private List<Item> random3Items(String item_type) {
         List<Item> i = new ArrayList<Item>();
         Random rand = new Random();
@@ -99,7 +117,7 @@ public class Store {
                 case "Vynil": i.add(new Vinyl("I have " + n + "nodes for you", "mr. graph", "vertex romance")); break;
                 case "CDPlayer": i.add(new CDPlayer("CD Player " + n)); break;
                 case "RecordPlayer": i.add(new RecordPlayer("Record Player " + n)); break;
-                case "MP3Player": i.add(new VinylPlayer("MP3 Player " + n)); break;
+                case "MP3Player": i.add(new MP3Player("MP3 Player " + n)); break;
                 case "Guitar": i.add(new Guitar("style " + n + " guitar", rand.nextBoolean())); break;
                 case "Bass": i.add(new Bass("see " + n + " bass", rand.nextBoolean())); break;
                 case "Mandolin": i.add(new Guitar("number " + n + " mandolin", rand.nextBoolean())); break;
@@ -113,6 +131,10 @@ public class Store {
                 case "Strings": i.add(new Strings(n + " coil string" , "type: " + rand.nextInt(9))); break;
                 default: break;
             }
+
+        }
+        for (Item it : i) {
+            it.setPrice(rand.nextDouble()*50);
         }
         return i;
         
