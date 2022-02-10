@@ -2,6 +2,7 @@ public class Main{
 
     public static void main(String[] args){
         //run main
+        Store store = new Store();
         System.out.println("Running");
         /*Clerk c1 = new Clerk("Shaggy",10.0,5.0);
         System.out.println(c1.getName());

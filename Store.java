@@ -16,6 +16,7 @@ public class Store {
     public Store() {
         money = 0;
         // add starting inventory
+        inventory = new ArrayList<Item>();
         // Paper Scores
         inventory.add(new PaperScore("paper score 1", "paper cuts", "rock loses")); inventory.add(new PaperScore("octopus", "paper cuts", "ink drip"));
         inventory.add(new PaperScore("paper score 3", "paper cuts", "rock loses"));
@@ -87,6 +88,9 @@ public class Store {
     }
     public void add_money(int diff) {
         this.money += diff;
+    }
+    public void log(String s) {
+        this.log.add(s);
     }
     // advances the day and returns any orders that have been completed
     public List<Item> advance_day() {
