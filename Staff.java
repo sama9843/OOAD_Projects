@@ -42,11 +42,13 @@ class Clerk extends Staff{
     public float checkRegister(float reg){
         // print the amount of money in the register
         System.out.println("$" + reg + " left in the register");
+        // if not enough money, go to the bank and pick up money
         if(reg < 75) {return reg + this.goToBank();}
         return reg;
     }
 
     public float goToBank(){
+        // get $1000 from the bank, and return so we can keep track of the debt
         System.out.println("Putting $1,000 in the register.");
         return 1000;
     }
@@ -56,6 +58,7 @@ class Clerk extends Staff{
         ArrayList<String> outOfStock = new ArrayList<String>();
         for(String s : inventory.keySet()) {
             if(inventory.get(s).size() == 0) {
+                System.out.println("Store is out of " + s);
                 outOfStock.add(s);
             } else {
                 for(Item i : inventory.get(s)) {
@@ -72,14 +75,34 @@ class Clerk extends Staff{
         // Place the orders in the store class and run a day in the store class
     }
 
-    public void openTheStore(){
-        // 
+    public float openTheStore(Map<String, ArrayList<Item>> inventory, float register){
+        System.out.println("The store is now open!");;
+        ArrayList<Buyer> buyers = new ArrayList<Buyer>();
+        ArrayList<Seller> sellers = new ArrayList<Seller>();
+        Random rand = new Random();
+        for(int i = 0; i < (int)rand.nextDouble() * 7 + 4; i++){
+            buyers.add(new Buyer());
+        }
+        for(int i = 0; i < (int)rand.nextInt(4) + 1; i++){
+            sellers.add(new Seller());
+        }
+        System.out.println(register);
+        for(Buyer b : buyers){
+            register += this.sell(b, inventory);
+            System.out.println();
+        }
+        System.out.println(register);
+        for(Seller s : sellers){
+            register -= this.buy(s.getItem(), s, inventory);
+            System.out.println();
+        }
+        return register;
     }
 
     public void cleanTheStore(Map<String, ArrayList<Item>> inventory){
         Random rand = new Random();
-        System.out.println(inventory);
-        if(rand.nextDouble() <= 1) {
+        System.out.println("Cleaning up the store!");
+        if(rand.nextDouble() <= this.carefulness) {
             ArrayList<String> keys = new ArrayList<String>(inventory.keySet());
             String itemType = keys.get(rand.nextInt(keys.size()));
             int toDamage = rand.nextInt(inventory.get(itemType).size());
@@ -114,47 +137,30 @@ class Clerk extends Staff{
                 default: break;
             }
         }
-        System.out.println(inventory);
         System.out.println("Store has been cleaned up!");
     }
 
-    public void sell(Customer c){
-        //TODO
-        Item customerItem = c.getItem();
-        //check if in inventory
-        boolean inInventory = true; //TODO
-        if(inInventory){
-            Item inventoryItem = //TODO
-            if(c.getDeal1()){
-                double p= inventoryItem.getListPrice();
-                inventoryItem.setSalePrice(p);
-                System.out.format("Customer took the first deal and bought a %s for %s dollars.\n",inventoryItem.thisIs(),df.format(p));
-                //TODO 
-                //move from inventory to sold items
-                //update daySold
-                //update register
+    public float sell(Buyer b, Map<String, ArrayList<Item>> inventory){
+        String itemToBuy = b.getItem().thisIs();
+        System.out.println("The customer is trying to buy " + itemToBuy);
+        ArrayList<Item> typeMatches = inventory.get(itemToBuy);
+        if(typeMatches.size() == 0){
+            System.out.println("The customer tried to buy a " + itemToBuy + " but we were out of stock, so they left.");
+        }else{
+            if(b.getDeal1()){
+                System.out.println(this + " sold a " + itemToBuy + " to the customer for " + typeMatches.get(0));
+                return (float)inventory.get(itemToBuy).remove(0).getListPrice();
+            } else if(b.getDeal2()){
+                System.out.println(this + " sold a " + itemToBuy + " to the customer with a 10% discount for " + typeMatches.get(0));
+                return (float)(inventory.get(itemToBuy).remove(0).getListPrice() * 0.9);
+            } else {
+                System.out.println("The customer did not want to pay " + typeMatches.get(0).getListPrice() + " for " + typeMatches.get(0));
             }
-            else if(c.getDeal2()){
-                inventoryItem.setSalePrice(inventoryItem.getListPrice() - (inventoryItem.getListPrice()*0.1));
-                double p= inventoryItem.getSalePrice();
-                System.out.format("Customer took the first deal and bought a %s for %s dollars.\n",inventoryItem.thisIs(),df.format(p));
-                //TODO 
-                //move from inventory to sold items
-                //update daySold
-                //update register
-            }
-            else{
-                System.out.format("Customer wanted to sell a %s but did not accept the offered deal.\n",customerItem.thisIs());
-            }
-        } 
-        else{
-            System.out.format("Customer wanted to buy a %s but none were in inventory, so they left.\n",customerItem.thisIs());
         }
-
+        return 0;
     }
 
-    public void buy(Customer c){
-        Item customerItem = c.getItem();
+    public float buy(Item customerItem, Customer c, Map<String, ArrayList<Item>> inventory){
         //appraise
         Random rand = new Random();
         customerItem.setUsed(rand.nextBoolean());
@@ -174,26 +180,27 @@ class Clerk extends Staff{
             case "Very Good": customerItem.setPurchasePrice(price+15); break;
             case "Excellent": customerItem.setPurchasePrice(price+20); break;
         }
-        System.out.println(customerItem.getCondition());
-        System.out.println(customerItem.getPurchasePrice());
+        // System.out.println(customerItem.getCondition());
+        // System.out.println(customerItem.getPurchasePrice());
         //buy
         if(c.getDeal1()){
             double p= customerItem.getPurchasePrice();
-            System.out.format("Customer took the first deal and sold a %s for %s dollars.\n",customerItem.thisIs(),df.format(p));
+            System.out.format("Customer took the first deal and sold a %s for %s dollars\n",customerItem.thisIs(),df.format(p));
             //TODO 
-            //add item to inventory
-            //pay from register
+            inventory.get(customerItem.thisIs()).add(customerItem);
+            return (float)p;
         }
         else if(c.getDeal2()){
             customerItem.setPurchasePrice(customerItem.getPurchasePrice() + (customerItem.getPurchasePrice()*0.1));
             double p= customerItem.getPurchasePrice();
-            System.out.format("Customer took the second deal and sold a %s for %s dollars.\n",customerItem.thisIs(),df.format(p));
+            System.out.format("Customer took the second deal and sold a %s for %s dollars\n",customerItem.thisIs(),df.format(p));
             //TODO 
-            //add item to inventory
-            //pay from register
+            inventory.get(customerItem.thisIs()).add(customerItem);
+            return (float)p;
         }
         else{
             System.out.format("Customer wanted to sell a %s but did not accept the offered deal.\n",customerItem.thisIs());
         }
+        return 0;
     }
 }
