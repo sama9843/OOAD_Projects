@@ -4,19 +4,32 @@ import java.util.Random;
 
 public class Main{
 
+    private static String get_week_day(int day) {
+        switch (day % 7) {
+            case 0: return "Monday";
+            case 1: return "Tuesday";
+            case 2: return "Wednesday";
+            case 3: return "Thursday";
+            case 4: return "Friday";
+            case 5: return "Saturday";
+            case 6: return "Sunday";
+        }
+        return "What";
+    }
+
     public static void main(String[] args){
 
         //run main
         Store str = new Store();
         Random rand = new Random();
         List<Item> items_sold = new ArrayList<Item>();
-        List<Item> shipments;
+        List<Item> shipments = new ArrayList<Item>();
         System.out.println("initializing world...");
         for (int days = 0; days < 30; days++) {
             // store doesnt operate on sundays
-            System.out.println("day " + days);
+            System.out.println("day " + days + ", " + get_week_day(days));
             shipments.addAll(str.advance_day());
-            if (days % 7 != 0) {
+            if (days % 7 != 6) {
                 int num_buyers = rand.nextInt(7) + 4;
                 int num_sellers = rand.nextInt(4) + 1;
                 List<Buyer> buyers = new ArrayList<Buyer>();
@@ -29,12 +42,18 @@ public class Main{
                 // 
                 // orders
                 System.out.println("Items arrived: ");
-                for (Item p : shipments) System.out.print(p.getName()+ " ");
+                for (Item p : shipments) System.out.print(p.getName()+ ", ");
                 System.out.println();
                 // clerk consumes shipments here
                 shipments.clear();
-            }
+                // order placed if needed
+                
+
+            } 
+            else System.out.println();
         }
+        System.out.println("Results!");
+        System.out.println("Inventory");
         /*Clerk c1 = new Clerk("Shaggy",10.0,5.0);
         System.out.println(c1.getName());
         System.out.println(c1.getWorkRate());
