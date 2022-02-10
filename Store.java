@@ -1,80 +1,121 @@
+import java.util.AbstractMap;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Random;
 
 
 public class Store {
-    // inventory is a list of items
-    List<Item> inventory;
+    // inventory is a Dictionary of a list of items
+    Map<String, List<Item>> inventory = new HashMap<String, List<Item>> ();
     // orders are lists of items, order_days tracks the days left of each order index
-    List<List<Item>> orders;
-    List<Integer> order_days;
+    List<List<Item>> orders = new ArrayList<List<Item>>();
+    List<Integer> order_days = new ArrayList<Integer>();
+
+    // money in the register
+    float money = 0;
+
+    // debt to bank
+    float debt = 0;
+
+    // list of employees
+    List<Clerk> employees = new ArrayList<Clerk>();
+
     // log book
     List<String> log;
-    // money
-    int money;
     public Store() {
         money = 0;
         orders = new ArrayList<List<Item>>();
         order_days = new ArrayList<Integer>();
         // add starting inventory
-        inventory = new ArrayList<Item>();
         // Paper Scores
-        inventory.add(new PaperScore("paper scores. 1", "paper cuts", "rock loses")); inventory.add(new PaperScore("paper scores? 2", "paper cuts", "ink drip"));
-        inventory.add(new PaperScore("paper scores! 3", "paper cuts", "rock loses"));
+        inventory.put("PaperScore", Arrays.asList(new PaperScore("paper scores? 1", "paper cuts", "rock loses"),
+                                                    new PaperScore("paper scores. 2", "paper cuts", "ink drip"), 
+                                                    new PaperScore("paper scores! 3", "paper cuts", "rock loses")));
         // CDs
-        inventory.add(new CD("banana CD","the monkeys","tropic plunder")); inventory.add(new CD("tail swing CD","the monkeys","tropic plunder"));
-        inventory.add(new CD("cheeky CD","the monkeys","junglevania"));
+        inventory.put("CD", Arrays.asList(new CD("banana CD","the monkeys","tropic plunder"),
+                                            new CD("tail swing CD","the monkeys","tropic plunder"),
+                                            new CD("cheeky CD","the monkeys","junglevania"))); 
         // Vinyls
-        inventory.add(new Vinyl("vertex cover Vinyl", "mr. graph", "NP complete")); inventory.add(new Vinyl("Color me k Vynil", "mr. graph", "NP complete"));
-        inventory.add(new Vinyl("depth first search for you Vinyl", "mr. graph", "vertex romance"));
+        inventory.put("Vinyl", Arrays.asList(new Vinyl("vertex cover vinyl", "mr. graph", "NP complete"),
+                                            new Vinyl("color me k vinyl", "mr. graph", "NP complete"),
+                                            new Vinyl("depth first search for you vinyl", "mr. graph", "vertex romance"))); 
         // CD Players
-        inventory.add(new CDPlayer("CDplayer alpha")); inventory.add(new CDPlayer("CDplayer beta"));
-        inventory.add(new CDPlayer("CDplayer omega"));
+        inventory.put("CDPlayer", Arrays.asList(new CDPlayer("CDplayer alpha"),
+                                                new CDPlayer("CDplayer beta"),
+                                                new CDPlayer("CDplayer omega"))); 
         // Record Players
-        inventory.add(new RecordPlayer("Record Player01")); inventory.add(new RecordPlayer("Record Player10"));
-        inventory.add(new RecordPlayer("Record Player11"));
+        inventory.put("RecordPlayer", Arrays.asList(new RecordPlayer("Record Player01"),
+                                                    new RecordPlayer("Record Player10"),
+                                                    new RecordPlayer("Record Player11"))); 
         // Vinyl Players
-        inventory.add(new MP3Player("MP3 Player baby")); inventory.add(new VinylPlayer("MP3 Player teenager"));
-        inventory.add(new MP3Player("MP3 Player elderly"));
+        inventory.put("MP3Player", Arrays.asList(new MP3Player("MP3 Player baby"),
+                                                new MP3Player("MP3 Player teenager"),
+                                                new MP3Player("MP3 Player elderly"))); 
         // Guitars
-        inventory.add(new Guitar("blue ice guitar", true)); inventory.add(new Guitar("crimson flame guitar", true));
-        inventory.add(new Guitar("yellow snow guitar", false));
+        inventory.put("Guitar", Arrays.asList(new Guitar("blue ice guitar", true),
+                                            new Guitar("crimson flame guitar", true),
+                                            new Guitar("yellow snow guitar", false))); 
         // Bass
-        inventory.add(new Bass("burpy bumper bass", false)); inventory.add(new Bass("clurpy clumper bass", true));
-        inventory.add(new Bass("durpy dumper bass", false));
+        inventory.put("Bass", Arrays.asList(new Bass("burpy bumper bass", false),
+                                            new Bass("clurpy clumper bass", true),
+                                            new Bass("durpy dumper bass", false))); 
         // Mandolins
-        inventory.add(new Mandolin("forky", false)); inventory.add(new Mandolin("sporky", true));
-        inventory.add(new Mandolin("forky sporky", false));
+        inventory.put("Mandolin", Arrays.asList(new Mandolin("forky mandolin", false),
+                                                new Mandolin("sporky mandolin", true),
+                                                new Mandolin("forky sporky mandolin", false))); 
         // Flutes
-        inventory.add(new Flute("stupendous flute", "standard")); inventory.add(new Flute("happy flute", "harmony"));
-        inventory.add(new Flute("picky flute", "piccolo"));
+        inventory.put("Flute", Arrays.asList(new Flute("stupendous flute", "standard"),
+                                            new Flute("happy flute", "harmony"),
+                                            new Flute("picky flute", "piccolo"))); 
         // Harmonicas
-        inventory.add(new Harmonica("Horse Harmonica", "A")); inventory.add(new Harmonica("Hippo Harmonica", "B"));
-        inventory.add(new Harmonica("Hamster Harmonica", "C"));
+        inventory.put("Harmonica", Arrays.asList(new Harmonica("Horse Harmonica", "A"),
+                                                new Harmonica("Hippo Harmonica", "B"),
+                                                new Harmonica("Hamster Harmonica", "C"))); 
         // Hats
-        inventory.add(new Hats("top hats", "small")); inventory.add(new Hats("flop caps", "small"));
-        inventory.add(new Hats("clop hats", "extra large"));
+        inventory.put("Hats", Arrays.asList(new Hats("top hats", "small"),
+                                            new Hats("flop caps", "small"),
+                                            new Hats("clop hats", "extra large"))); 
         // Shirts
-        inventory.add(new Shirts("cool shirt", "large")); inventory.add(new Shirts("school shirt", "medium"));
-        inventory.add(new Shirts("pool shirt", "large"));
+        inventory.put("Shirts", Arrays.asList(new Shirts("cool shirt", "large"),
+                                            new Shirts("school shirt", "medium"),
+                                            new Shirts("pool shirt", "large"))); 
         // Bandanas
-        inventory.add(new Bandanas("Striped Bandana")); inventory.add(new Bandanas("Trucks Bandana"));
-        inventory.add(new Bandanas("Donut Bandana"));
+        inventory.put("Bandanas", Arrays.asList(new Bandanas("baseballs bandana"),
+                                                new Bandanas("trucks bandana"),
+                                                new Bandanas("donuts bandana"))); 
         // Practice Amps
-        inventory.add(new PracticeAmps("Volume Amp", 28.7)); inventory.add(new PracticeAmps("Echo Amp", 13.9));
-        inventory.add(new PracticeAmps("Reverb Amp", 30));
+        inventory.put("PracticeAmps", Arrays.asList(new PracticeAmps("Volume Amp", 28.7),
+                                                    new PracticeAmps("Echo Amp", 13.9),
+                                                    new PracticeAmps("Reverb Amp", 30))); 
         // Cables
-        inventory.add(new Cables("CIO Cable", 5)); inventory.add(new Cables("SAM Cable", 2));
-        inventory.add(new Cables("SRS Cable", 13));
+        inventory.put("Cables", Arrays.asList(new Cables("CIO Cable", 5),
+                                            new Cables("SAM Cable", 2),
+                                            new Cables("SRS Cable", 13))); 
         // Strings
-        inventory.add(new Strings("coil string", "A")); inventory.add(new Strings("shoe string", "B"));
-        inventory.add(new Strings("metal string", "C"));
+        inventory.put("Strings", Arrays.asList(new Strings("coil string", "A"),
+                                                new Strings("shoe string", "B"),
+                                                new Strings("metal string", "C"))); 
         // prices
         Random rand = new Random();
-        for (Item i : inventory) {
-            i.setPrice(rand.nextDouble()*50);
+        for (String s : inventory.keySet()) {
+            for(Item i : inventory.get(s)) {
+                // purchace price random 1 - 50
+                i.setPurchasePrice(rand.nextDouble() * 49 + 1);
+                // 2 * purchase price
+                i.setListPrice(i.getPurchasePrice() * 2);
+                // starting inventory is day 0
+                i.setDayArrived(0);
+                // set the condition of the item
+                String[] conds = {"Poor", "Fair", "Good", "Very Good", "Excellent"};
+                i.setCondition(conds[rand.nextInt(conds.length)]);
+            }
         }
+        // employees
+        employees.add(new Clerk("Shaggy", 0, 0.2));
+        employees.add(new Clerk("Velma", 0, 0.05));
     }
     // getters
     public List<Item> getInventory() {return this.inventory;}
@@ -83,6 +124,7 @@ public class Store {
     public void remove_money(int diff) {
         this.money -= diff;
     }
+
     public void add_money(int diff) {
         this.money += diff;
     }
@@ -100,6 +142,7 @@ public class Store {
 
     // advances the day and returns any orders that have been completed
     public List<Item> advance_day() {
+
         List<Item> arrivals = new ArrayList<Item>();
         for (int i = 0; i < orders.size(); i++) {
             order_days.set(i, order_days.get(i) - 1);
@@ -111,6 +154,7 @@ public class Store {
                 orders.remove(i);
             }
         }
+
         assert (order_days.size() == orders.size()); // make sure same size
         return arrivals;
     }
@@ -149,5 +193,12 @@ public class Store {
         }
         return i;
         
+    }
+
+    public Clerk getClerk() {
+        Random rand = new Random();
+        int emp = rand.nextInt(2);
+
+        return employees.get(emp).getDaysWorked() < 3 ? employees.get(emp) : employees.get(~emp);
     }
 }

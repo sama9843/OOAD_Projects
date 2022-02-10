@@ -83,7 +83,7 @@ public class Main{
             if(test.getDeal2()){t2++;}
         }
         */
-        Store store = new Store();
+        // Store store = new Store();
         //Seller s1 = new Seller();
         //s1.setItem();
 

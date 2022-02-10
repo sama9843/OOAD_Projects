@@ -1,45 +1,66 @@
+import java.util.*;
+
 //abstract class for all staff
 //will only be used to implement clerk in this project
 abstract class Staff{
     //attributes protected by encapsulation
     private String name;
-    private double workRate;
+    private int daysWorked;
     //abstract methods
     abstract void arriveAtStore();
     abstract void leaveTheStore();
     //constructor
-    public Staff(String name, double workRate){
+    public Staff(String name, int worked){
         this.name = name;
-        this.workRate = workRate;
+        daysWorked = worked;
     }
     //getter method
-    public String getName(){return name;}
-    public double getWorkRate(){return workRate;}
+    public double getDaysWorked(){return daysWorked;}
+    public String toString() {return name;}
 }
+
 //implementing abstract class
 class Clerk extends Staff{
     private double carefulness;
+
     //constructor
-    public Clerk(String name,double workRate, double carefulness){
-        super(name,workRate);
-        this.carefulness = carefulness;
+    public Clerk(String name,int worked, double careful){
+        super(name, worked);
+        this.carefulness = careful;
     }
+
     //implement abstract methods
-    void arriveAtStore(){System.out.println("Arrive");}
-    void leaveTheStore(){System.out.println("Leave");}
+    void arriveAtStore(){System.out.println(this + " has arrived at the store");}
+    void leaveTheStore(){System.out.println(this + " has left the store");}
+
     //getter methods
     public double getCarefulness(){return carefulness;}
+
     //other methods
-    public void checkRegister(){
-        //TODO
+    public float checkRegister(float reg){
+        // print the amount of money in the register
+        System.out.println("$" + reg + " left in the register");
+        if(reg < 75) {return reg + this.goToBank();}
+        return reg;
     }
 
-    public void goToBank(){
-        //TODO
+    public float goToBank(){
+        System.out.println("Putting $1,000 in the register.");
+        return 1000;
     }
 
-    public void doInventory(){
-        //TODO
+    public void doInventory(Map<String, List<Item>> inventory){
+        float value = 0;
+        for(String s : inventory.keySet()) {
+            if(inventory.get(s).size() == 0) {
+                this.placeAnOrder();
+            } else {
+                for(Item i : inventory.get(s)) {
+                    value += i.getPurchasePrice();
+                }
+            }
+        }
+        System.out.println("Total Inventory: " + value);
     }
 
     public void placeAnOrder(){
@@ -47,11 +68,13 @@ class Clerk extends Staff{
     }
 
     public void openTheStore(){
-        //TODO
+        // 
     }
 
-    public void cleanTheStore(){
-        //TODO
+    public void cleanTheStore(Map<String, List<Item>> inventory){
+        Random rand = new Random();
+        String itemType = (new ArrayList(inventory.keySet())[rand.nextInt(inventory.size() + 1)];
+        int toDelete = rand.nextInt(inventory.get(itemType).size() + 1);
     }
 
     public void sell(){
