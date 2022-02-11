@@ -164,13 +164,16 @@ class Clerk extends Staff{
             System.out.println("The customer tried to buy a " + itemToBuy + " but we were out of stock, so they left.");
         }else{
             if(b.getDeal1()){
+                //50% chance customer accepts deal1
+                //sets saleprice and removes from inventory
                 System.out.println(this + " sold a " + itemToBuy + " to the customer for " + df.format(typeMatches.get(0).getListPrice()));
                 inventory.get(itemToBuy).get(0).setSalePrice(inventory.get(itemToBuy).get(0).getListPrice());
                 return inventory.get(itemToBuy).remove(0);
             } else if(b.getDeal2()){
+                //75% chance customer accepts deal2
+                //sets saleprice with 10% discount and removes from inventory
                 System.out.println(this + " sold a " + itemToBuy + " to the customer with a 10% discount for " + df.format(typeMatches.get(0).getListPrice()*0.9));
                 inventory.get(itemToBuy).get(0).setSalePrice(inventory.get(itemToBuy).get(0).getListPrice() * 0.9);
-                // System.out.println(inventory.get(itemToBuy).get(0).getSalePrice() );
                 return inventory.get(itemToBuy).remove(0);
             } else {
                 System.out.println("The customer did not want to pay " + df.format(typeMatches.get(0).getListPrice()) + " for " + typeMatches.get(0).thisIs());
@@ -184,6 +187,7 @@ class Clerk extends Staff{
         Random rand = new Random();
         customerItem.setUsed(rand.nextBoolean());
         int con = rand.nextInt(5);
+        //sets condition of item
         switch(con){
             case 0: customerItem.setCondition("Poor"); break;
             case 1: customerItem.setCondition("Fair"); break;
@@ -191,6 +195,7 @@ class Clerk extends Staff{
             case 3: customerItem.setCondition("Very Good"); break;
             case 4: customerItem.setCondition("Excellent"); break;
         }
+        //sets price using condition
         int price = rand.nextInt(50);
         switch(customerItem.getCondition()){
             case "Poor": customerItem.setPurchasePrice(price+1); break;
@@ -200,13 +205,16 @@ class Clerk extends Staff{
             case "Excellent": customerItem.setPurchasePrice(price+20); break;
         }
 
-        //buy
+        //50% chance customer takes first deal
+        //sets price and adds to inventory
         if(c.getDeal1()){
             double p= customerItem.getPurchasePrice();
             System.out.format("Customer took the first deal and sold a %s for %s dollars\n",customerItem.thisIs(),df.format(p));
             inventory.get(customerItem.thisIs()).add(customerItem);
             return (float)p;
         }
+        //75% chance customer takes second deal
+        //sets price with added 10% adn adds to inventory
         else if(c.getDeal2()){
             customerItem.setPurchasePrice(customerItem.getPurchasePrice() * 1.1);
             double p= customerItem.getPurchasePrice();
@@ -214,6 +222,7 @@ class Clerk extends Staff{
             inventory.get(customerItem.thisIs()).add(customerItem);
             return (float)p;
         }
+        //when customer doesn't accept either deal
         else{
             System.out.format("Customer wanted to sell a %s but did not accept the offered deal.\n",customerItem.thisIs());
         }

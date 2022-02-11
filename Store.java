@@ -161,7 +161,7 @@ public class Store {
         return arrivals;
     }
 
-
+    //generates 3 random items of a certain item type
     private List<Item> random3Items(String item_type) {
         List<Item> i = new ArrayList<Item>();
         Random rand = new Random();
@@ -196,7 +196,7 @@ public class Store {
         return i;
         
     }
-
+    //gets clerk who is working that day
     public Clerk getClerk() {
         Random rand = new Random();
         int emp = rand.nextInt(2);
@@ -206,9 +206,7 @@ public class Store {
 
     public void simulate(int total_days) {
         Random rand = new Random();
-        // List<Item> items_sold = new ArrayList<Item>();
         List<Item> shipments = new ArrayList<Item>();
-        // System.out.println("S" + shipments);
         System.out.println("initializing world...");
         for (int days = 0; days < total_days; days++) {
             // store doesnt operate on sundays
@@ -262,7 +260,7 @@ public class Store {
         System.out.println("Money In Register: " + getMoney());
         System.out.println("Money Added From Bank: " + getDebt());
     }
-
+    //returns day of the week it is
     private  String get_week_day(int day) {
         switch (day % 7) {
             case 0: return "Monday";

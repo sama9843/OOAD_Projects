@@ -17,23 +17,23 @@ abstract class Customer{
         //sets item
         int num = rand.nextInt(17);
         switch(num){
-            case 0: this.item = new PaperScore("Name","Band","Album"); break;
-            case 1: this.item = new CD("Name","Band","Album"); break;
-            case 2: this.item = new Vinyl("Name","Band","Album"); break;
-            case 3: this.item = new CDPlayer("Name"); break;
-            case 4: this.item = new RecordPlayer("Name"); break;
-            case 5: this.item = new MP3Player("Name"); break;
-            case 6: this.item = new Guitar("Name",true); break;
-            case 7: this.item = new Bass("Name",true); break;
-            case 8: this.item = new Mandolin("Name",true); break;
-            case 9: this.item = new Flute("Name","Type"); break;
-            case 10: this.item = new Harmonica("Name","Key"); break;
-            case 11: this.item = new Hats("Name","HatSize"); break;
-            case 12: this.item = new Shirts("Name","ShirtSize"); break;
-            case 13: this.item = new Bandanas("Name"); break;
-            case 14: this.item = new PracticeAmps("Name",10.0); break;
-            case 15: this.item = new Cables("Name",1.0); break;
-            case 16: this.item = new Strings("Name","Type"); break;
+            case 0: this.item = new PaperScore("Jerry's PaperScore","Band","Album"); break;
+            case 1: this.item = new CD("Claire's CD","Band","Album"); break;
+            case 2: this.item = new Vinyl("Donna's Vinyl","Band","Album"); break;
+            case 3: this.item = new CDPlayer("Leslie's CDPlayer"); break;
+            case 4: this.item = new RecordPlayer("Ron's RecordPlayer"); break;
+            case 5: this.item = new MP3Player("Tom's MP3Player"); break;
+            case 6: this.item = new Guitar("Jake's Guitar",true); break;
+            case 7: this.item = new Bass("Benny's Bass",true); break;
+            case 8: this.item = new Mandolin("Liam's Mandolin",true); break;
+            case 9: this.item = new Flute("Ann's Flute","Type"); break;
+            case 10: this.item = new Harmonica("Chris' Harmonica","Key"); break;
+            case 11: this.item = new Hats("FoodnStuff Hat","HatSize"); break;
+            case 12: this.item = new Shirts("Sam's Shirt","ShirtSize"); break;
+            case 13: this.item = new Bandanas("Ben's Bandana"); break;
+            case 14: this.item = new PracticeAmps("Andy's PracticeAmp",10.0); break;
+            case 15: this.item = new Cables("April's Cables",1.0); break;
+            case 16: this.item = new Strings("Bobby's Strings","Type"); break;
         }
     }
     //getter methods for deals
