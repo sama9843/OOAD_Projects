@@ -118,7 +118,8 @@ class Clerk extends Staff{
         if(rand.nextDouble() <= this.carefulness) {
             ArrayList<String> keys = new ArrayList<String>(inventory.keySet());
             String itemType = keys.get(rand.nextInt(keys.size()));
-            int toDamage = rand.nextInt(inventory.get(itemType).size());
+            int toDamage = inventory.get(itemType).size() > 0 ? rand.nextInt(inventory.get(itemType).size()) : -1;
+            if(toDamage < 0) {return;}
             switch (inventory.get(itemType).get(toDamage).getCondition()) {
                 case "Poor":
                     System.out.println(inventory.get(itemType).remove(toDamage) + " was damaged beyond repair!");

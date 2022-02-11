@@ -208,7 +208,7 @@ public class Store {
         Random rand = new Random();
         // List<Item> items_sold = new ArrayList<Item>();
         List<Item> shipments = new ArrayList<Item>();
-        System.out.println("S" + shipments);
+        // System.out.println("S" + shipments);
         System.out.println("initializing world...");
         for (int days = 0; days < total_days; days++) {
             // store doesnt operate on sundays
@@ -231,9 +231,7 @@ public class Store {
                 clerk.doInventory(inventory);
 
                 // open the store for the day
-                System.out.println(money);
                 money = clerk.openTheStore(this.inventory, this.money, this.itemsSold);
-                System.out.println(money);
                 // clean the store
                 clerk.cleanTheStore(inventory);
 
