@@ -237,14 +237,14 @@ public class Store {
         }
         System.out.println("Results!");
         System.out.println("Inventory:");
-        double invent_worth = 0;
-        inventory.forEach((key,group) -> {
-            group.forEach((it) -> {
-                System.out.println(it.getName());
-                invent_worth += it.getPurchasePrice();
-            });
-        });
-        System.out.println("Total Inventory Worth: " + invent_worth);
+        // double invent_worth = 0;
+        // inventory.forEach((key,group) -> {
+        //     group.forEach((it) -> {
+        //         System.out.println(it.getName());
+        //         invent_worth += it.getPurchasePrice();
+        //     });
+        // });
+        // System.out.println("Total Inventory Worth: " + invent_worth);
         System.out.println("Items sold:");
         double sales_worth = 0;
         for (Item p : items_sold) {
@@ -252,8 +252,8 @@ public class Store {
             sales_worth += p.getSalePrice();
         }
         System.out.println("Sales Total: " + sales_worth);
-        System.out.println("Money In Register: " + str.getMoney());
-        System.out.println("Money Added From Bank: " + str.getDebt());
+        System.out.println("Money In Register: " + this.getMoney());
+        System.out.println("Money Added From Bank: " + this.getDebt());
     }
 
     private  String get_week_day(int day) {
