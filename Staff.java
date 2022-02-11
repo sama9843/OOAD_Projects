@@ -86,12 +86,10 @@ class Clerk extends Staff{
         for(int i = 0; i < (int)rand.nextInt(4) + 1; i++){
             sellers.add(new Seller());
         }
-        System.out.println(register);
         for(Buyer b : buyers){
             register += this.sell(b, inventory);
             System.out.println();
         }
-        System.out.println(register);
         for(Seller s : sellers){
             register -= this.buy(s.getItem(), s, inventory);
             System.out.println();
@@ -148,13 +146,13 @@ class Clerk extends Staff{
             System.out.println("The customer tried to buy a " + itemToBuy + " but we were out of stock, so they left.");
         }else{
             if(b.getDeal1()){
-                System.out.println(this + " sold a " + itemToBuy + " to the customer for " + typeMatches.get(0));
+                System.out.println(this + " sold a " + itemToBuy + " to the customer for " + df.format(typeMatches.get(0).getListPrice()));
                 return (float)inventory.get(itemToBuy).remove(0).getListPrice();
             } else if(b.getDeal2()){
-                System.out.println(this + " sold a " + itemToBuy + " to the customer with a 10% discount for " + typeMatches.get(0));
+                System.out.println(this + " sold a " + itemToBuy + " to the customer with a 10% discount for " + df.format(typeMatches.get(0).getListPrice()*0.9));
                 return (float)(inventory.get(itemToBuy).remove(0).getListPrice() * 0.9);
             } else {
-                System.out.println("The customer did not want to pay " + typeMatches.get(0).getListPrice() + " for " + typeMatches.get(0));
+                System.out.println("The customer did not want to pay " + df.format(typeMatches.get(0).getListPrice()) + " for " + typeMatches.get(0));
             }
         }
         return 0;
