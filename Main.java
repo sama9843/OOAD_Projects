@@ -10,8 +10,6 @@ public class Main{
         //run main
         Store str = new Store();
        str.simulate(30);
-        Clerk c = str.getClerk();
-        c.cleanTheStore(str.getInventory());
         // for (int days = 0; days < 30; days++) {
         //     // store doesnt operate on sundays
         //     System.out.println("day " + days);
