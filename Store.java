@@ -138,14 +138,14 @@ public class Store {
     // place an order, returns price
     public int placeOrder(String item_type) {
         Random rand = new Random();
-        order_days.add(rand.nextInt(3));
+        order_days.add(rand.nextInt(3) + 1);
         orders.add(random3Items(item_type));
         return 0;
     }
 
     // advances the day and returns any orders that have been completed
     public List<Item> advance_day() {
-
+        System.out.println(order_days);
         List<Item> arrivals = new ArrayList<Item>();
         for (int i = 0; i < orders.size(); i++) {
             order_days.set(i, order_days.get(i) - 1);
@@ -157,7 +157,6 @@ public class Store {
                 orders.remove(i);
             }
         }
-
         assert (order_days.size() == orders.size()); // make sure same size
         return arrivals;
     }
@@ -255,7 +254,6 @@ public class Store {
             else System.out.println();
         }
         System.out.println("Results!");
-
         System.out.println("Items sold:");
         double sales_worth = 0;
         for (Item p : itemsSold) {
