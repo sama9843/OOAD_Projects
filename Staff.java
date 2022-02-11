@@ -71,10 +71,6 @@ class Clerk extends Staff{
         return outOfStock;
     }
 
-    public void placeAnOrder(){
-        //TODO
-        // Place the orders in the store class and run a day in the store class
-    }
 
     public float openTheStore(Map<String, ArrayList<Item>> inventory, float register, ArrayList<Item> itemsSold){
         System.out.println("The store is now open!");
