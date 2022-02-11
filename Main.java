@@ -1,15 +1,9 @@
-import java.util.List;
-import java.util.ArrayList;
-import java.util.Random;
-
 public class Main{
-
-
     public static void main(String[] args){
 
         //run main
         Store str = new Store();
-       str.simulate(30);
+        str.simulate(30);
         // for (int days = 0; days < 30; days++) {
         //     // store doesnt operate on sundays
         //     System.out.println("day " + days);

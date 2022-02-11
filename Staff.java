@@ -1,6 +1,7 @@
-import java.util.*;
 import java.text.DecimalFormat;
-
+import java.util.ArrayList;
+import java.util.Map;
+import java.util.Random;
 //abstract class for all staff
 //will only be used to implement clerk in this project
 abstract class Staff{
@@ -53,7 +54,7 @@ class Clerk extends Staff{
         return 1000;
     }
 
-    public ArrayList<String> doInventory(Map<String, List<Item>> inventory){
+    public ArrayList<String> doInventory(Map<String, ArrayList<Item>> inventory){
         float value = 0;
         ArrayList<String> outOfStock = new ArrayList<String>();
         for(String s : inventory.keySet()) {
@@ -75,21 +76,35 @@ class Clerk extends Staff{
         // Place the orders in the store class and run a day in the store class
     }
 
-    public float openTheStore(Map<String, ArrayList<Item>> inventory, float register){
-        System.out.println("The store is now open!");;
+    public float openTheStore(Map<String, ArrayList<Item>> inventory, float register, ArrayList<Item> itemsSold){
+        System.out.println("The store is now open!");
+
+        // create lists for the buyers and sellers
         ArrayList<Buyer> buyers = new ArrayList<Buyer>();
         ArrayList<Seller> sellers = new ArrayList<Seller>();
+
         Random rand = new Random();
+        // add buyers and sellers to lists
         for(int i = 0; i < (int)rand.nextDouble() * 7 + 4; i++){
             buyers.add(new Buyer());
         }
+
         for(int i = 0; i < (int)rand.nextInt(4) + 1; i++){
             sellers.add(new Seller());
         }
+
+        // sell the items to the buyers
         for(Buyer b : buyers){
-            register += this.sell(b, inventory);
-            System.out.println();
+            Item sold = this.sell(b, inventory);
+            if(sold != null) {
+                itemsSold.add(sold);
+                register += sold.getSalePrice();
+                System.out.println(register);
+                System.out.println();
+            }
         }
+
+        // buy the items from the sellers
         for(Seller s : sellers){
             register -= this.buy(s.getItem(), s, inventory);
             System.out.println();
@@ -117,19 +132,19 @@ class Clerk extends Staff{
                 case "Good":
                     Item item1 = inventory.get(itemType).get(toDamage);
                     System.out.println(item1.getName() + " was damaged during cleanup and is now in fair condition.");
-                    item1.setCondition("Poor");
+                    item1.setCondition("Fair");
                     item1.setListPrice(item1.getListPrice() * 0.8);
                     break;
                 case "Very Good":
                     Item item2 = inventory.get(itemType).get(toDamage);
                     System.out.println(item2.getName() + " was damaged during cleanup and is now in good condition.");
-                    item2.setCondition("Poor");
+                    item2.setCondition("Good");
                     item2.setListPrice(item2.getListPrice() * 0.8);
                     break;
                 case "Excellent":
                     Item item3 = inventory.get(itemType).get(toDamage);
                     System.out.println(item3.getName() + " was damaged during cleanup and is now in very good condition.");
-                    item3.setCondition("Poor");
+                    item3.setCondition("Very Good");
                     item3.setListPrice(item3.getListPrice() * 0.8);
                     break;
                 default: break;
@@ -138,24 +153,33 @@ class Clerk extends Staff{
         System.out.println("Store has been cleaned up!");
     }
 
-    public float sell(Buyer b, Map<String, ArrayList<Item>> inventory){
+    public Item sell(Buyer b, Map<String, ArrayList<Item>> inventory){
+        // get type of item to sell
         String itemToBuy = b.getItem().thisIs();
+
         System.out.println("The customer is trying to buy " + itemToBuy);
+
+        // get all the items of the type to buy
         ArrayList<Item> typeMatches = inventory.get(itemToBuy);
+
+        // no items of type
         if(typeMatches.size() == 0){
             System.out.println("The customer tried to buy a " + itemToBuy + " but we were out of stock, so they left.");
         }else{
             if(b.getDeal1()){
                 System.out.println(this + " sold a " + itemToBuy + " to the customer for " + df.format(typeMatches.get(0).getListPrice()));
-                return (float)inventory.get(itemToBuy).remove(0).getListPrice();
+                inventory.get(itemToBuy).get(0).setSalePrice(inventory.get(itemToBuy).get(0).getListPrice());
+                return inventory.get(itemToBuy).remove(0);
             } else if(b.getDeal2()){
                 System.out.println(this + " sold a " + itemToBuy + " to the customer with a 10% discount for " + df.format(typeMatches.get(0).getListPrice()*0.9));
-                return (float)(inventory.get(itemToBuy).remove(0).getListPrice() * 0.9);
+                inventory.get(itemToBuy).get(0).setSalePrice(inventory.get(itemToBuy).get(0).getListPrice() * 0.9);
+                // System.out.println(inventory.get(itemToBuy).get(0).getSalePrice() );
+                return inventory.get(itemToBuy).remove(0);
             } else {
-                System.out.println("The customer did not want to pay " + df.format(typeMatches.get(0).getListPrice()) + " for " + typeMatches.get(0));
+                System.out.println("The customer did not want to pay " + df.format(typeMatches.get(0).getListPrice()) + " for " + typeMatches.get(0).thisIs());
             }
         }
-        return 0;
+        return null;
     }
 
     public float buy(Item customerItem, Customer c, Map<String, ArrayList<Item>> inventory){
@@ -170,7 +194,7 @@ class Clerk extends Staff{
             case 3: customerItem.setCondition("Very Good"); break;
             case 4: customerItem.setCondition("Excellent"); break;
         }
-        int price = rand.nextInt(5);
+        int price = rand.nextInt(50);
         switch(customerItem.getCondition()){
             case "Poor": customerItem.setPurchasePrice(price+1); break;
             case "Fair": customerItem.setPurchasePrice(price+5); break;
@@ -178,21 +202,18 @@ class Clerk extends Staff{
             case "Very Good": customerItem.setPurchasePrice(price+15); break;
             case "Excellent": customerItem.setPurchasePrice(price+20); break;
         }
-        // System.out.println(customerItem.getCondition());
-        // System.out.println(customerItem.getPurchasePrice());
+
         //buy
         if(c.getDeal1()){
             double p= customerItem.getPurchasePrice();
             System.out.format("Customer took the first deal and sold a %s for %s dollars\n",customerItem.thisIs(),df.format(p));
-            //TODO 
             inventory.get(customerItem.thisIs()).add(customerItem);
             return (float)p;
         }
         else if(c.getDeal2()){
-            customerItem.setPurchasePrice(customerItem.getPurchasePrice() + (customerItem.getPurchasePrice()*0.1));
+            customerItem.setPurchasePrice(customerItem.getPurchasePrice() * 1.1);
             double p= customerItem.getPurchasePrice();
             System.out.format("Customer took the second deal and sold a %s for %s dollars\n",customerItem.thisIs(),df.format(p));
-            //TODO 
             inventory.get(customerItem.thisIs()).add(customerItem);
             return (float)p;
         }

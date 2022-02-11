@@ -36,7 +36,7 @@ abstract class Item{
     public void setCondition(String condition){this.condition = condition;}
     public void setDayArrived(int dayArrived){this.dayArrived = dayArrived;}
     public void setDaySold(int daySold){this.daySold = daySold;}
-    public String toString() {return "(" + name + ", " + condition + ", " + listPrice + ")";}
+    public String toString() {return "(" + name + ", " + condition + ", " + salePrice + ")";}
 }
 //Music implements Item
 //all Music Items

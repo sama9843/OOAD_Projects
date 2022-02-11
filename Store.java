@@ -1,7 +1,6 @@
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
@@ -16,6 +15,9 @@ public class Store {
 
     // money in the register
     float money = 0;
+
+    // items that have been sold
+    private ArrayList<Item> itemsSold = new ArrayList<Item>();
 
     // debt to bank
     float debt = 0;
@@ -205,24 +207,40 @@ public class Store {
 
     public void simulate(int total_days) {
         Random rand = new Random();
-        List<Item> items_sold = new ArrayList<Item>();
+        // List<Item> items_sold = new ArrayList<Item>();
         List<Item> shipments = new ArrayList<Item>();
+        System.out.println("S" + shipments);
         System.out.println("initializing world...");
         for (int days = 0; days < total_days; days++) {
             // store doesnt operate on sundays
             System.out.println("day " + days + ", " + get_week_day(days));
-            shipments.addAll(advance_day());
+
             if (days % 7 != 6) {
-                int num_buyers = rand.nextInt(7) + 4;
-                int num_sellers = rand.nextInt(4) + 1;
-                List<Buyer> buyers = new ArrayList<Buyer>();
-                for (int i = 0; i < num_buyers; i++) buyers.add(new Buyer());
-                List<Seller> sellers = new ArrayList<Seller>();
-                for (int i = 0; i < num_sellers; i++) sellers.add(new Seller());
-                /*
-                customer clerk interaction here pls
-                */
-                // 
+                Clerk clerk = this.getClerk();
+
+                // arrive at the store
+                clerk.arriveAtStore();
+                shipments.addAll(advance_day());
+
+                // check that the register has money
+                if(this.money != clerk.checkRegister(this.money)){
+                    this.money += 1000;
+                    this.debt += 1000;
+                }
+
+                // check the inventory
+                clerk.doInventory(inventory);
+
+                // open the store for the day
+                System.out.println(money);
+                money = clerk.openTheStore(this.inventory, this.money, this.itemsSold);
+                System.out.println(money);
+                // clean the store
+                clerk.cleanTheStore(inventory);
+
+                // close store
+                clerk.leaveTheStore();
+
                 // orders
                 System.out.println("Items arrived: ");
                 for (Item p : shipments) System.out.print(p.getName()+ ", ");
@@ -237,31 +255,10 @@ public class Store {
             else System.out.println();
         }
         System.out.println("Results!");
-        System.out.println("Inventory:");
-        // double invent_worth = 0;
-        // inventory.forEach((key,group) -> {
-        //     group.forEach((it) -> {
-        //         System.out.println(it.getName());
-        //         invent_worth += it.getPurchasePrice();
-        //     });
-        // });
-        // System.out.println("Total Inventory Worth: " + invent_worth);
-        double invent_worth = 0;
-        inventory.forEach((key,group) -> {
-            group.forEach((it) -> {
-                System.out.println(it.getName());
-            });
-        });
-        // find total price of items
-        for (List<Item> list : inventory.values()) {
-            for (Item i : list) {
-                invent_worth += i.getPurchasePrice();
-            }
-        }
-        System.out.println("Total Inventory Worth: " + invent_worth);
+
         System.out.println("Items sold:");
         double sales_worth = 0;
-        for (Item p : items_sold) {
+        for (Item p : itemsSold) {
             System.out.print(p.getName()+ ", ");
             sales_worth += p.getSalePrice();
         }
