@@ -1,6 +1,7 @@
 import java.util.Random;
 //abstract class for all customers
 //will only be used to implement buyer and seller in this project
+//COHESION: customer class has fairly strong cohesion as the only methods it has are related to it
 abstract class Customer{
     //attributes protected by encapsulation
     private Item item;
@@ -47,9 +48,19 @@ abstract class Customer{
         else{return false;}
     }
     public Item getItem(){return this.item;}
-    public String thisIs(){return this.getClass().getSimpleName();}
+    //public String thisIs(){return this.getClass().getSimpleName();}
+    //POLYMORPHISM: is overwriten later in subclasses
+    public String thisIs(){return "Customer";}
 }
 //Buyer implements Customer
-class Buyer extends Customer{public Buyer(){}}
+class Buyer extends Customer{
+    public Buyer(){}
+    //POLYMORPHISM: overides the super class definition of thisIs
+    public String thisIs(){return "Buyer";}
+}
 //Seller implements Customer
-class Seller extends Customer{public Seller(){}}
+class Seller extends Customer{
+    public Seller(){}
+    //POLYMORPHISM: overides the super class definition of thisIs
+    public String thisIs(){return "Seller";}
+}

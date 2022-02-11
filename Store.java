@@ -116,6 +116,7 @@ public class Store {
             }
         }
         // employees
+        //IDENTITY: employees shaggy and velma each have a unique identity
         employees.add(new Clerk("Shaggy", 0, 0.2));
         employees.add(new Clerk("Velma", 0, 0.05));
     }

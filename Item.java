@@ -1,6 +1,7 @@
+//ABSTRACTION
 //abstract class for all items
 abstract class Item{
-    //attributes protected by encapsulation
+    //attributes protected by ENCAPSULATION
     private String name;
     private double purchasePrice;
     private double listPrice;
@@ -38,6 +39,7 @@ abstract class Item{
     public void setDaySold(int daySold){this.daySold = daySold;}
     public String toString() {return "(" + name + ", " + condition + ", " + salePrice + ")";}
 }
+//INHERITANCE: all sublcass of item inheritate from superclass Item
 //Music implements Item
 //all Music Items
 class Music extends Item{

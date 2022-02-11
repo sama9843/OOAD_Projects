@@ -209,6 +209,7 @@ class Clerk extends Staff{
         //sets price and adds to inventory
         if(c.getDeal1()){
             double p= customerItem.getPurchasePrice();
+            customerItem.setListPrice(p*2);
             System.out.format("Customer took the first deal and sold a %s for %s dollars\n",customerItem.thisIs(),df.format(p));
             inventory.get(customerItem.thisIs()).add(customerItem);
             return (float)p;
@@ -218,6 +219,7 @@ class Clerk extends Staff{
         else if(c.getDeal2()){
             customerItem.setPurchasePrice(customerItem.getPurchasePrice() * 1.1);
             double p= customerItem.getPurchasePrice();
+            customerItem.setListPrice(p*2);
             System.out.format("Customer took the second deal and sold a %s for %s dollars\n",customerItem.thisIs(),df.format(p));
             inventory.get(customerItem.thisIs()).add(customerItem);
             return (float)p;
