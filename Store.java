@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
@@ -245,6 +246,19 @@ public class Store {
         //     });
         // });
         // System.out.println("Total Inventory Worth: " + invent_worth);
+        double invent_worth = 0;
+        inventory.forEach((key,group) -> {
+            group.forEach((it) -> {
+                System.out.println(it.getName());
+            });
+        });
+        // find total price of items
+        for (List<Item> list : inventory.values()) {
+            for (Item i : list) {
+                invent_worth += i.getPurchasePrice();
+            }
+        }
+        System.out.println("Total Inventory Worth: " + invent_worth);
         System.out.println("Items sold:");
         double sales_worth = 0;
         for (Item p : items_sold) {
@@ -252,8 +266,8 @@ public class Store {
             sales_worth += p.getSalePrice();
         }
         System.out.println("Sales Total: " + sales_worth);
-        System.out.println("Money In Register: " + this.getMoney());
-        System.out.println("Money Added From Bank: " + this.getDebt());
+        System.out.println("Money In Register: " + getMoney());
+        System.out.println("Money Added From Bank: " + getDebt());
     }
 
     private  String get_week_day(int day) {
