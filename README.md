@@ -13,3 +13,5 @@ OOAD Terms:
 -Abstraction: example found in Item.java (line 1)
 
 Important Files: Item.java , Customer.java , Staff.java  Store.java  Main.java , Output.txt , Proj2_UML_Updated.pdf
+
+Project 2: Can be found in the Project2 branch
