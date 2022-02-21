@@ -10,7 +10,7 @@ abstract class Item{
     private String condition;
     private int dayArrived;
     private int daySold;
-
+ 
     //constructor
     public Item(String name){
         this.name = name;
@@ -61,29 +61,45 @@ class PaperScore extends Music{public PaperScore(String name, String band, Strin
 class CD extends Music{public CD(String name, String band, String album){super(name,band,album);}}
 //Vinyl
 class Vinyl extends Music{public Vinyl(String name, String band, String album){super(name,band,album);}}
-
+//Cassette
+class Cassette extends Music{public Cassette(String name, String band, String album){super(name,band,album);}}
+ 
 //Players implements Item
 //all Players items
-class Players extends Item{public Players(String name){super(name);}}
+class Players extends Item{
+    private boolean equalized;
+    public Players(String name){
+        super(name);
+        this.equalized = false;
+    }
+    public void setEqualized(boolean e){equalized = e;}
+    public boolean getEqualized(){return equalized;}
+}
 //CDPlayer
 class CDPlayer extends Players{public CDPlayer(String name){super(name);}}
 //RecordPlayer
 class RecordPlayer extends Players{public RecordPlayer(String name){super(name);}}
-//VinylPlayer THIS IS WRONG IS A MP3 PLAYER 
+//MP3Player
 class MP3Player extends Players{public MP3Player(String name){super(name);}}
-
+//CassettePlayer
+class CassettePlayer extends Players{public CassettePlayer(String name){super(name);}}
+ 
 //Instruments implements Item
 //all Instruments items
 class Instruments extends Item{public Instruments(String name){super(name);}}
 //Stringed
 class Stringed extends Instruments{
     private boolean electric;
+    private boolean tuned;
     public Stringed(String name,boolean electric){
         super(name);
         this.electric = electric;
+        this.tuned = false;
     }
     //getter method
     public boolean getElectric(){return electric;}
+    public void setTuned(boolean t){tuned = t;}
+    public boolean getTuned(){return tuned;}
 }
 //all Stringed items
 //Guitar
@@ -92,9 +108,17 @@ class Guitar extends Stringed{public Guitar(String name,boolean electric){super(
 class Bass extends Stringed{public Bass(String name,boolean electric){super(name,electric);}}
 //Mandolin
 class Mandolin extends Stringed{public Mandolin(String name,boolean electric){super(name,electric);}}
-
+ 
 //Wind
-class Wind extends Instruments{public Wind(String name){super(name);}}
+class Wind extends Instruments{
+    private boolean adjusted;
+    public Wind(String name){
+        super(name);
+        this.adjusted = false;
+    }
+    public void setAdjusted(boolean a){adjusted = a;}
+    public boolean getAdjusted(){return adjusted;}
+}
 //all Wind items
 //Flute
 class Flute extends Wind{
@@ -114,7 +138,16 @@ class Harmonica extends Wind{
     }
     public String getKey(){return key;}
 }
-
+//Saxophone
+class Saxophone extends Wind{
+    private String type;
+    public Saxophone(String name,String type){
+        super(name);
+        this.type = type;
+    }
+    public String getType(){return type;}
+}
+ 
 //Clothing implements Item
 //all Clothing Items
 class Clothing extends Item{public Clothing(String name){super(name);}}
@@ -138,7 +171,7 @@ class Shirts extends Clothing{
 }
 //Bandanas
 class Bandanas extends Clothing{public Bandanas(String name){super(name);}}
-
+ 
 //Accessories implements Item
 //all Accessories Items
 class Accessories extends Item{public Accessories(String name){super(name);}}
@@ -169,3 +202,5 @@ class Strings extends Accessories{
     }
     public String getType(){return type;}
 }
+//GigBag
+class GigBag extends Accessories{public GigBag(String name){super(name);}}
