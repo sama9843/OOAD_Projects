@@ -60,6 +60,8 @@ class Clerk extends Staff{
         for(String s : inventory.keySet()) {
             if(inventory.get(s).size() == 0) {
                 System.out.println("Store is out of " + s);
+                // ignore clothing refills
+                if (s == "Hats" || s == "Shirts" || s == "Bandanas") continue;
                 outOfStock.add(s);
             } else {
                 for(Item i : inventory.get(s)) {
@@ -161,6 +163,9 @@ class Clerk extends Staff{
 
         // no items of type
         if(typeMatches.size() == 0){
+            if (itemToBuy == "Hats" || itemToBuy == "Shirts" || itemToBuy == "Bandanas") {
+                System.out.println("The customer tried to buy a " + itemToBuy + " but they are no longer sold, so they left.");
+            } else 
             System.out.println("The customer tried to buy a " + itemToBuy + " but we were out of stock, so they left.");
         }else{
             if(b.getDeal1()){
@@ -183,6 +188,11 @@ class Clerk extends Staff{
     }
 
     public float buy(Item customerItem, Customer c, Map<String, ArrayList<Item>> inventory){
+        // if the customer is trying to sell clothing we no longer accept.
+        if (customerItem instanceof Clothing && inventory.get(customerItem.thisIs()).size() == 0) {
+            System.out.format("Customer wanted to sell a %s but store no longer supports them, so they left.\n",customerItem.thisIs());
+            return 0;
+        }
         //appraise
         Random rand = new Random();
         customerItem.setUsed(rand.nextBoolean());
