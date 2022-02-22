@@ -119,6 +119,7 @@ public class Store {
         //IDENTITY: employees shaggy and velma each have a unique identity
         employees.add(new Clerk("Shaggy", 0, 0.2));
         employees.add(new Clerk("Velma", 0, 0.05));
+        employees.add(new Clerk("Daphne", 0, 0.01));
     }
     // getters
     public Map<String, ArrayList<Item>> getInventory() {return this.inventory;}
@@ -200,9 +201,19 @@ public class Store {
     //gets clerk who is working that day
     public Clerk getClerk() {
         Random rand = new Random();
-        int emp = rand.nextInt(2);
-
-        return employees.get(emp).getDaysWorked() < 3 ? employees.get(emp) : employees.get(~emp);
+        int sick = rand.nextInt(10);
+        int emp = rand.nextInt(employees.size()); // changed from 2 to size to account for daphne and future clerks
+        int sickemp = -1;
+        // if someone is sick, find the sick employee and report it
+        if (sick == 1)  {
+            sickemp = rand.nextInt(employees.size());
+            System.out.println(employees.get(sick).toString() +  " was sick today!");
+        }
+        // find a random employee untill the one found is not sick and hasnt worked 3 days in a row.
+        while (emp == sickemp || employees.get(emp).getDaysWorked() > 3) {
+            emp = rand.nextInt(employees.size());
+        }
+        return employees.get(emp);
     }
 
     public void simulate(int total_days) {
