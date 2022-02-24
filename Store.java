@@ -117,9 +117,9 @@ public class Store {
         }
         // employees
         //IDENTITY: employees shaggy and velma each have a unique identity
-        employees.add(new Clerk("Shaggy", 0, 0.2));
-        employees.add(new Clerk("Velma", 0, 0.05));
-        employees.add(new Clerk("Daphne", 0, 0.01));
+        employees.add(new Clerk("Shaggy", 0, 0.2,new Haphazard()));
+        employees.add(new Clerk("Velma", 0, 0.05,new Manual()));
+        employees.add(new Clerk("Daphne", 0, 0.01,new Electronic()));
     }
     // getters
     public Map<String, ArrayList<Item>> getInventory() {return this.inventory;}

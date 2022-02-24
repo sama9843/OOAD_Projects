@@ -2,6 +2,8 @@ import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Map;
 import java.util.Random;
+
+
 //abstract class for all staff
 //will only be used to implement clerk in this project
 abstract class Staff{
@@ -25,11 +27,13 @@ abstract class Staff{
 //implementing abstract class
 class Clerk extends Staff{
     private double carefulness;
+    private TuneBehavior tuneBehavior;
 
     //constructor
-    public Clerk(String name,int worked, double careful){
+    public Clerk(String name,int worked, double careful, TuneBehavior tuneBehavior){
         super(name, worked);
         this.carefulness = careful;
+        this.tuneBehavior = tuneBehavior;
     }
 
     //implement abstract methods
@@ -38,6 +42,11 @@ class Clerk extends Staff{
 
     //getter methods
     public double getCarefulness(){return carefulness;}
+    
+    //strategy method
+    public Boolean performTune(Item item){
+        return tuneBehavior.tune(item);
+    }
 
     //other methods
     public float checkRegister(float reg){
@@ -65,6 +74,18 @@ class Clerk extends Staff{
                 outOfStock.add(s);
             } else {
                 for(Item i : inventory.get(s)) {
+                    if(i.getClass().getSuperclass().getName() == "Players" ||
+                    i.getClass().getSuperclass().getName() == "Strings" || 
+                    i.getClass().getSuperclass().getName() == "Wind") {
+                    System.out.println("Now tuning " + i.getName());
+                    if(performTune(i)) {
+                        Random rand = new Random();
+                        if(rand.nextDouble() < 1) {
+                            System.out.println("Unfortunately, " + i.getName() + " was damaged during tuning and is now in " + i.getCondition() + " condition.");
+                            damageItem(inventory, i);
+                        }
+                    };
+                    }
                     value += i.getPurchasePrice();
                 }
             }
@@ -73,6 +94,17 @@ class Clerk extends Staff{
         return outOfStock;
     }
 
+    public int getPoisson(){
+        Random rand = new Random();
+        double L = Math.exp(-3);
+        double p = 1;
+        int k = 0;
+        while(p > L) {
+            p *= rand.nextDouble();
+            k++;
+        }
+        return k--;
+    }
 
     public float openTheStore(Map<String, ArrayList<Item>> inventory, float register, ArrayList<Item> itemsSold){
         System.out.println("The store is now open!");
@@ -82,8 +114,11 @@ class Clerk extends Staff{
         ArrayList<Seller> sellers = new ArrayList<Seller>();
 
         Random rand = new Random();
+
+        int k = getPoisson();
+
         // add buyers and sellers to lists
-        for(int i = 0; i < (int)rand.nextDouble() * 7 + 4; i++){
+        for(int i = 0; i < 2 + k; i++){
             buyers.add(new Buyer());
         }
 
@@ -110,10 +145,36 @@ class Clerk extends Staff{
         return register;
     }
 
-    public void cleanTheStore(Map<String, ArrayList<Item>> inventory){
+    public void damageItem(Map<String, ArrayList<Item>> inventory,  Item item) {
         Random rand = new Random();
-        System.out.println("Cleaning up the store!");
-        if(rand.nextDouble() <= this.carefulness) {
+        if(item != null) {
+            switch (item.getCondition()) {
+                case "Poor":
+                System.out.println(item + " was damaged beyond repair!");
+                break;
+            case "Fair":;
+                System.out.println(item.getName() + " was damaged during tuning and is now in poor condition.");
+                item.setCondition("Poor");
+                item.setListPrice(item.getListPrice() * 0.8);
+                break;
+            case "Good":;
+                System.out.println(item.getName() + " was damaged during tuning and is now in fair condition.");
+                item.setCondition("Fair");
+                item.setListPrice(item.getListPrice() * 0.8);
+                break;
+            case "Very Good":;
+                System.out.println(item.getName() + " was damaged during tuning and is now in good condition.");
+                item.setCondition("Good");
+                item.setListPrice(item.getListPrice() * 0.8);
+                break;
+            case "Excellent":;
+                System.out.println(item.getName() + " was damaged during tuning and is now in very good condition.");
+                item.setCondition("Very Good");
+                item.setListPrice(item.getListPrice() * 0.8);
+                break;
+            default: break;
+            }
+        }else {
             ArrayList<String> keys = new ArrayList<String>(inventory.keySet());
             String itemType = keys.get(rand.nextInt(keys.size()));
             int toDamage = inventory.get(itemType).size() > 0 ? rand.nextInt(inventory.get(itemType).size()) : -1;
@@ -123,10 +184,10 @@ class Clerk extends Staff{
                     System.out.println(inventory.get(itemType).remove(toDamage) + " was damaged beyond repair!");
                     break;
                 case "Fair":
-                    Item item = inventory.get(itemType).get(toDamage);
-                    System.out.println(item.getName() + " was damaged during cleanup and is now in poor condition.");
-                    item.setCondition("Poor");
-                    item.setListPrice(item.getListPrice() * 0.8);
+                    Item item4 = inventory.get(itemType).get(toDamage);
+                    System.out.println(item4.getName() + " was damaged during cleanup and is now in poor condition.");
+                    item4.setCondition("Poor");
+                    item4.setListPrice(item4.getListPrice() * 0.8);
                     break;
                 case "Good":
                     Item item1 = inventory.get(itemType).get(toDamage);
@@ -148,6 +209,15 @@ class Clerk extends Staff{
                     break;
                 default: break;
             }
+        }
+
+    }
+
+    public void cleanTheStore(Map<String, ArrayList<Item>> inventory){
+        Random rand = new Random();
+        System.out.println("Cleaning up the store!");
+        if(rand.nextDouble() <= this.carefulness) {
+            damageItem(inventory, null);
         }
         System.out.println("Store has been cleaned up!");
     }
