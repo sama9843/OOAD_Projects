@@ -2,7 +2,7 @@ import java.util.Random;
 //Electronic
 public class Electronic implements TuneBehavior{
     @Override
-    public void tune(Item item){
+    public boolean tune(Item item){
         //always properly tunes
         String name = item.thisIs();
         if(name == "CDPlayer" || name == "RecordPlayer" || name == "MP3Player"){
@@ -14,5 +14,6 @@ public class Electronic implements TuneBehavior{
         else if(name == "Flute" || name == "Harmonica" || name == "Saxophone"){
             ((Wind) item).setState(true);
         }
+        return false;
     }
 }

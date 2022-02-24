@@ -1,5 +1,5 @@
 import java.util.Random;
 
 public interface TuneBehavior{
-    public void tune(Item item);
+    public boolean tune(Item item);
 }
