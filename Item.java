@@ -42,7 +42,7 @@ abstract class Item{
 //INHERITANCE: all sublcass of item inheritate from superclass Item
 //Music implements Item
 //all Music Items
-class Music extends Item{
+abstract class Music extends Item{
     private String band;
     private String album;
     //constructor
@@ -66,14 +66,14 @@ class Cassette extends Music{public Cassette(String name, String band, String al
  
 //Players implements Item
 //all Players items
-class Players extends Item{
+abstract class Players extends Item{
     private boolean equalized;
     public Players(String name){
         super(name);
         this.equalized = false;
     }
-    public void setEqualized(boolean e){equalized = e;}
-    public boolean getEqualized(){return equalized;}
+    public void setState(boolean e){equalized = e;}
+    public boolean getState(){return equalized;}
 }
 //CDPlayer
 class CDPlayer extends Players{public CDPlayer(String name){super(name);}}
@@ -86,9 +86,9 @@ class CassettePlayer extends Players{public CassettePlayer(String name){super(na
  
 //Instruments implements Item
 //all Instruments items
-class Instruments extends Item{public Instruments(String name){super(name);}}
+abstract class Instruments extends Item{public Instruments(String name){super(name);}}
 //Stringed
-class Stringed extends Instruments{
+abstract class Stringed extends Instruments{
     private boolean electric;
     private boolean tuned;
     public Stringed(String name,boolean electric){
@@ -98,8 +98,8 @@ class Stringed extends Instruments{
     }
     //getter method
     public boolean getElectric(){return electric;}
-    public void setTuned(boolean t){tuned = t;}
-    public boolean getTuned(){return tuned;}
+    public void setState(boolean t){tuned = t;}
+    public boolean getState(){return tuned;}
 }
 //all Stringed items
 //Guitar
@@ -110,14 +110,14 @@ class Bass extends Stringed{public Bass(String name,boolean electric){super(name
 class Mandolin extends Stringed{public Mandolin(String name,boolean electric){super(name,electric);}}
  
 //Wind
-class Wind extends Instruments{
+abstract class Wind extends Instruments{
     private boolean adjusted;
     public Wind(String name){
         super(name);
         this.adjusted = false;
     }
-    public void setAdjusted(boolean a){adjusted = a;}
-    public boolean getAdjusted(){return adjusted;}
+    public void setState(boolean a){adjusted = a;}
+    public boolean getState(){return adjusted;}
 }
 //all Wind items
 //Flute
@@ -150,7 +150,7 @@ class Saxophone extends Wind{
  
 //Clothing implements Item
 //all Clothing Items
-class Clothing extends Item{public Clothing(String name){super(name);}}
+abstract class Clothing extends Item{public Clothing(String name){super(name);}}
 //Hats
 class Hats extends Clothing{
     private String hatSize;
@@ -174,7 +174,7 @@ class Bandanas extends Clothing{public Bandanas(String name){super(name);}}
  
 //Accessories implements Item
 //all Accessories Items
-class Accessories extends Item{public Accessories(String name){super(name);}}
+abstract class Accessories extends Item{public Accessories(String name){super(name);}}
 //PracticeAmps
 class PracticeAmps extends Accessories{
     private double wattage;
