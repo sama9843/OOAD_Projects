@@ -1,4 +1,3 @@
-import java.util.Random;
 //Electronic
 public class Electronic implements TuneBehavior{
     @Override

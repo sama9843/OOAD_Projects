@@ -3,6 +3,7 @@ import java.util.ArrayList;
 import java.util.Map;
 import java.util.Random;
 
+
 //abstract class for all staff
 //will only be used to implement clerk in this project
 abstract class Staff{
@@ -43,7 +44,7 @@ class Clerk extends Staff{
     public double getCarefulness(){return carefulness;}
     
     //strategy method
-    public boolean performTune(Item item){
+    public Boolean performTune(Item item){
         return tuneBehavior.tune(item);
     }
 
@@ -73,6 +74,18 @@ class Clerk extends Staff{
                 outOfStock.add(s);
             } else {
                 for(Item i : inventory.get(s)) {
+                    if(i.getClass().getSuperclass().getName() == "Players" ||
+                    i.getClass().getSuperclass().getName() == "Strings" || 
+                    i.getClass().getSuperclass().getName() == "Wind") {
+                    System.out.println("Now tuning " + i.getName());
+                    if(performTune(i)) {
+                        Random rand = new Random();
+                        if(rand.nextDouble() < 1) {
+                            System.out.println("Unfortunately, " + i.getName() + " was damaged during tuning and is now in " + i.getCondition() + " condition.");
+                            damageItem(inventory, i);
+                        }
+                    };
+                    }
                     value += i.getPurchasePrice();
                 }
             }
@@ -132,49 +145,79 @@ class Clerk extends Staff{
         return register;
     }
 
-    public void damageItem(Map<String, ArrayList<Item>> inventory) {
+    public void damageItem(Map<String, ArrayList<Item>> inventory,  Item item) {
         Random rand = new Random();
-        ArrayList<String> keys = new ArrayList<String>(inventory.keySet());
-        String itemType = keys.get(rand.nextInt(keys.size()));
-        int toDamage = inventory.get(itemType).size() > 0 ? rand.nextInt(inventory.get(itemType).size()) : -1;
-        if(toDamage < 0) {return;}
-        switch (inventory.get(itemType).get(toDamage).getCondition()) {
-            case "Poor":
-                System.out.println(inventory.get(itemType).remove(toDamage) + " was damaged beyond repair!");
+        if(item != null) {
+            switch (item.getCondition()) {
+                case "Poor":
+                System.out.println(item + " was damaged beyond repair!");
                 break;
-            case "Fair":
-                Item item = inventory.get(itemType).get(toDamage);
-                System.out.println(item.getName() + " was damaged during cleanup and is now in poor condition.");
+            case "Fair":;
+                System.out.println(item.getName() + " was damaged during tuning and is now in poor condition.");
                 item.setCondition("Poor");
                 item.setListPrice(item.getListPrice() * 0.8);
                 break;
-            case "Good":
-                Item item1 = inventory.get(itemType).get(toDamage);
-                System.out.println(item1.getName() + " was damaged during cleanup and is now in fair condition.");
-                item1.setCondition("Fair");
-                item1.setListPrice(item1.getListPrice() * 0.8);
+            case "Good":;
+                System.out.println(item.getName() + " was damaged during tuning and is now in fair condition.");
+                item.setCondition("Fair");
+                item.setListPrice(item.getListPrice() * 0.8);
                 break;
-            case "Very Good":
-                Item item2 = inventory.get(itemType).get(toDamage);
-                System.out.println(item2.getName() + " was damaged during cleanup and is now in good condition.");
-                item2.setCondition("Good");
-                item2.setListPrice(item2.getListPrice() * 0.8);
+            case "Very Good":;
+                System.out.println(item.getName() + " was damaged during tuning and is now in good condition.");
+                item.setCondition("Good");
+                item.setListPrice(item.getListPrice() * 0.8);
                 break;
-            case "Excellent":
-                Item item3 = inventory.get(itemType).get(toDamage);
-                System.out.println(item3.getName() + " was damaged during cleanup and is now in very good condition.");
-                item3.setCondition("Very Good");
-                item3.setListPrice(item3.getListPrice() * 0.8);
+            case "Excellent":;
+                System.out.println(item.getName() + " was damaged during tuning and is now in very good condition.");
+                item.setCondition("Very Good");
+                item.setListPrice(item.getListPrice() * 0.8);
                 break;
             default: break;
+            }
+        }else {
+            ArrayList<String> keys = new ArrayList<String>(inventory.keySet());
+            String itemType = keys.get(rand.nextInt(keys.size()));
+            int toDamage = inventory.get(itemType).size() > 0 ? rand.nextInt(inventory.get(itemType).size()) : -1;
+            if(toDamage < 0) {return;}
+            switch (inventory.get(itemType).get(toDamage).getCondition()) {
+                case "Poor":
+                    System.out.println(inventory.get(itemType).remove(toDamage) + " was damaged beyond repair!");
+                    break;
+                case "Fair":
+                    Item item4 = inventory.get(itemType).get(toDamage);
+                    System.out.println(item4.getName() + " was damaged during cleanup and is now in poor condition.");
+                    item4.setCondition("Poor");
+                    item4.setListPrice(item4.getListPrice() * 0.8);
+                    break;
+                case "Good":
+                    Item item1 = inventory.get(itemType).get(toDamage);
+                    System.out.println(item1.getName() + " was damaged during cleanup and is now in fair condition.");
+                    item1.setCondition("Fair");
+                    item1.setListPrice(item1.getListPrice() * 0.8);
+                    break;
+                case "Very Good":
+                    Item item2 = inventory.get(itemType).get(toDamage);
+                    System.out.println(item2.getName() + " was damaged during cleanup and is now in good condition.");
+                    item2.setCondition("Good");
+                    item2.setListPrice(item2.getListPrice() * 0.8);
+                    break;
+                case "Excellent":
+                    Item item3 = inventory.get(itemType).get(toDamage);
+                    System.out.println(item3.getName() + " was damaged during cleanup and is now in very good condition.");
+                    item3.setCondition("Very Good");
+                    item3.setListPrice(item3.getListPrice() * 0.8);
+                    break;
+                default: break;
+            }
         }
+
     }
 
     public void cleanTheStore(Map<String, ArrayList<Item>> inventory){
         Random rand = new Random();
         System.out.println("Cleaning up the store!");
         if(rand.nextDouble() <= this.carefulness) {
-                damageItem(inventory);
+            damageItem(inventory, null);
         }
         System.out.println("Store has been cleaned up!");
     }
