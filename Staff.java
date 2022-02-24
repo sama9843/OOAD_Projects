@@ -25,11 +25,13 @@ abstract class Staff{
 //implementing abstract class
 class Clerk extends Staff{
     private double carefulness;
+    private TuneBehavior tuneBehavior;
 
     //constructor
-    public Clerk(String name,int worked, double careful){
+    public Clerk(String name,int worked, double careful, TuneBehavior tuneBehavior){
         super(name, worked);
         this.carefulness = careful;
+        this.tuneBehavior = tuneBehavior;
     }
 
     //implement abstract methods
@@ -38,6 +40,11 @@ class Clerk extends Staff{
 
     //getter methods
     public double getCarefulness(){return carefulness;}
+    
+    //strategy method
+    public void performTune(Item item){
+        tuneBehavior.tune(item);
+    }
 
     //other methods
     public float checkRegister(float reg){
