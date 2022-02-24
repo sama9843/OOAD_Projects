@@ -43,8 +43,8 @@ class Clerk extends Staff{
     public double getCarefulness(){return carefulness;}
     
     //strategy method
-    public void performTune(Item item){
-        tuneBehavior.tune(item);
+    public boolean performTune(Item item){
+        return tuneBehavior.tune(item);
     }
 
     //other methods

@@ -2,7 +2,8 @@ import java.util.Random;
 //Manual
 public class Manual implements TuneBehavior{
     @Override
-    public void tune(Item item){
+    public boolean tune(Item item){
+        boolean result = false;
         Random rand = new Random();
         int chance = rand.nextInt(5);
         String name = item.thisIs();
@@ -14,6 +15,7 @@ public class Manual implements TuneBehavior{
             //if true changes to false 20% of the time
             else if(((Players) item).getState() && chance == 0){
                 ((Players) item).setState(false);
+                result = true;
             }
         }
         else if(name == "Guitar" || name == "Bass" || name == "Mandolin"){
@@ -24,6 +26,7 @@ public class Manual implements TuneBehavior{
             //if true changes to false 20% of the time
             else if(((Stringed) item).getState() && chance == 0){
                 ((Stringed) item).setState(false);
+                result = true;
             }
         }
         else if(name == "Flute" || name == "Harmonica" || name == "Saxophone"){
@@ -34,7 +37,9 @@ public class Manual implements TuneBehavior{
             //if true changes to false 20% of the time
             else if(((Wind) item).getState() && chance == 0){
                 ((Wind) item).setState(false);
+                result = true;
             }
         }
+        return result;
     }
 }
