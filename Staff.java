@@ -81,7 +81,7 @@ class Clerk extends Staff{
                     if(performTune(i)) {
                         Random rand = new Random();
                         if(rand.nextDouble() < 1) {
-                            System.out.println("Unfortunately, " + i.getName() + " was damaged during tuning and is now in " + i.getCondition() + " condition.");
+                            //System.out.println("Unfortunately, " + i.getName() + " was damaged during tuning and is now in " + i.getCondition() + " condition.");
                             damageItem(inventory, i);
                         }
                     };

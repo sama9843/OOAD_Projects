@@ -4,7 +4,8 @@ public class Electronic implements TuneBehavior{
     public boolean tune(Item item){
         //always properly tunes
         String name = item.thisIs();
-        if(name == "CDPlayer" || name == "RecordPlayer" || name == "MP3Player"){
+        //checks what type it is then casts that type and sets tuned state
+        if(name == "CDPlayer" || name == "RecordPlayer" || name == "MP3Player" || name == "CassettePlayer"){
             ((Players) item).setState(true);
         }
         else if(name == "Guitar" || name == "Bass" || name == "Mandolin"){

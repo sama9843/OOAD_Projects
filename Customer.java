@@ -16,7 +16,8 @@ abstract class Customer{
         this.deal1 = rand.nextInt(2);
         this.deal2 = rand.nextInt(4);
         //sets item
-        int num = rand.nextInt(17);
+        //updated to include new items
+        int num = rand.nextInt(21);
         switch(num){
             case 0: this.item = new PaperScore("Jerry's PaperScore","Band","Album"); break;
             case 1: this.item = new CD("Claire's CD","Band","Album"); break;
@@ -35,6 +36,10 @@ abstract class Customer{
             case 14: this.item = new PracticeAmps("Andy's PracticeAmp",10.0); break;
             case 15: this.item = new Cables("April's Cables",1.0); break;
             case 16: this.item = new Strings("Bobby's Strings","Type"); break;
+            case 17: this.item = new Saxophone("Susies's Saxophone","Type"); break;
+            case 18: this.item = new Cassette("Candice's Cassette","Band", "Album"); break;
+            case 19: this.item = new CassettePlayer("Cordae's CassettePlayer"); break;
+            case 20: this.item = new GigBag("Giannis' GigBag"); break;
         }
     }
     //getter methods for deals

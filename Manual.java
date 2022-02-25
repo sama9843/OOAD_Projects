@@ -7,7 +7,8 @@ public class Manual implements TuneBehavior{
         Random rand = new Random();
         int chance = rand.nextInt(5);
         String name = item.thisIs();
-        if(name == "CDPlayer" || name == "RecordPlayer" || name == "MP3Player"){
+        //checks what type it is then casts that type and sets tuned state
+        if(name == "CDPlayer" || name == "RecordPlayer" || name == "MP3Player" || name == "CassettePlayer"){
             //if false changes to true 80% of time
             if(!((Players) item).getState() && chance != 0){
                 ((Players) item).setState(true);
