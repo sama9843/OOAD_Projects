@@ -100,6 +100,22 @@ public class Store {
         inventory.put("Strings", new ArrayList<Item>(Arrays.asList(new Strings("coil string", "A"),
                                                 new Strings("shoe string", "B"),
                                                 new Strings("metal string", "C")))); 
+        // Saxophone
+        inventory.put("Saxophone", new ArrayList<Item>(Arrays.asList(new Saxophone("Golden Sax", "Tenor"),
+                                                new Saxophone("Jazz Sax", "Alto"),
+                                                new Saxophone("Blues Sax", "Tenor")))); 
+        // Cassette
+        inventory.put("Cassette", new ArrayList<Item>(Arrays.asList(new Cassette("Kids Cassette", "Jamz","The Jamz"),
+                                                new Cassette("Old Cassette", "Old Head","1800's"),
+                                                new Cassette("Jazz Cassette", "Big Jazz","Smooth Tunes"))));  
+        // CassettePlayer
+        inventory.put("CassettePlayer", new ArrayList<Item>(Arrays.asList(new CassettePlayer("Blue CassettePlayer"),
+                                                new CassettePlayer("Dirty CassettePlayer"),
+                                                new CassettePlayer("Jazz CassettePlayer")))); 
+        // GigBag
+        inventory.put("GigBag", new ArrayList<Item>(Arrays.asList(new GigBag("Bronze GigBag"),
+                                                new GigBag("Pokemon GigBag"),
+                                                new GigBag("Evil GigBag")))); 
         // prices
         Random rand = new Random();
         for (String s : inventory.keySet()) {
@@ -173,7 +189,7 @@ public class Store {
             switch (item_type) {
                 case "PaperScore": i.add(new PaperScore("PaperScore Symphony " + n, "random randies", "snowmen")); break;
                 case "CD": i.add(new CD("monkey CD " + n,"the" + n + " monkeys","junglevania")); break;
-                case "Vynil": i.add(new Vinyl("Vynil:" + n + "nodes for you", "mr. graph", "vertex romance")); break;
+                case "Vinyl": i.add(new Vinyl("Vinyl:" + n + "nodes for you", "mr. graph", "vertex romance")); break;
                 case "CDPlayer": i.add(new CDPlayer("CD Player " + n)); break;
                 case "RecordPlayer": i.add(new RecordPlayer("Record Player " + n)); break;
                 case "MP3Player": i.add(new MP3Player("MP3 Player " + n)); break;
@@ -188,6 +204,10 @@ public class Store {
                 case "PracticeAmps": i.add(new PracticeAmps("Random Amp " + n, rand.nextDouble()*50)); break;
                 case "Cables": i.add(new Cables("Type " + n + " Cable", rand.nextInt(25))); break;
                 case "Strings": i.add(new Strings(n + " coil string" , "type: " + rand.nextInt(9))); break;
+                case "Saxophone": i.add(new Saxophone(n + " sax" , "type: " + rand.nextInt(9))); break;
+                case "Cassette": i.add(new Cassette(n + " cassette" , "band: " + rand.nextInt(9), "album: " + rand.nextInt(9))); break;
+                case "CassettePlayer": i.add(new CassettePlayer(n + " cassetteplayer")); break;
+                case "GigBag": i.add(new GigBag(n + " gigbag")); break;
                 default: break;
             }
 
