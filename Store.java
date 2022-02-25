@@ -24,7 +24,8 @@ public class Store {
 
     // list of employees
     List<Clerk> employees = new ArrayList<Clerk>();
-    
+    // tracker observer for store
+    Tracker tracker;
     
 
     public Store() {
@@ -135,7 +136,13 @@ public class Store {
         //IDENTITY: employees shaggy and velma each have a unique identity
         employees.add(new Clerk("Shaggy", 0, 0.2,new Haphazard()));
         employees.add(new Clerk("Velma", 0, 0.05,new Manual()));
-        employees.add(new Clerk("Daphne", 0, 0.01,new Electronic()));
+        employees.add(new Clerk("Daphne", 0, 0.04,new Electronic()));
+        // tie tracker to employees
+        tracker = new Tracker();
+        for (Clerk emp : employees) {
+            emp.addSubscription(tracker);
+            tracker.add(emp.toString());
+        }
     }
     // getters
     public Map<String, ArrayList<Item>> getInventory() {return this.inventory;}
@@ -234,10 +241,6 @@ public class Store {
     }
 
     public void simulate(int total_days) {
-        // get names of employees and create a tracker
-        ArrayList<String> names = new ArrayList<String>();
-        for (Clerk emp : employees) names.add(emp.toString());
-        Tracker tracker = new Tracker(names);
 
         List<Item> shipments = new ArrayList<Item>();
         System.out.println("initializing world...");
@@ -251,7 +254,7 @@ public class Store {
                 // arrive at the store
                 clerk.arriveAtStore();
                 shipments.addAll(advance_day());
-
+                // UPDATE LOGGER HERE
                 // check that the register has money
                 if(this.money != clerk.checkRegister(this.money)){
                     this.money += 1000;
@@ -277,10 +280,11 @@ public class Store {
                 shipments.clear();
                 // order placed if needed
                 // clerk does stuff here after too pls
-                
 
             } 
             else System.out.println();
+            // print tracker for the day
+            tracker.print(days);
         }
         System.out.println("Results!");
         System.out.println("Items sold:");

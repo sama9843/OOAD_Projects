@@ -30,7 +30,10 @@ class Logger implements EventConsumer {
             FileWriter log = new FileWriter(filename, true);
             switch (event_str) {
                 case "ArriveAtStore":
-                    log.write( info_str + " arrived at the store and added " + info_dbl.intValue() + " items. \n");
+                    log.write( info_str + " arrived at the store. \n");
+                    break;
+                case "ArriveAtStoreShipments":
+                    log.write( info_str + " arrived at the store. \n");
                     break;
                 case "CheckRegister":
                 case "GoToBank":
@@ -71,6 +74,7 @@ class Tracker implements EventConsumer {
     // string to keep track of the current clerk performing the events
     String clerk;
     // initialize all values as zero for each employee
+    public Tracker() {};
     public Tracker(ArrayList<String> names) {
         for (String name : names) {
             data.put(name, new ArrayList<Integer>( Arrays.asList(0,0,0)));
@@ -105,6 +109,10 @@ class Tracker implements EventConsumer {
             }
             System.out.println();
         }
+    }
+    // adds a new employee to tracker
+    public void add(String name) {
+        data.put(name, new ArrayList<Integer>( Arrays.asList(0,0,0)));
     }
 
 }

@@ -14,7 +14,7 @@ OOAD Terms:
 
 Oberver Design Pattern:
 each observer implements the EventConsumer interface.
-obervers instantiated and used in Store.simulate()
+obervers subscribe to clerks
 
 Important Files: Item.java , Customer.java , Staff.java  Store.java  Main.java , Output.txt , Proj2_UML_Updated.pdf
 
