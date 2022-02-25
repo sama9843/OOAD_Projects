@@ -24,9 +24,9 @@ public class Store {
 
     // list of employees
     List<Clerk> employees = new ArrayList<Clerk>();
+    
+    
 
-    // log book
-    List<String> log;
     public Store() {
         money = 0;
         orders = new ArrayList<List<Item>>();
@@ -133,9 +133,6 @@ public class Store {
     public void add_money(int diff) {
         this.money += diff;
     }
-    public void log(String s) {
-        this.log.add(s);
-    }
 
     // place an order, returns price
     public int placeOrder(String item_type) {
@@ -217,13 +214,17 @@ public class Store {
     }
 
     public void simulate(int total_days) {
-        Random rand = new Random();
+        // get names of employees and create a tracker
+        ArrayList<String> names = new ArrayList<String>();
+        for (Clerk emp : employees) names.add(emp.toString());
+        Tracker tracker = new Tracker(names);
+
         List<Item> shipments = new ArrayList<Item>();
         System.out.println("initializing world...");
         for (int days = 0; days < total_days; days++) {
             // store doesnt operate on sundays
             System.out.println("day " + days + ", " + get_week_day(days));
-
+            
             if (days % 7 != 6) {
                 Clerk clerk = this.getClerk();
 

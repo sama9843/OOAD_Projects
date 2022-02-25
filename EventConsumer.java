@@ -15,6 +15,13 @@ class Logger implements EventConsumer {
     String filename;
     public Logger(int day) {
         filename = "Logger-" + day + ".txt";
+        // clears file if it exists
+        try {
+            new FileWriter(filename, false).close();
+        } catch (IOException e) {
+            System.err.println("An error occurred in file reset.");
+            e.printStackTrace();
+        }
     }
     public void update(String event_str, String info_str, Double info_dbl) {
         // open log file
@@ -50,7 +57,7 @@ class Logger implements EventConsumer {
             log.close();
             System.out.println("Successfully wrote to the log.");
           } catch (IOException e) {
-            System.out.println("An error occurred.");
+            System.out.println("An error occurred in file write.");
             e.printStackTrace();
           }
         // add update

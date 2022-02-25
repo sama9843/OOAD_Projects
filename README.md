@@ -12,6 +12,10 @@ OOAD Terms:
 -Encapsulation: example found in Item.java (line 4)
 -Abstraction: example found in Item.java (line 1)
 
+Oberver Design Pattern:
+each observer implements the EventConsumer interface.
+obervers instantiated and used in Store.simulate()
+
 Important Files: Item.java , Customer.java , Staff.java  Store.java  Main.java , Output.txt , Proj2_UML_Updated.pdf
 
 Project 2: Can be found in the project2 branch
