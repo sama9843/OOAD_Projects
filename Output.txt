@@ -1,873 +1,1650 @@
 initializing world...
 day 0, Monday
-Shaggy has arrived at the store
+Velma has arrived at the store
 []
 $0.0 left in the register
 Putting $1,000 in the register.
-Total Inventory: 1316.2375
+Now tuning blue ice
+Now tuning crimson flame
+Now tuning yellow snow
+Now tuning burpy bumper
+Now tuning clurpy clumper
+Now tuning durpy dumper
+Now tuning MP3 Player baby
+Now tuning MP3 Player teenager
+Now tuning MP3 Player elderly
+Now tuning Blue CassettePlayer
+Now tuning Dirty CassettePlayer
+Now tuning Jazz CassettePlayer
+Now tuning forky
+Now tuning sporky
+Now tuning forky sporky
+Now tuning stupendous flute
+Now tuning happy flute
+Now tuning picky flute
+Now tuning Horse Harmonica
+Now tuning Hippo Harmonica
+Now tuning Hamster Harmonica
+Now tuning CDplayer alpha
+Now tuning CDplayer beta
+Now tuning CDplayer omega
+Now tuning Golden Sax
+Now tuning Jazz Sax
+Now tuning Blues Sax
+Now tuning Record Player01
+Now tuning Record Player10
+Now tuning Record Player11
+Total Inventory: 1723.9866
 The store is now open!
-The customer is trying to buy CDPlayer
-Shaggy sold a CDPlayer to the customer with a 10% discount for 79.53
-1079.5333
+The customer is trying to buy PaperScore
+Velma sold a PaperScore to the customer for 98.44
+1098.4359
 
-The customer is trying to buy Vinyl
-Shaggy sold a Vinyl to the customer with a 10% discount for 8.80
-1088.3292
+The customer is trying to buy CassettePlayer
+Velma sold a CassettePlayer to the customer for 63.40
+1161.836
 
-The customer is trying to buy Cables
-Shaggy sold a Cables to the customer with a 10% discount for 88.86
-1177.1854
+The customer is trying to buy Bass
+Velma sold a Bass to the customer for 57.78
+Trying to sell accessories!
+1219.6124
+
+The customer is trying to buy Cassette
+Velma sold a Cassette to the customer with a 10% discount for 62.61
+1282.221
+
+The customer is trying to buy Saxophone
+Velma sold a Saxophone to the customer with a 10% discount for 12.20
+1294.4165
+
+The customer is trying to buy Flute
+Velma sold a Flute to the customer for 15.57
+1309.9847
 
 The customer is trying to buy Mandolin
-Shaggy sold a Mandolin to the customer with a 10% discount for 39.99
-1217.1771
+Velma sold a Mandolin to the customer with a 10% discount for 79.06
+Trying to sell accessories!
+The customer has also bought (CIO Cable, Good, 0.0) for 70.51222424371093
+1459.5599
 
-Customer took the second deal and sold a Shirts for 42.90 dollars
+The customer is trying to buy CD
+Velma sold a CD to the customer with a 10% discount for 14.53
+1474.0946
 
-Customer took the first deal and sold a PaperScore for 36.00 dollars
+Customer took the first deal and sold a Guitar for 24.00 dollars
 
-Cleaning up the store!
-depth first search for you was damaged during cleanup and is now in poor condition.
-Store has been cleaned up!
-Shaggy has left the store
-Items arrived:
+Customer took the second deal and sold a PracticeAmps for 29.70 dollars
 
-day 1, Tuesday
-Velma has arrived at the store
-[]
-$1138.2771 left in the register
-Total Inventory: 1274.4835
-The store is now open!
-The customer is trying to buy Bass
-Velma sold a Bass to the customer with a 10% discount for 38.75
-1177.0288
-
-The customer is trying to buy Strings
-Velma sold a Strings to the customer with a 10% discount for 58.86
-1235.8843
-
-The customer is trying to buy Cables
-Velma sold a Cables to the customer with a 10% discount for 58.45
-1294.3326
-
-The customer is trying to buy CDPlayer
-The customer did not want to pay 69.78 for CDPlayer
-Customer took the first deal and sold a Flute for 47.00 dollars
-
-Customer took the first deal and sold a Harmonica for 53.00 dollars
+Customer took the first deal and sold a Vinyl for 18.00 dollars
 
 Cleaning up the store!
 Store has been cleaned up!
 Velma has left the store
-Items arrived:
+Items arrived: 
 
-day 2, Wednesday
-Shaggy has arrived at the store
+Tracker: Day 0
+Clerk:   Items_Sold   Items_Purchased   Items_Damaged
+Shaggy:    0    0    0    
+Daphne:    0    0    0    
+Velma:    8    3    0    
+day 1, Tuesday
+Daphne has arrived at the store
 []
-$1194.3326 left in the register
-Total Inventory: 1287.786
+$1402.3947 left in the register
+Now tuning blue ice
+Now tuning crimson flame
+Now tuning yellow snow
+Now tuning Jake's Guitar
+Now tuning clurpy clumper
+Now tuning durpy dumper
+Now tuning MP3 Player baby
+Now tuning MP3 Player teenager
+Now tuning MP3 Player elderly
+Now tuning Dirty CassettePlayer
+Now tuning Jazz CassettePlayer
+Now tuning sporky
+Now tuning forky sporky
+Now tuning happy flute
+Now tuning picky flute
+Now tuning Horse Harmonica
+Now tuning Hippo Harmonica
+Now tuning Hamster Harmonica
+Now tuning CDplayer alpha
+Now tuning CDplayer beta
+Now tuning CDplayer omega
+Now tuning Jazz Sax
+Now tuning Blues Sax
+Now tuning Record Player01
+Now tuning Record Player10
+Now tuning Record Player11
+Total Inventory: 1549.2837
 The store is now open!
-The customer is trying to buy PaperScore
-The customer did not want to pay 31.47 for PaperScore
-The customer is trying to buy Harmonica
-Shaggy sold a Harmonica to the customer for 85.75
-1280.0868
+The customer is trying to buy CassettePlayer
+Daphne sold a CassettePlayer to the customer for 77.88
+1480.2697
 
-The customer is trying to buy Hats
-Shaggy sold a Hats to the customer with a 10% discount for 12.50
-1292.5901
+The customer is trying to buy CassettePlayer
+Daphne sold a CassettePlayer to the customer with a 10% discount for 81.39
+1561.6586
+
+The customer is trying to buy PaperScore
+Daphne sold a PaperScore to the customer for 2.83
+1564.4901
+
+The customer is trying to buy Flute
+The customer did not want to pay 54.59 for Flute
+
+The customer is trying to buy Cables
+Daphne sold a Cables to the customer with a 10% discount for 60.88
+1625.3671
+
+Customer took the second deal and sold a Saxophone for 16.50 dollars
+
+Customer took the first deal and sold a CDPlayer for 45.00 dollars
+
+Cleaning up the store!
+Store has been cleaned up!
+Daphne has left the store
+Items arrived: 
+
+Tracker: Day 1
+Clerk:   Items_Sold   Items_Purchased   Items_Damaged
+Shaggy:    0    0    0    
+Daphne:    4    2    0    
+Velma:    8    3    0    
+day 2, Wednesday
+Daphne has arrived at the store
+[]
+$1563.8671 left in the register
+Now tuning blue ice
+Now tuning crimson flame
+Now tuning yellow snow
+Now tuning Jake's Guitar
+Now tuning clurpy clumper
+Now tuning durpy dumper
+Now tuning MP3 Player baby
+Now tuning MP3 Player teenager
+Now tuning MP3 Player elderly
+Store is out of CassettePlayer
+Now tuning sporky
+Now tuning forky sporky
+Now tuning happy flute
+Now tuning picky flute
+Now tuning Horse Harmonica
+Now tuning Hippo Harmonica
+Now tuning Hamster Harmonica
+Now tuning CDplayer alpha
+Now tuning CDplayer beta
+Now tuning CDplayer omega
+Now tuning Leslie's CDPlayer
+Now tuning Jazz Sax
+Now tuning Blues Sax
+Now tuning Susies's Saxophone
+Now tuning Record Player01
+Now tuning Record Player10
+Now tuning Record Player11
+Total Inventory: 1491.3938
+The store is now open!
+The customer is trying to buy Mandolin
+Daphne sold a Mandolin to the customer for 2.22
+Trying to sell accessories!
+1566.0906
+
+The customer is trying to buy GigBag
+Daphne sold a GigBag to the customer with a 10% discount for 89.96
+1656.0474
 
 The customer is trying to buy CD
-The customer did not want to pay 26.25 for CD
-Customer took the first deal and sold a Harmonica for 53.00 dollars
+The customer did not want to pay 72.55 for CD
 
-Customer took the first deal and sold a CD for 21.00 dollars
+The customer is trying to buy Cassette
+Daphne sold a Cassette to the customer for 31.62
+1687.6716
+
+The customer is trying to buy Cassette
+The customer did not want to pay 88.16 for Cassette
+
+The customer is trying to buy Guitar
+Daphne sold a Guitar to the customer for 46.83
+Trying to sell accessories!
+1734.5004
+
+Customer took the second deal and sold a Flute for 41.80 dollars
+
+Customer took the first deal and sold a PaperScore for 15.00 dollars
 
 Cleaning up the store!
 Store has been cleaned up!
-Shaggy has left the store
-Items arrived:
+Daphne has left the store
+Items arrived: 
 
+Tracker: Day 2
+Clerk:   Items_Sold   Items_Purchased   Items_Damaged
+Shaggy:    0    0    0    
+Daphne:    8    4    0    
+Velma:    8    3    0    
 day 3, Thursday
-Shaggy has arrived at the store
-[]
-$1218.5901 left in the register
-Total Inventory: 1311.9628
+Daphne has arrived at the store
+[2]
+$1677.7003 left in the register
+Now tuning crimson flame
+Now tuning yellow snow
+Now tuning Jake's Guitar
+Now tuning clurpy clumper
+Now tuning durpy dumper
+Now tuning MP3 Player baby
+Now tuning MP3 Player teenager
+Now tuning MP3 Player elderly
+Store is out of CassettePlayer
+Now tuning forky sporky
+Now tuning happy flute
+Now tuning picky flute
+Now tuning Ann's Flute
+Now tuning Horse Harmonica
+Now tuning Hippo Harmonica
+Now tuning Hamster Harmonica
+Now tuning CDplayer alpha
+Now tuning CDplayer beta
+Now tuning CDplayer omega
+Now tuning Leslie's CDPlayer
+Now tuning Jazz Sax
+Now tuning Blues Sax
+Now tuning Susies's Saxophone
+Now tuning Record Player01
+Now tuning Record Player10
+Now tuning Record Player11
+Total Inventory: 1457.8796
 The store is now open!
-The customer is trying to buy Guitar
-Shaggy sold a Guitar to the customer for 30.12
-1248.7095
+The customer is trying to buy CD
+Daphne sold a CD to the customer with a 10% discount for 65.30
+1742.9962
 
-The customer is trying to buy PaperScore
-Shaggy sold a PaperScore to the customer with a 10% discount for 28.32
-1277.0338
-
-The customer is trying to buy PracticeAmps
-Shaggy sold a PracticeAmps to the customer with a 10% discount for 56.58
-1333.6127
-
-The customer is trying to buy RecordPlayer
-Shaggy sold a RecordPlayer to the customer for 43.12
-1376.7284
-
-Customer took the first deal and sold a RecordPlayer for 33.00 dollars
-
-Customer took the second deal and sold a Bandanas for 50.60 dollars
-
-Customer took the second deal and sold a Harmonica for 6.60 dollars
-
-Cleaning up the store!
-Store has been cleaned up!
-Shaggy has left the store
-Items arrived:
-
-day 4, Friday
-Shaggy has arrived at the store
-[]
-$1286.5284 left in the register
-Total Inventory: 1318.3767
-The store is now open!
-The customer is trying to buy Guitar
-Shaggy sold a Guitar to the customer with a 10% discount for 78.37
-1364.8975
-
-The customer is trying to buy Strings
-Shaggy sold a Strings to the customer for 2.20
-1367.0979
-
-The customer is trying to buy PracticeAmps
-Shaggy sold a PracticeAmps to the customer with a 10% discount for 2.26
-1369.3579
+The customer is trying to buy Hats
+Daphne sold a Hats to the customer for 50.60
+1793.5963
 
 The customer is trying to buy Shirts
-Shaggy sold a Shirts to the customer for 85.51
-1454.8685
+Daphne sold a Shirts to the customer for 29.01
+1822.6038
 
-Customer took the second deal and sold a Vinyl for 64.90 dollars
+The customer is trying to buy Guitar
+Daphne sold a Guitar to the customer with a 10% discount for 68.97
+Trying to sell accessories!
+The customer has also bought (Volume Amp, Excellent, 0.0) for 16.35251533527429
+1907.9244
 
-Customer took the second deal and sold a PaperScore for 25.30 dollars
+Customer took the first deal and sold a Saxophone for 25.00 dollars
 
-Customer took the first deal and sold a Mandolin for 13.00 dollars
+Customer wanted to sell a Shirts but did not accept the offered deal.
+
+Customer took the first deal and sold a Flute for 9.00 dollars
 
 Cleaning up the store!
 Store has been cleaned up!
-Shaggy has left the store
-Items arrived:
+Daphne has left the store
+Items arrived: 
 
+Tracker: Day 3
+Clerk:   Items_Sold   Items_Purchased   Items_Damaged
+Shaggy:    0    0    0    
+Daphne:    12    6    0    
+Velma:    8    3    0    
+day 4, Friday
+Daphne has arrived at the store
+[1, 2]
+$1873.9244 left in the register
+Now tuning yellow snow
+Now tuning Jake's Guitar
+Now tuning clurpy clumper
+Now tuning durpy dumper
+Now tuning MP3 Player baby
+Now tuning MP3 Player teenager
+Now tuning MP3 Player elderly
+Store is out of CassettePlayer
+Now tuning forky sporky
+Now tuning happy flute
+Now tuning picky flute
+Now tuning Ann's Flute
+Now tuning Ann's Flute
+Now tuning Horse Harmonica
+Now tuning Hippo Harmonica
+Now tuning Hamster Harmonica
+Now tuning CDplayer alpha
+Now tuning CDplayer beta
+Now tuning CDplayer omega
+Now tuning Leslie's CDPlayer
+Now tuning Jazz Sax
+Now tuning Blues Sax
+Now tuning Susies's Saxophone
+Now tuning Susies's Saxophone
+Now tuning Record Player01
+Now tuning Record Player10
+Now tuning Record Player11
+Total Inventory: 1369.3083
+The store is now open!
+The customer is trying to buy Flute
+Daphne sold a Flute to the customer for 54.59
+1928.5107
+
+The customer is trying to buy Cables
+Daphne sold a Cables to the customer for 71.97
+2000.4833
+
+The customer is trying to buy Strings
+Daphne sold a Strings to the customer with a 10% discount for 58.95
+2059.4365
+
+The customer is trying to buy PracticeAmps
+The customer did not want to pay 81.89 for PracticeAmps
+
+The customer is trying to buy Guitar
+Daphne sold a Guitar to the customer for 48.58
+Trying to sell accessories!
+The customer has also bought (Echo Amp, Fair, 0.0) for 81.89098481159057
+2189.9084
+
+The customer is trying to buy Cables
+The customer tried to buy a Cables but we were out of stock, so they left.
+Customer took the second deal and sold a Cassette for 50.60 dollars
+
+Customer took the first deal and sold a PracticeAmps for 16.00 dollars
+
+Cleaning up the store!
+Store has been cleaned up!
+Daphne has left the store
+Items arrived: 
+88 cassetteplayer, 16 cassetteplayer, 32 cassetteplayer, 
+Tracker: Day 4
+Clerk:   Items_Sold   Items_Purchased   Items_Damaged
+Shaggy:    0    0    0    
+Daphne:    16    8    0    
+Velma:    8    3    0    
 day 5, Saturday
 Velma has arrived at the store
-[]
-$1351.6685 left in the register
-Total Inventory: 1332.9272
+[2, 2]
+$2123.3083 left in the register
+Now tuning Jake's Guitar
+Now tuning clurpy clumper
+Now tuning durpy dumper
+Now tuning MP3 Player baby
+Now tuning MP3 Player teenager
+(MP3 Player teenager, Poor, 0.0) was damaged beyond repair!
+Store is out of CassettePlayer
+Now tuning forky sporky
+Now tuning picky flute
+Now tuning Ann's Flute
+Now tuning Ann's Flute
+Store is out of Cables
+Now tuning Horse Harmonica
+Now tuning Hippo Harmonica
+Now tuning Hamster Harmonica
+Now tuning CDplayer alpha
+Now tuning CDplayer beta
+Now tuning CDplayer omega
+Now tuning Leslie's CDPlayer
+Now tuning Jazz Sax
+Jazz Sax was damaged during tuning and is now in poor condition.
+Now tuning Blues Sax
+Now tuning Susies's Saxophone
+Susies's Saxophone was damaged during tuning and is now in poor condition.
+Now tuning Susies's Saxophone
+Now tuning Record Player01
+Now tuning Record Player10
+Now tuning Record Player11
+Total Inventory: 1246.791
 The store is now open!
-The customer is trying to buy Bass
-Velma sold a Bass to the customer with a 10% discount for 18.87
-1370.5397
-
-The customer is trying to buy Flute
-Velma sold a Flute to the customer for 14.18
-1384.7188
-
-The customer is trying to buy Bandanas
-Velma sold a Bandanas to the customer with a 10% discount for 76.28
-1460.9989
-
-The customer is trying to buy CD
-Velma sold a CD to the customer with a 10% discount for 23.63
-1484.627
-
-Customer took the first deal and sold a Bandanas for 33.00 dollars
-
-Cleaning up the store!
-Store has been cleaned up!
-Velma has left the store
-Items arrived:
-
-day 6, Sunday
-
-day 7, Monday
-Velma has arrived at the store
-[]
-$1451.627 left in the register
-Total Inventory: 1292.8492
-The store is now open!
-The customer is trying to buy Vinyl
-Velma sold a Vinyl to the customer for 55.37
-1506.9978
-
+The customer is trying to buy CassettePlayer
+The customer tried to buy a CassettePlayer but we were out of stock, so they left.
 The customer is trying to buy CDPlayer
-Velma sold a CDPlayer to the customer for 69.78
-1576.7778
-
-The customer is trying to buy Shirts
-Velma sold a Shirts to the customer for 50.27
-1627.0504
-
-The customer is trying to buy Hats
-Velma sold a Hats to the customer with a 10% discount for 58.55
-1685.5961
-
-Customer took the first deal and sold a PaperScore for 2.00 dollars
-
-Cleaning up the store!
-Store has been cleaned up!
-Velma has left the store
-Items arrived:
-
-day 8, Tuesday
-Shaggy has arrived at the store
-[]
-$1683.5961 left in the register
-Total Inventory: 1174.6122
-The store is now open!
-The customer is trying to buy PaperScore
-Shaggy sold a PaperScore to the customer with a 10% discount for 71.94
-1755.5371
-
-The customer is trying to buy CDPlayer
-Shaggy sold a CDPlayer to the customer with a 10% discount for 32.53
-1788.0719
-
-The customer is trying to buy Guitar
-Shaggy sold a Guitar to the customer for 6.08
-1794.1516
-
-The customer is trying to buy Strings
-Shaggy sold a Strings to the customer with a 10% discount for 13.13
-1807.2798
-
-Customer took the second deal and sold a Bandanas for 13.20 dollars
-
-Customer wanted to sell a Strings but did not accept the offered deal.
-
-Customer took the first deal and sold a Hats for 7.00 dollars
-
-Cleaning up the store!
-Store has been cleaned up!
-Shaggy has left the store
-Items arrived:
-
-day 9, Wednesday
-Velma has arrived at the store
-[]
-$1787.0798 left in the register
-Store is out of Guitar
-Store is out of Strings
-Store is out of CDPlayer
-Total Inventory: 1126.4368
-The store is now open!
-The customer is trying to buy PaperScore
-Velma sold a PaperScore to the customer for 68.64
-1855.7233
+Velma sold a CDPlayer to the customer for 49.40
+2172.7053
 
 The customer is trying to buy PaperScore
-Velma sold a PaperScore to the customer for 72.00
-1927.7233
-
-The customer is trying to buy Harmonica
-Velma sold a Harmonica to the customer with a 10% discount for 67.25
-1994.9686
-
-The customer is trying to buy Guitar
-The customer tried to buy a Guitar but we were out of stock, so they left.
-Customer took the first deal and sold a Mandolin for 37.00 dollars
-
-Customer took the second deal and sold a Bass for 37.40 dollars
-
-Cleaning up the store!
-Store has been cleaned up!
-Velma has left the store
-Items arrived:
-
-day 10, Thursday
-Shaggy has arrived at the store
-[]
-$1920.5686 left in the register
-Store is out of Guitar
-Store is out of Strings
-Store is out of CDPlayer
-Total Inventory: 1093.1565
-The store is now open!
-The customer is trying to buy CD
-Shaggy sold a CD to the customer for 35.21
-1955.7773
-
-The customer is trying to buy CD
-Shaggy sold a CD to the customer with a 10% discount for 57.13
-2012.9083
-
-The customer is trying to buy CD
-Shaggy sold a CD to the customer with a 10% discount for 37.80
-2050.7083
-
-The customer is trying to buy Shirts
-Shaggy sold a Shirts to the customer for 92.17
-2142.8765
-
-Customer took the second deal and sold a RecordPlayer for 34.10 dollars
-
-Customer took the second deal and sold a Mandolin for 61.60 dollars
-
-Customer took the second deal and sold a PracticeAmps for 31.90 dollars
-
-Cleaning up the store!
-Store has been cleaned up!
-Shaggy has left the store
-Items arrived:
-
-day 11, Friday
-Velma has arrived at the store
-[]
-$2015.2764 left in the register
-Store is out of Guitar
-Store is out of CD
-Store is out of Strings
-Store is out of CDPlayer
-Total Inventory: 1104.3285
-The store is now open!
-The customer is trying to buy Strings
-The customer tried to buy a Strings but we were out of stock, so they left.
-The customer is trying to buy Strings
-The customer tried to buy a Strings but we were out of stock, so they left.
-The customer is trying to buy CDPlayer
-The customer tried to buy a CDPlayer but we were out of stock, so they left.
-The customer is trying to buy Vinyl
-Velma sold a Vinyl to the customer with a 10% discount for 69.69
-2084.9673
-
-Customer took the first deal and sold a Bass for 7.00 dollars
-
-Cleaning up the store!
-Store has been cleaned up!
-Velma has left the store
-Items arrived:
-
-day 12, Saturday
-Shaggy has arrived at the store
-[]
-$2077.9673 left in the register
-Store is out of Guitar
-Store is out of CD
-Store is out of Strings
-Store is out of CDPlayer
-Total Inventory: 1062.932
-The store is now open!
-The customer is trying to buy MP3Player
-Shaggy sold a MP3Player to the customer for 36.70
-2114.6682
-
-The customer is trying to buy CD
-The customer tried to buy a CD but we were out of stock, so they left.
-The customer is trying to buy Strings
-The customer tried to buy a Strings but we were out of stock, so they left.
-The customer is trying to buy Mandolin
-The customer did not want to pay 17.05 for Mandolin
-Customer wanted to sell a PaperScore but did not accept the offered deal.
-
-Customer took the first deal and sold a Cables for 32.00 dollars
-
-Customer wanted to sell a CDPlayer but did not accept the offered deal.
-
-Customer took the first deal and sold a MP3Player for 38.00 dollars
-
-Cleaning up the store!
-Store has been cleaned up!
-Shaggy has left the store
-Items arrived:
-
-day 13, Sunday
-
-day 14, Monday
-Velma has arrived at the store
-[]
-$2044.6682 left in the register
-Store is out of Guitar
-Store is out of CD
-Store is out of Strings
-Store is out of CDPlayer
-Total Inventory: 1114.5815
-The store is now open!
-The customer is trying to buy Strings
-The customer tried to buy a Strings but we were out of stock, so they left.
-The customer is trying to buy Shirts
-Velma sold a Shirts to the customer for 85.80
-2130.4683
+Velma sold a PaperScore to the customer for 98.27
+2270.9749
 
 The customer is trying to buy RecordPlayer
-Velma sold a RecordPlayer to the customer with a 10% discount for 88.85
-2219.315
-
-The customer is trying to buy CD
-The customer tried to buy a CD but we were out of stock, so they left.
-Customer took the first deal and sold a Cables for 10.00 dollars
-
-Customer took the first deal and sold a CDPlayer for 22.00 dollars
-
-Cleaning up the store!
-Store has been cleaned up!
-Velma has left the store
-Items arrived:
-
-day 15, Tuesday
-Velma has arrived at the store
-[]
-$2187.315 left in the register
-Store is out of Guitar
-Store is out of CD
-Store is out of Strings
-Store is out of Shirts
-Total Inventory: 1054.3224
-The store is now open!
-The customer is trying to buy Hats
-Velma sold a Hats to the customer for 44.44
-2231.7566
-
-The customer is trying to buy Guitar
-The customer tried to buy a Guitar but we were out of stock, so they left.
-The customer is trying to buy Mandolin
-Velma sold a Mandolin to the customer with a 10% discount for 15.35
-2247.103
-
-The customer is trying to buy Bass
-Velma sold a Bass to the customer with a 10% discount for 33.17
-2280.2725
-
-Customer took the first deal and sold a PaperScore for 29.00 dollars
-
-Customer took the first deal and sold a CDPlayer for 67.00 dollars
-
-Cleaning up the store!
-Store has been cleaned up!
-Velma has left the store
-Items arrived:
-
-day 16, Wednesday
-Velma has arrived at the store
-[]
-$2184.2725 left in the register
-Store is out of Guitar
-Store is out of CD
-Store is out of Strings
-Store is out of Shirts
-Total Inventory: 1101.1482
-The store is now open!
-The customer is trying to buy Guitar
-The customer tried to buy a Guitar but we were out of stock, so they left.
-The customer is trying to buy Harmonica
-Velma sold a Harmonica to the customer with a 10% discount for 71.94
-2256.2148
-
-The customer is trying to buy Harmonica
-Velma sold a Harmonica to the customer for 106.00
-2362.2148
-
-The customer is trying to buy Hats
-Velma sold a Hats to the customer for 14.00
-2376.2148
-
-Customer took the first deal and sold a Mandolin for 37.00 dollars
-
-Cleaning up the store!
-Store has been cleaned up!
-Velma has left the store
-Items arrived:
-
-day 17, Thursday
-Velma has arrived at the store
-[]
-$2339.2148 left in the register
-Store is out of Guitar
-Store is out of CD
-Store is out of Strings
-Store is out of Shirts
-Store is out of Hats
-Total Inventory: 1038.1803
-The store is now open!
-The customer is trying to buy PracticeAmps
-Velma sold a PracticeAmps to the customer for 48.50
-2387.7102
-
-The customer is trying to buy Hats
-The customer tried to buy a Hats but we were out of stock, so they left.
-The customer is trying to buy PracticeAmps
-Velma sold a PracticeAmps to the customer with a 10% discount for 57.42
-2445.1301
-
-The customer is trying to buy Flute
-Velma sold a Flute to the customer for 4.57
-2449.7017
-
-Customer took the first deal and sold a MP3Player for 13.00 dollars
-
-Customer took the second deal and sold a Harmonica for 53.90 dollars
-
-Customer took the second deal and sold a MP3Player for 45.10 dollars
-
-Customer took the first deal and sold a MP3Player for 38.00 dollars
-
-Cleaning up the store!
-Store has been cleaned up!
-Velma has left the store
-Items arrived:
-
-day 18, Friday
-Velma has arrived at the store
-[]
-$2299.7017 left in the register
-Store is out of Guitar
-Store is out of CD
-Store is out of Strings
-Store is out of Shirts
-Store is out of PracticeAmps
-Store is out of Hats
-Total Inventory: 1129.7467
-The store is now open!
-The customer is trying to buy RecordPlayer
-Velma sold a RecordPlayer to the customer with a 10% discount for 46.90
-2346.6028
-
-The customer is trying to buy RecordPlayer
-Velma sold a RecordPlayer to the customer for 66.00
-2412.6028
-
-The customer is trying to buy Hats
-The customer tried to buy a Hats but we were out of stock, so they left.
-The customer is trying to buy CDPlayer
-Velma sold a CDPlayer to the customer with a 10% discount for 39.60
-2452.203
-
-Customer wanted to sell a CD but did not accept the offered deal.
-
-Customer took the first deal and sold a RecordPlayer for 20.00 dollars
-
-Cleaning up the store!
-Store has been cleaned up!
-Velma has left the store
-Items arrived:
-
-day 19, Saturday
-Shaggy has arrived at the store
-[]
-$2432.203 left in the register
-Store is out of Guitar
-Store is out of CD
-Store is out of Strings
-Store is out of Shirts
-Store is out of PracticeAmps
-Store is out of Hats
-Total Inventory: 1068.6907
-The store is now open!
-The customer is trying to buy Bass
-Shaggy sold a Bass to the customer for 74.80
-2507.003
-
-The customer is trying to buy Guitar
-The customer tried to buy a Guitar but we were out of stock, so they left.
-The customer is trying to buy PaperScore
-Shaggy sold a PaperScore to the customer with a 10% discount for 45.54
-2552.543
-
-The customer is trying to buy RecordPlayer
-The customer did not want to pay 68.20 for RecordPlayer
-Customer took the first deal and sold a RecordPlayer for 4.00 dollars
-
-Customer took the first deal and sold a Shirts for 35.00 dollars
-
-Customer took the second deal and sold a Bass for 48.40 dollars
-
-Customer took the second deal and sold a RecordPlayer for 62.70 dollars
-
-Cleaning up the store!
-Store has been cleaned up!
-Shaggy has left the store
-Items arrived:
-
-day 20, Sunday
-
-day 21, Monday
-Shaggy has arrived at the store
-[]
-$2402.443 left in the register
-Store is out of Guitar
-Store is out of CD
-Store is out of Strings
-Store is out of PracticeAmps
-Store is out of Hats
-Total Inventory: 1156.0906
-The store is now open!
-The customer is trying to buy Guitar
-The customer tried to buy a Guitar but we were out of stock, so they left.
-The customer is trying to buy MP3Player
-Shaggy sold a MP3Player to the customer for 13.63
-2416.0762
-
-The customer is trying to buy PaperScore
-Shaggy sold a PaperScore to the customer with a 10% discount for 3.60
-2419.6763
-
-The customer is trying to buy CDPlayer
-Shaggy sold a CDPlayer to the customer with a 10% discount for 120.60
-2540.2764
-
-Customer took the second deal and sold a Mandolin for 25.30 dollars
-
-Cleaning up the store!
-Store has been cleaned up!
-Shaggy has left the store
-Items arrived:
-
-day 22, Tuesday
-Velma has arrived at the store
-[]
-$2514.9763 left in the register
-Store is out of Guitar
-Store is out of CD
-Store is out of Strings
-Store is out of PracticeAmps
-Store is out of CDPlayer
-Store is out of Hats
-Total Inventory: 1105.5742
-The store is now open!
-The customer is trying to buy CD
-The customer tried to buy a CD but we were out of stock, so they left.
-The customer is trying to buy MP3Player
-Velma sold a MP3Player to the customer for 55.98
-2570.9536
-
-The customer is trying to buy RecordPlayer
-Velma sold a RecordPlayer to the customer for 68.20
-2639.1536
-
-The customer is trying to buy Flute
-Velma sold a Flute to the customer for 46.12
-2685.2769
-
-Customer took the first deal and sold a Bandanas for 31.00 dollars
-
-Customer took the second deal and sold a Bandanas for 46.20 dollars
-
-Customer took the first deal and sold a Cables for 46.00 dollars
-
-Customer took the second deal and sold a PracticeAmps for 60.50 dollars
-
-Cleaning up the store!
-Store has been cleaned up!
-Velma has left the store
-Items arrived:
-
-day 23, Wednesday
-Velma has arrived at the store
-[]
-$2501.577 left in the register
-Store is out of Guitar
-Store is out of CD
-Store is out of Strings
-Store is out of CDPlayer
-Store is out of Hats
-Total Inventory: 1204.1238
-The store is now open!
-The customer is trying to buy Strings
-The customer tried to buy a Strings but we were out of stock, so they left.
-The customer is trying to buy CD
-The customer tried to buy a CD but we were out of stock, so they left.
-The customer is trying to buy RecordPlayer
-Velma sold a RecordPlayer to the customer for 40.00
-2541.577
-
-The customer is trying to buy RecordPlayer
-Velma sold a RecordPlayer to the customer for 8.00
-2549.577
-
-Customer took the first deal and sold a PracticeAmps for 11.00 dollars
-
-Customer took the second deal and sold a Strings for 29.70 dollars
-
-Cleaning up the store!
-Store has been cleaned up!
-Velma has left the store
-Items arrived:
-
-day 24, Thursday
-Velma has arrived at the store
-[]
-$2508.877 left in the register
-Store is out of Guitar
-Store is out of CD
-Store is out of CDPlayer
-Store is out of Hats
-Total Inventory: 1220.8239
-The store is now open!
-The customer is trying to buy Shirts
-Velma sold a Shirts to the customer for 70.00
-2578.877
-
-The customer is trying to buy Strings
-Velma sold a Strings to the customer with a 10% discount for 53.46
-2632.337
+Velma sold a RecordPlayer to the customer with a 10% discount for 77.90
+2348.8735
 
 The customer is trying to buy Cables
-Velma sold a Cables to the customer with a 10% discount for 64.58
-2696.9211
+The customer tried to buy a Cables but we were out of stock, so they left.
+The customer is trying to buy Mandolin
+Velma sold a Mandolin to the customer for 13.15
+Trying to sell accessories!
+2362.0261
 
-The customer is trying to buy Shirts
-The customer tried to buy a Shirts but we were out of stock, so they left.
-Customer took the second deal and sold a CDPlayer for 20.90 dollars
+The customer is trying to buy GigBag
+Velma sold a GigBag to the customer with a 10% discount for 66.18
+2428.2068
 
-Customer took the first deal and sold a Shirts for 33.00 dollars
-
-Customer took the first deal and sold a Shirts for 35.00 dollars
-
-Customer took the second deal and sold a Bass for 15.40 dollars
+Customer took the first deal and sold a Saxophone for 15.00 dollars
 
 Cleaning up the store!
 Store has been cleaned up!
 Velma has left the store
-Items arrived:
+Items arrived: 
 
-day 25, Friday
-Shaggy has arrived at the store
-[]
-$2592.6213 left in the register
-Store is out of Guitar
-Store is out of CD
-Store is out of Strings
-Store is out of Hats
-Total Inventory: 1224.5437
-The store is now open!
-The customer is trying to buy Bass
-Shaggy sold a Bass to the customer for 14.00
-2606.6213
+Tracker: Day 5
+Clerk:   Items_Sold   Items_Purchased   Items_Damaged
+Shaggy:    0    0    0    
+Daphne:    16    8    0    
+Velma:    13    4    3    
+day 6, Sunday
 
-The customer is trying to buy Bass
-Shaggy sold a Bass to the customer for 96.80
-2703.4214
-
-The customer is trying to buy Flute
-Shaggy sold a Flute to the customer for 94.00
-2797.4214
-
-The customer is trying to buy Bass
-Shaggy sold a Bass to the customer with a 10% discount for 27.72
-2825.1414
-
-Customer took the first deal and sold a Bandanas for 34.00 dollars
-
-Customer took the second deal and sold a PracticeAmps for 70.40 dollars
-
-Customer took the second deal and sold a CDPlayer for 48.40 dollars
-
-Customer took the second deal and sold a Guitar for 28.60 dollars
-
-Cleaning up the store!
-Store has been cleaned up!
-Shaggy has left the store
-Items arrived:
-
-day 26, Saturday
-Shaggy has arrived at the store
-[]
-$2643.7415 left in the register
-Store is out of Bass
-Store is out of CD
-Store is out of Flute
-Store is out of Strings
-Store is out of Hats
-Total Inventory: 1288.1438
-The store is now open!
-The customer is trying to buy Shirts
-The customer did not want to pay 66.00 for Shirts
-The customer is trying to buy CDPlayer
-Shaggy sold a CDPlayer to the customer for 41.80
-2685.5415
-
-The customer is trying to buy Harmonica
-Shaggy sold a Harmonica to the customer with a 10% discount for 95.40
-2780.9414
-
-The customer is trying to buy Hats
-The customer tried to buy a Hats but we were out of stock, so they left.
-Customer took the first deal and sold a RecordPlayer for 46.00 dollars
-
-Customer took the first deal and sold a Harmonica for 40.00 dollars
-
-Cleaning up the store!
-Leslie's CDPlayer was damaged during cleanup and is now in poor condition.
-Store has been cleaned up!
-Shaggy has left the store
-Items arrived:
-
-day 27, Sunday
-
-day 28, Monday
+Tracker: Day 6
+Clerk:   Items_Sold   Items_Purchased   Items_Damaged
+Shaggy:    0    0    0    
+Daphne:    16    8    0    
+Velma:    13    4    3    
+day 7, Monday
 Velma has arrived at the store
-[]
-$2694.9414 left in the register
-Store is out of Bass
-Store is out of CD
-Store is out of Flute
-Store is out of Strings
-Store is out of Hats
-Total Inventory: 1300.2438
+[1, 1, 2, 2]
+$2413.2068 left in the register
+Now tuning Jake's Guitar
+Now tuning clurpy clumper
+Now tuning durpy dumper
+Now tuning MP3 Player baby
+Now tuning MP3 Player elderly
+Store is out of CassettePlayer
+Store is out of Mandolin
+Now tuning picky flute
+Now tuning Ann's Flute
+Ann's Flute was damaged during tuning and is now in fair condition.
+Now tuning Ann's Flute
+Store is out of Cables
+Now tuning Horse Harmonica
+Now tuning Hippo Harmonica
+Hippo Harmonica was damaged during tuning and is now in good condition.
+Now tuning Hamster Harmonica
+Now tuning CDplayer beta
+Now tuning CDplayer omega
+Now tuning Leslie's CDPlayer
+Now tuning Jazz Sax
+Now tuning Blues Sax
+Now tuning Susies's Saxophone
+Now tuning Susies's Saxophone
+Susies's Saxophone was damaged during tuning and is now in good condition.
+Now tuning Susies's Saxophone
+Now tuning Record Player10
+Record Player10 was damaged during tuning and is now in very good condition.
+Now tuning Record Player11
+Total Inventory: 1101.3373
 The store is now open!
-The customer is trying to buy Vinyl
-Velma sold a Vinyl to the customer for 129.80
-2824.7415
+The customer is trying to buy PaperScore
+Velma sold a PaperScore to the customer with a 10% discount for 27.00
+2440.2068
 
-The customer is trying to buy Shirts
-Velma sold a Shirts to the customer for 66.00
-2890.7415
+The customer is trying to buy Strings
+Velma sold a Strings to the customer with a 10% discount for 66.81
+2507.0168
 
-The customer is trying to buy Mandolin
-Velma sold a Mandolin to the customer for 67.34
-2958.0813
+The customer is trying to buy Cables
+The customer tried to buy a Cables but we were out of stock, so they left.
+The customer is trying to buy Guitar
+Velma sold a Guitar to the customer for 48.00
+Trying to sell accessories!
+The customer has also bought (Reverb Amp, Fair, 0.0) for 15.511554647605582
+2570.5283
+
+Customer took the second deal and sold a CassettePlayer for 23.10 dollars
+
+Customer took the first deal and sold a Hats for 30.00 dollars
+
+Customer wanted to sell a Hats but did not accept the offered deal.
+
+Cleaning up the store!
+Store has been cleaned up!
+Velma has left the store
+Items arrived: 
+27 cassetteplayer, 43 cassetteplayer, 94 cassetteplayer, 
+Tracker: Day 7
+Clerk:   Items_Sold   Items_Purchased   Items_Damaged
+Shaggy:    0    0    0    
+Daphne:    16    8    0    
+Velma:    16    6    7    
+day 8, Tuesday
+Velma has arrived at the store
+[1, 1, 1, 3, 2, 1]
+$2517.4282 left in the register
+Store is out of Guitar
+Now tuning clurpy clumper
+Now tuning durpy dumper
+Store is out of PaperScore
+Now tuning MP3 Player baby
+Now tuning MP3 Player elderly
+Now tuning Cordae's CassettePlayer
+Store is out of Mandolin
+Now tuning picky flute
+Now tuning Ann's Flute
+Now tuning Ann's Flute
+Store is out of Cables
+Now tuning Horse Harmonica
+Horse Harmonica was damaged during tuning and is now in good condition.
+Now tuning Hippo Harmonica
+Now tuning Hamster Harmonica
+Now tuning CDplayer beta
+Now tuning CDplayer omega
+CDplayer omega was damaged during tuning and is now in poor condition.
+Now tuning Leslie's CDPlayer
+Now tuning Jazz Sax
+Now tuning Blues Sax
+Now tuning Susies's Saxophone
+Now tuning Susies's Saxophone
+Now tuning Susies's Saxophone
+Now tuning Record Player10
+Now tuning Record Player11
+Record Player11 was damaged during tuning and is now in good condition.
+Total Inventory: 1070.5648
+The store is now open!
+The customer is trying to buy Flute
+Velma sold a Flute to the customer for 73.20
+2590.631
+
+The customer is trying to buy Bass
+Velma sold a Bass to the customer for 45.82
+Trying to sell accessories!
+The customer has also bought (Evil GigBag, Excellent, 0.0) for 79.32028233670249
+The customer has also bought (metal string, Good, 0.0) for 2.206585768354505
+2717.9814
 
 The customer is trying to buy MP3Player
-Velma sold a MP3Player to the customer with a 10% discount for 68.40
-3026.4812
+Velma sold a MP3Player to the customer with a 10% discount for 32.41
+2750.3933
 
-Customer took the first deal and sold a PaperScore for 11.00 dollars
+The customer is trying to buy Hats
+Velma sold a Hats to the customer for 82.39
+2832.783
 
-Customer took the second deal and sold a CDPlayer for 11.00 dollars
+The customer is trying to buy Bass
+The customer did not want to pay 88.87 for Bass
 
-Customer took the first deal and sold a CD for 52.00 dollars
+Customer took the first deal and sold a Mandolin for 46.00 dollars
+
+Customer took the second deal and sold a MP3Player for 41.80 dollars
 
 Cleaning up the store!
 Store has been cleaned up!
 Velma has left the store
-Items arrived:
-
-day 29, Tuesday
-Shaggy has arrived at the store
-[]
-$2952.4812 left in the register
-Store is out of Bass
-Store is out of Vinyl
-Store is out of Flute
+Items arrived: 
+19 cassetteplayer, 57 cassetteplayer, 16 cassetteplayer, Type 14 Cable, Type 6 Cable, Type 52 Cable, Type 55 Cable, Type 38 Cable, Type 14 Cable, 
+Tracker: Day 8
+Clerk:   Items_Sold   Items_Purchased   Items_Damaged
+Shaggy:    0    0    0    
+Daphne:    16    8    0    
+Velma:    20    8    10    
+day 9, Wednesday
+Velma has arrived at the store
+[1, 3, 1, 3, 2, 3, 2]
+$2744.983 left in the register
+Store is out of Guitar
+Now tuning durpy dumper
+Store is out of PaperScore
+Now tuning MP3 Player elderly
+Now tuning Tom's MP3Player
+Now tuning Cordae's CassettePlayer
+Now tuning Liam's Mandolin
+Now tuning Ann's Flute
+Now tuning Ann's Flute
 Store is out of Strings
-Store is out of Hats
-Total Inventory: 1204.6738
+Store is out of Cables
+Now tuning Horse Harmonica
+Now tuning Hippo Harmonica
+Now tuning Hamster Harmonica
+Now tuning CDplayer beta
+Now tuning CDplayer omega
+Now tuning Leslie's CDPlayer
+Now tuning Jazz Sax
+Now tuning Blues Sax
+Now tuning Susies's Saxophone
+(Susies's Saxophone, Poor, 0.0) was damaged beyond repair!
+Now tuning Susies's Saxophone
+Store is out of GigBag
+Now tuning Record Player10
+Now tuning Record Player11
+Total Inventory: 982.38684
 The store is now open!
-The customer is trying to buy Vinyl
-The customer tried to buy a Vinyl but we were out of stock, so they left.
 The customer is trying to buy Harmonica
-Shaggy sold a Harmonica to the customer for 13.20
-2965.6812
+Velma sold a Harmonica to the customer for 67.07
+2812.0513
 
 The customer is trying to buy Strings
 The customer tried to buy a Strings but we were out of stock, so they left.
-The customer is trying to buy Vinyl
-The customer tried to buy a Vinyl but we were out of stock, so they left.
-Customer took the first deal and sold a Shirts for 58.00 dollars
+The customer is trying to buy PracticeAmps
+Velma sold a PracticeAmps to the customer with a 10% discount for 53.46
+2865.5112
 
-Customer took the second deal and sold a CDPlayer for 15.40 dollars
+The customer is trying to buy MP3Player
+Velma sold a MP3Player to the customer with a 10% discount for 44.01
+2909.521
+
+The customer is trying to buy PaperScore
+The customer tried to buy a PaperScore but we were out of stock, so they left.
+Customer took the first deal and sold a RecordPlayer for 11.00 dollars
+
+Customer took the first deal and sold a MP3Player for 63.00 dollars
+
+Cleaning up the store!
+Store has been cleaned up!
+Velma has left the store
+Items arrived: 
+77 cassetteplayer, 45 cassetteplayer, 52 cassetteplayer, number 80 mandolin, number 14 mandolin, number 36 mandolin, 
+Tracker: Day 9
+Clerk:   Items_Sold   Items_Purchased   Items_Damaged
+Shaggy:    0    0    0    
+Daphne:    16    8    0    
+Velma:    23    10    11    
+day 10, Thursday
+Velma was sick today!
+Daphne has arrived at the store
+[3, 3, 1, 2, 1, 2, 1, 1, 2, 3]
+$2835.521 left in the register
+Store is out of Guitar
+Now tuning durpy dumper
+Store is out of PaperScore
+Now tuning Tom's MP3Player
+Now tuning Tom's MP3Player
+Now tuning Cordae's CassettePlayer
+Now tuning Liam's Mandolin
+Now tuning Ann's Flute
+Now tuning Ann's Flute
+Store is out of Strings
+Store is out of Cables
+Now tuning Hippo Harmonica
+Now tuning Hamster Harmonica
+Now tuning CDplayer beta
+Now tuning CDplayer omega
+Now tuning Leslie's CDPlayer
+Now tuning Jazz Sax
+Now tuning Blues Sax
+Now tuning Susies's Saxophone
+Now tuning Susies's Saxophone
+Store is out of GigBag
+Now tuning Record Player10
+Now tuning Record Player11
+Now tuning Ron's RecordPlayer
+Total Inventory: 960.3192
+The store is now open!
+The customer is trying to buy Cassette
+The customer did not want to pay 88.16 for Cassette
+
+The customer is trying to buy Cables
+The customer tried to buy a Cables but we were out of stock, so they left.
+The customer is trying to buy Cables
+The customer tried to buy a Cables but we were out of stock, so they left.
+The customer is trying to buy Shirts
+Daphne sold a Shirts to the customer for 86.16
+2921.6785
+
+The customer is trying to buy MP3Player
+Daphne sold a MP3Player to the customer for 83.60
+3005.2786
+
+The customer is trying to buy Harmonica
+Daphne sold a Harmonica to the customer for 69.10
+3074.3787
+
+The customer is trying to buy Saxophone
+Daphne sold a Saxophone to the customer for 34.11
+3108.4854
+
+The customer is trying to buy Saxophone
+Daphne sold a Saxophone to the customer for 77.72
+3186.2053
+
+The customer is trying to buy MP3Player
+Daphne sold a MP3Player to the customer for 126.00
+3312.2053
+
+Customer took the first deal and sold a MP3Player for 32.00 dollars
+
+Customer took the first deal and sold a Cassette for 19.00 dollars
+
+Cleaning up the store!
+Store has been cleaned up!
+Daphne has left the store
+Items arrived: 
+PaperScore Symphony 33, PaperScore Symphony 9, PaperScore Symphony 57, Type 56 Cable, Type 18 Cable, Type 95 Cable, PaperScore Symphony 53, PaperScore Symphony 82, PaperScore Symphony 32, 
+Tracker: Day 10
+Clerk:   Items_Sold   Items_Purchased   Items_Damaged
+Shaggy:    0    0    0    
+Daphne:    22    10    0    
+Velma:    23    10    11    
+day 11, Friday
+Shaggy has arrived at the store
+[2, 2, 2, 2, 1, 1, 2, 2, 2, 3, 1, 1]
+$3261.2053 left in the register
+Store is out of Guitar
+Now tuning durpy dumper
+Store is out of PaperScore
+Now tuning Tom's MP3Player
+Now tuning Cordae's CassettePlayer
+Cordae's CassettePlayer was damaged during tuning and is now in very good condition.
+Now tuning Liam's Mandolin
+Liam's Mandolin was damaged during tuning and is now in very good condition.
+Now tuning Ann's Flute
+Ann's Flute was damaged during tuning and is now in poor condition.
+Now tuning Ann's Flute
+Store is out of Strings
+Store is out of Cables
+Now tuning Hamster Harmonica
+Now tuning CDplayer beta
+Now tuning CDplayer omega
+Now tuning Leslie's CDPlayer
+(Leslie's CDPlayer, Poor, 0.0) was damaged beyond repair!
+Now tuning Susies's Saxophone
+Now tuning Susies's Saxophone
+Store is out of GigBag
+Now tuning Record Player10
+Now tuning Record Player11
+Now tuning Ron's RecordPlayer
+Ron's RecordPlayer was damaged during tuning and is now in fair condition.
+Total Inventory: 715.07623
+The store is now open!
+The customer is trying to buy CassettePlayer
+Shaggy sold a CassettePlayer to the customer for 36.96
+3298.1653
+
+The customer is trying to buy Flute
+Shaggy sold a Flute to the customer with a 10% discount for 48.15
+3346.3188
+
+The customer is trying to buy Guitar
+The customer tried to buy a Guitar but we were out of stock, so they left.
+The customer is trying to buy MP3Player
+Shaggy sold a MP3Player to the customer for 64.00
+3410.3188
+
+The customer is trying to buy Flute
+Shaggy sold a Flute to the customer for 18.00
+3428.3188
+
+The customer is trying to buy Harmonica
+Shaggy sold a Harmonica to the customer for 45.89
+3474.2092
+
+Customer took the second deal and sold a Shirts for 53.90 dollars
 
 Cleaning up the store!
 Store has been cleaned up!
 Shaggy has left the store
-Items arrived:
+Items arrived: 
+63 coil string, 61 coil string, 75 coil string, Type 36 Cable, Type 95 Cable, Type 71 Cable, 
+Tracker: Day 11
+Clerk:   Items_Sold   Items_Purchased   Items_Damaged
+Shaggy:    5    1    5    
+Daphne:    22    10    0    
+Velma:    23    10    11    
+day 12, Saturday
+Shaggy has arrived at the store
+[1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 3, 2, 1, 3, 3]
+$3420.3093 left in the register
+Store is out of Guitar
+Now tuning durpy dumper
+Store is out of PaperScore
+Store is out of MP3Player
+Store is out of CassettePlayer
+Now tuning Liam's Mandolin
+Store is out of Flute
+Store is out of Strings
+Store is out of Cables
+Store is out of Harmonica
+Now tuning CDplayer beta
+Now tuning CDplayer omega
+(CDplayer omega, Poor, 0.0) was damaged beyond repair!
+Now tuning Susies's Saxophone
+Now tuning Susies's Saxophone
+Store is out of GigBag
+Now tuning Record Player10
+Record Player10 was damaged during tuning and is now in good condition.
+Now tuning Record Player11
+Record Player11 was damaged during tuning and is now in fair condition.
+Now tuning Ron's RecordPlayer
+Total Inventory: 618.38916
+The store is now open!
+The customer is trying to buy PaperScore
+The customer tried to buy a PaperScore but we were out of stock, so they left.
+The customer is trying to buy Cassette
+The customer did not want to pay 88.16 for Cassette
 
+The customer is trying to buy Cassette
+Shaggy sold a Cassette to the customer with a 10% discount for 79.34
+3499.6543
+
+Customer took the second deal and sold a CassettePlayer for 33.00 dollars
+
+Customer took the first deal and sold a CassettePlayer for 27.00 dollars
+
+Customer took the first deal and sold a GigBag for 27.00 dollars
+
+Cleaning up the store!
+Store has been cleaned up!
+Shaggy has left the store
+Items arrived: 
+15 cassetteplayer, 21 cassetteplayer, 28 cassetteplayer, number 15 mandolin, number 67 mandolin, number 94 mandolin, Type 91 Cable, Type 96 Cable, Type 91 Cable, style 98 guitar, style 95 guitar, style 61 guitar, 12 gigbag, 14 gigbag, 41 gigbag, 15 coil string, 58 coil string, 61 coil string, 
+Tracker: Day 12
+Clerk:   Items_Sold   Items_Purchased   Items_Damaged
+Shaggy:    6    4    8    
+Daphne:    22    10    0    
+Velma:    23    10    11    
+day 13, Sunday
+
+Tracker: Day 13
+Clerk:   Items_Sold   Items_Purchased   Items_Damaged
+Shaggy:    6    4    8    
+Daphne:    22    10    0    
+Velma:    23    10    11    
+day 14, Monday
+Shaggy has arrived at the store
+[1, 1, 1, 1, 1, 3, 1, 3, 2, 2, 2, 3, 1, 3, 2, 2, 1, 3]
+$3412.6543 left in the register
+Store is out of Guitar
+Now tuning durpy dumper
+Store is out of PaperScore
+Store is out of MP3Player
+Now tuning Cordae's CassettePlayer
+Now tuning Cordae's CassettePlayer
+Now tuning Liam's Mandolin
+Liam's Mandolin was damaged during tuning and is now in good condition.
+Store is out of Flute
+Store is out of Strings
+Store is out of Cables
+Store is out of Harmonica
+Now tuning CDplayer beta
+Now tuning Susies's Saxophone
+Susies's Saxophone was damaged during tuning and is now in fair condition.
+Now tuning Susies's Saxophone
+Susies's Saxophone was damaged during tuning and is now in fair condition.
+Now tuning Record Player10
+Now tuning Record Player11
+Now tuning Ron's RecordPlayer
+Ron's RecordPlayer was damaged during tuning and is now in poor condition.
+Total Inventory: 661.3086
+The store is now open!
+The customer is trying to buy Cables
+The customer tried to buy a Cables but we were out of stock, so they left.
+The customer is trying to buy Shirts
+Shaggy sold a Shirts to the customer with a 10% discount for 7.91
+3420.563
+
+The customer is trying to buy MP3Player
+The customer tried to buy a MP3Player but we were out of stock, so they left.
+The customer is trying to buy Vinyl
+Shaggy sold a Vinyl to the customer for 47.49
+3468.0515
+
+The customer is trying to buy PracticeAmps
+Shaggy sold a PracticeAmps to the customer for 32.00
+3500.0515
+
+The customer is trying to buy Cassette
+Shaggy sold a Cassette to the customer for 101.20
+3601.2515
+
+The customer is trying to buy Shirts
+Shaggy sold a Shirts to the customer for 107.80
+3709.0515
+
+The customer is trying to buy Mandolin
+Shaggy sold a Mandolin to the customer with a 10% discount for 52.99
+Trying to sell accessories!
+3762.0435
+
+The customer is trying to buy Flute
+The customer tried to buy a Flute but we were out of stock, so they left.
+Customer took the second deal and sold a Saxophone for 40.70 dollars
+
+Customer took the second deal and sold a Strings for 60.50 dollars
+
+Cleaning up the store!
+Store has been cleaned up!
+Shaggy has left the store
+Items arrived: 
+style 17 guitar, style 30 guitar, style 33 guitar, 29 gigbag, 87 gigbag, 51 gigbag, 58 coil string, 60 coil string, 90 coil string, PaperScore Symphony 13, PaperScore Symphony 58, PaperScore Symphony 64, 42 cassetteplayer, 61 cassetteplayer, 65 cassetteplayer, Unpredictable Harmonica 12, Unpredictable Harmonica 66, Unpredictable Harmonica 78, 
+Tracker: Day 14
+Clerk:   Items_Sold   Items_Purchased   Items_Damaged
+Shaggy:    12    6    12    
+Daphne:    22    10    0    
+Velma:    23    10    11    
+day 15, Tuesday
+Daphne has arrived at the store
+[1, 1, 3, 3, 1, 1, 1, 2, 3, 1, 1, 3, 3, 3, 3, 3, 3, 1, 2]
+$3660.8435 left in the register
+Store is out of Guitar
+Now tuning durpy dumper
+Store is out of PaperScore
+Store is out of MP3Player
+Now tuning Cordae's CassettePlayer
+Now tuning Cordae's CassettePlayer
+Store is out of Mandolin
+Store is out of Flute
+Store is out of Cables
+Store is out of Shirts
+Store is out of PracticeAmps
+Store is out of Harmonica
+Now tuning CDplayer beta
+Now tuning Susies's Saxophone
+Now tuning Susies's Saxophone
+Now tuning Susies's Saxophone
+Now tuning Record Player10
+Now tuning Record Player11
+Now tuning Ron's RecordPlayer
+Total Inventory: 567.8707
+The store is now open!
+The customer is trying to buy Vinyl
+Daphne sold a Vinyl to the customer for 10.01
+3670.8535
+
+The customer is trying to buy Hats
+Daphne sold a Hats to the customer for 9.00
+3679.8562
+
+The customer is trying to buy Flute
+The customer tried to buy a Flute but we were out of stock, so they left.
+The customer is trying to buy PracticeAmps
+The customer tried to buy a PracticeAmps but we were out of stock, so they left.
+Customer took the first deal and sold a Cassette for 42.00 dollars
+
+Customer wanted to sell a CassettePlayer but did not accept the offered deal.
+
+Cleaning up the store!
+Store has been cleaned up!
+Daphne has left the store
+Items arrived: 
+style 48 guitar, style 55 guitar, style 62 guitar, 37 gigbag, 17 gigbag, 81 gigbag, PaperScore Symphony 85, PaperScore Symphony 18, PaperScore Symphony 90, 13 coil string, 36 coil string, 95 coil string, Type 42 Cable, Type 73 Cable, Type 62 Cable, 
+Tracker: Day 15
+Clerk:   Items_Sold   Items_Purchased   Items_Damaged
+Shaggy:    12    6    12    
+Daphne:    24    11    0    
+Velma:    23    10    11    
+day 16, Wednesday
+Velma has arrived at the store
+[1, 2, 2, 1, 2, 2, 1, 2, 2, 2, 2, 2, 2, 2, 2, 1, 2, 3, 1, 3, 3, 2]
+$3637.8562 left in the register
+Store is out of Guitar
+Now tuning durpy dumper
+Store is out of PaperScore
+Store is out of MP3Player
+Now tuning Cordae's CassettePlayer
+Now tuning Cordae's CassettePlayer
+Store is out of Mandolin
+Store is out of Flute
+Store is out of Cables
+Store is out of Shirts
+Store is out of PracticeAmps
+Store is out of Harmonica
+Now tuning CDplayer beta
+Now tuning Susies's Saxophone
+Susies's Saxophone was damaged during tuning and is now in poor condition.
+Now tuning Susies's Saxophone
+Susies's Saxophone was damaged during tuning and is now in poor condition.
+Now tuning Susies's Saxophone
+Susies's Saxophone was damaged during tuning and is now in very good condition.
+Now tuning Record Player10
+Now tuning Record Player11
+Now tuning Ron's RecordPlayer
+Total Inventory: 600.36444
+The store is now open!
+The customer is trying to buy Vinyl
+Velma sold a Vinyl to the customer for 60.92
+3698.7778
+
+The customer is trying to buy Flute
+The customer tried to buy a Flute but we were out of stock, so they left.
+The customer is trying to buy RecordPlayer
+Velma sold a RecordPlayer to the customer with a 10% discount for 21.48
+3720.258
+
+The customer is trying to buy PracticeAmps
+The customer tried to buy a PracticeAmps but we were out of stock, so they left.
+Customer took the first deal and sold a Cassette for 42.00 dollars
+
+Customer took the first deal and sold a RecordPlayer for 23.00 dollars
+
+Cleaning up the store!
+Store has been cleaned up!
+Velma has left the store
+Items arrived: 
+PaperScore Symphony 83, PaperScore Symphony 73, PaperScore Symphony 41, style 16 guitar, style 51 guitar, style 13 guitar, Type 47 Cable, Type 48 Cable, Type 49 Cable, PaperScore Symphony 57, PaperScore Symphony 75, PaperScore Symphony 83, random flute 84, random flute 66, random flute 88, 
+Tracker: Day 16
+Clerk:   Items_Sold   Items_Purchased   Items_Damaged
+Shaggy:    12    6    12    
+Daphne:    24    11    0    
+Velma:    25    12    15    
+day 17, Thursday
+Velma was sick today!
+Shaggy has arrived at the store
+[2, 1, 2, 1, 2, 1, 1, 1, 1, 1, 1, 1, 2, 2, 3, 2, 1, 2, 2, 1, 1, 1, 3, 1, 1]
+$3655.258 left in the register
+Store is out of Guitar
+Now tuning durpy dumper
+durpy dumper was damaged during tuning and is now in very good condition.
+Store is out of PaperScore
+Store is out of MP3Player
+Now tuning Cordae's CassettePlayer
+Cordae's CassettePlayer was damaged during tuning and is now in fair condition.
+Now tuning Cordae's CassettePlayer
+(Cordae's CassettePlayer, Poor, 0.0) was damaged beyond repair!
+Store is out of Mandolin
+Store is out of Flute
+Store is out of Cables
+Store is out of Shirts
+Store is out of PracticeAmps
+Store is out of Harmonica
+Now tuning CDplayer beta
+CDplayer beta was damaged during tuning and is now in very good condition.
+Now tuning Susies's Saxophone
+Now tuning Susies's Saxophone
+Now tuning Susies's Saxophone
+Now tuning Record Player11
+Now tuning Ron's RecordPlayer
+Now tuning Ron's RecordPlayer
+Total Inventory: 589.2575
+The store is now open!
+The customer is trying to buy RecordPlayer
+Shaggy sold a RecordPlayer to the customer for 35.53
+3690.7834
+
+The customer is trying to buy Bandanas
+Shaggy sold a Bandanas to the customer with a 10% discount for 25.39
+3716.1738
+
+The customer is trying to buy Shirts
+The customer tried to buy a Shirts but they are no longer sold, so they left.
+The customer is trying to buy PaperScore
+The customer tried to buy a PaperScore but we were out of stock, so they left.
+The customer is trying to buy MP3Player
+The customer tried to buy a MP3Player but we were out of stock, so they left.
+Customer took the first deal and sold a Harmonica for 47.00 dollars
+
+Customer took the first deal and sold a Mandolin for 30.00 dollars
+
+Cleaning up the store!
+Store has been cleaned up!
+Shaggy has left the store
+Items arrived: 
+Type 25 Cable, Type 3 Cable, Type 11 Cable, random flute 39, random flute 68, random flute 1, style 42 guitar, style 67 guitar, style 42 guitar, MP3 Player 52, MP3 Player 5, MP3 Player 31, 65 coil string, 46 coil string, 94 coil string, style 8 guitar, style 33 guitar, style 24 guitar, Unpredictable Harmonica 6, Unpredictable Harmonica 96, Unpredictable Harmonica 98, MP3 Player 60, MP3 Player 73, MP3 Player 48, random flute 83, random flute 79, random flute 49, Random Amp 87, Random Amp 69, Random Amp 6, 
+Tracker: Day 17
+Clerk:   Items_Sold   Items_Purchased   Items_Damaged
+Shaggy:    14    8    16    
+Daphne:    24    11    0    
+Velma:    25    12    15    
+day 18, Friday
+Shaggy has arrived at the store
+[1, 2, 2, 1, 1, 1, 2, 1, 2, 1, 2, 1, 1, 3, 1, 3, 3, 1, 2, 3, 1, 1, 3]
+$3639.1738 left in the register
+Store is out of Guitar
+Now tuning durpy dumper
+Store is out of PaperScore
+Store is out of MP3Player
+Now tuning Cordae's CassettePlayer
+Now tuning Liam's Mandolin
+Store is out of Flute
+Store is out of Cables
+Store is out of Shirts
+Store is out of PracticeAmps
+Now tuning Chris' Harmonica
+Now tuning CDplayer beta
+Now tuning Susies's Saxophone
+(Susies's Saxophone, Poor, 0.0) was damaged beyond repair!
+Now tuning Susies's Saxophone
+Now tuning Ron's RecordPlayer
+Now tuning Ron's RecordPlayer
+Ron's RecordPlayer was damaged during tuning and is now in very good condition.
+Total Inventory: 599.3974
+The store is now open!
+The customer is trying to buy Harmonica
+Shaggy sold a Harmonica to the customer with a 10% discount for 84.60
+3723.774
+
+The customer is trying to buy Bandanas
+Shaggy sold a Bandanas to the customer for 79.65
+3803.4202
+
+The customer is trying to buy RecordPlayer
+The customer did not want to pay 14.08 for RecordPlayer
+
+The customer is trying to buy Bass
+Shaggy sold a Bass to the customer for 71.10
+Trying to sell accessories!
+The customer has also bought (Bobby's Strings, Good, 0.0) for 121.00000000000001
+3995.5154
+
+The customer is trying to buy Flute
+The customer tried to buy a Flute but we were out of stock, so they left.
+Customer took the second deal and sold a GigBag for 29.70 dollars
+
+Customer took the first deal and sold a PaperScore for 15.00 dollars
+
+Customer took the first deal and sold a CassettePlayer for 25.00 dollars
+
+Cleaning up the store!
+Store has been cleaned up!
+Shaggy has left the store
+Items arrived: 
+style 52 guitar, style 72 guitar, style 30 guitar, PaperScore Symphony 7, PaperScore Symphony 81, PaperScore Symphony 83, Unpredictable Harmonica 62, Unpredictable Harmonica 2, Unpredictable Harmonica 31, number 73 mandolin, number 56 mandolin, number 37 mandolin, Random Amp 3, Random Amp 44, Random Amp 10, PaperScore Symphony 10, PaperScore Symphony 23, PaperScore Symphony 63, Unpredictable Harmonica 73, Unpredictable Harmonica 73, Unpredictable Harmonica 20, MP3 Player 14, MP3 Player 54, MP3 Player 65, Type 5 Cable, Type 46 Cable, Type 20 Cable, 
+Tracker: Day 18
+Clerk:   Items_Sold   Items_Purchased   Items_Damaged
+Shaggy:    17    11    18    
+Daphne:    24    11    0    
+Velma:    25    12    15    
+day 19, Saturday
+Daphne has arrived at the store
+[2, 1, 1, 2, 2, 2, 1, 2, 3, 2, 2, 2, 1, 2, 1, 1, 3, 3, 1, 1]
+$3925.8154 left in the register
+Store is out of Guitar
+Store is out of Bass
+Store is out of MP3Player
+Now tuning Cordae's CassettePlayer
+Now tuning Cordae's CassettePlayer
+Now tuning Liam's Mandolin
+Store is out of Flute
+Store is out of Strings
+Store is out of Cables
+Store is out of Shirts
+Store is out of PracticeAmps
+Store is out of Harmonica
+Now tuning CDplayer beta
+Now tuning Susies's Saxophone
+Now tuning Susies's Saxophone
+Now tuning Ron's RecordPlayer
+Now tuning Ron's RecordPlayer
+Total Inventory: 477.33987
+The store is now open!
+The customer is trying to buy Cassette
+The customer did not want to pay 38.00 for Cassette
+
+The customer is trying to buy Guitar
+The customer tried to buy a Guitar but we were out of stock, so they left.
+The customer is trying to buy Vinyl
+Daphne sold a Vinyl to the customer for 36.00
+3961.8154
+
+The customer is trying to buy Shirts
+The customer tried to buy a Shirts but they are no longer sold, so they left.
+The customer is trying to buy Bass
+The customer tried to buy a Bass but we were out of stock, so they left.
+The customer is trying to buy PracticeAmps
+The customer tried to buy a PracticeAmps but we were out of stock, so they left.
+Customer took the first deal and sold a Flute for 41.00 dollars
+
+Customer took the second deal and sold a GigBag for 51.70 dollars
+
+Customer wanted to sell a Cassette but did not accept the offered deal.
+
+Cleaning up the store!
+Store has been cleaned up!
+Daphne has left the store
+Items arrived: 
+76 gigbag, 39 gigbag, 40 gigbag, number 69 mandolin, number 5 mandolin, number 90 mandolin, Random Amp 24, Random Amp 55, Random Amp 54, style 65 guitar, style 87 guitar, style 73 guitar, Type 87 Cable, Type 2 Cable, Type 12 Cable, 
+Tracker: Day 19
+Clerk:   Items_Sold   Items_Purchased   Items_Damaged
+Shaggy:    17    11    18    
+Daphne:    25    13    0    
+Velma:    25    12    15    
+day 20, Sunday
+
+Tracker: Day 20
+Clerk:   Items_Sold   Items_Purchased   Items_Damaged
+Shaggy:    17    11    18    
+Daphne:    25    13    0    
+Velma:    25    12    15    
+day 21, Monday
+Daphne has arrived at the store
+[1, 1, 1, 1, 1, 2, 2, 1, 1, 1, 2, 1, 2, 2, 1, 1, 2, 3, 2, 2, 1, 2, 2]
+$3869.1155 left in the register
+Store is out of Guitar
+Store is out of Bass
+Store is out of Vinyl
+Store is out of MP3Player
+Now tuning Cordae's CassettePlayer
+Now tuning Cordae's CassettePlayer
+Now tuning Liam's Mandolin
+Now tuning Ann's Flute
+Store is out of Strings
+Store is out of Cables
+Store is out of Shirts
+Store is out of PracticeAmps
+Store is out of Harmonica
+Now tuning CDplayer beta
+Now tuning Susies's Saxophone
+Now tuning Susies's Saxophone
+Now tuning Ron's RecordPlayer
+Now tuning Ron's RecordPlayer
+Total Inventory: 552.03986
+The store is now open!
+The customer is trying to buy Shirts
+The customer tried to buy a Shirts but they are no longer sold, so they left.
+The customer is trying to buy Mandolin
+Daphne sold a Mandolin to the customer for 60.00
+Trying to sell accessories!
+3929.1155
+
+The customer is trying to buy Cassette
+Daphne sold a Cassette to the customer for 38.00
+3967.1155
+
+The customer is trying to buy Guitar
+The customer tried to buy a Guitar but we were out of stock, so they left.
+The customer is trying to buy Flute
+Daphne sold a Flute to the customer for 82.00
+4049.1155
+
+The customer is trying to buy Saxophone
+Daphne sold a Saxophone to the customer for 19.20
+4068.3154
+
+The customer is trying to buy Vinyl
+The customer tried to buy a Vinyl but we were out of stock, so they left.
+The customer is trying to buy Saxophone
+Daphne sold a Saxophone to the customer for 65.12
+4133.4355
+
+The customer is trying to buy PracticeAmps
+The customer tried to buy a PracticeAmps but we were out of stock, so they left.
+Customer took the first deal and sold a Hats for 20.00 dollars
+
+Customer took the first deal and sold a Vinyl for 19.00 dollars
+
+Customer took the first deal and sold a Cassette for 62.00 dollars
+
+Customer wanted to sell a MP3Player but did not accept the offered deal.
+
+Cleaning up the store!
+Store has been cleaned up!
+Daphne has left the store
+Items arrived: 
+MP3 Player 83, MP3 Player 21, MP3 Player 44, MP3 Player 67, MP3 Player 17, MP3 Player 83, style 14 guitar, style 4 guitar, style 35 guitar, PaperScore Symphony 6, PaperScore Symphony 79, PaperScore Symphony 80, random flute 12, random flute 14, random flute 27, PaperScore Symphony 66, PaperScore Symphony 13, PaperScore Symphony 26, Random Amp 14, Random Amp 45, Random Amp 69, Type 99 Cable, Type 94 Cable, Type 46 Cable, 
+Tracker: Day 21
+Clerk:   Items_Sold   Items_Purchased   Items_Damaged
+Shaggy:    17    11    18    
+Daphne:    30    16    0    
+Velma:    25    12    15    
+day 22, Tuesday
+Daphne has arrived at the store
+[1, 1, 2, 1, 1, 2, 2, 1, 1, 1, 2, 1, 1, 2, 1, 1, 3, 3, 3, 2, 1, 3, 1]
+$4032.4355 left in the register
+Store is out of Guitar
+Store is out of Bass
+Store is out of MP3Player
+Now tuning Cordae's CassettePlayer
+Now tuning Cordae's CassettePlayer
+Store is out of Mandolin
+Store is out of Flute
+Store is out of Strings
+Store is out of Cables
+Store is out of Shirts
+Store is out of PracticeAmps
+Store is out of Harmonica
+Now tuning CDplayer beta
+Store is out of Saxophone
+Now tuning Ron's RecordPlayer
+Now tuning Ron's RecordPlayer
+Total Inventory: 507.33987
+The store is now open!
+The customer is trying to buy Strings
+The customer tried to buy a Strings but we were out of stock, so they left.
+The customer is trying to buy CDPlayer
+Daphne sold a CDPlayer to the customer for 45.26
+4077.698
+
+The customer is trying to buy Bass
+The customer tried to buy a Bass but we were out of stock, so they left.
+The customer is trying to buy CD
+Daphne sold a CD to the customer with a 10% discount for 72.14
+4149.836
+
+Customer took the first deal and sold a Mandolin for 24.00 dollars
+
+Customer took the first deal and sold a Bass for 5.00 dollars
+
+Cleaning up the store!
+Store has been cleaned up!
+Daphne has left the store
+Items arrived: 
+random flute 87, random flute 54, random flute 86, style 56 guitar, style 33 guitar, style 53 guitar, random flute 28, random flute 1, random flute 58, see 85 bass, see 94 bass, see 3 bass, random flute 15, random flute 52, random flute 8, Unpredictable Harmonica 75, Unpredictable Harmonica 14, Unpredictable Harmonica 42, Type 14 Cable, Type 87 Cable, Type 76 Cable, Unpredictable Harmonica 99, Unpredictable Harmonica 29, Unpredictable Harmonica 33, 
+Tracker: Day 22
+Clerk:   Items_Sold   Items_Purchased   Items_Damaged
+Shaggy:    17    11    18    
+Daphne:    32    18    0    
+Velma:    25    12    15    
+day 23, Wednesday
+Shaggy has arrived at the store
+[1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 2, 2, 2, 1, 3, 3, 3, 3, 1, 2, 3, 3, 1, 2, 2]
+$4120.836 left in the register
+Store is out of Guitar
+Now tuning Benny's Bass
+Store is out of CD
+Store is out of MP3Player
+Now tuning Cordae's CassettePlayer
+Now tuning Cordae's CassettePlayer
+Cordae's CassettePlayer was damaged during tuning and is now in very good condition.
+Now tuning Liam's Mandolin
+Store is out of Flute
+Store is out of Strings
+Store is out of Cables
+Store is out of Shirts
+Store is out of PracticeAmps
+Store is out of Harmonica
+Store is out of CDPlayer
+Store is out of Saxophone
+Now tuning Ron's RecordPlayer
+(Ron's RecordPlayer, Poor, 0.0) was damaged beyond repair!
+Total Inventory: 456.97427
+The store is now open!
+The customer is trying to buy Vinyl
+The customer did not want to pay 38.00 for Vinyl
+
+The customer is trying to buy Flute
+The customer tried to buy a Flute but we were out of stock, so they left.
+The customer is trying to buy Mandolin
+Shaggy sold a Mandolin to the customer with a 10% discount for 43.20
+Trying to sell accessories!
+4164.036
+
+The customer is trying to buy Bass
+Shaggy sold a Bass to the customer for 10.00
+Trying to sell accessories!
+The customer has also bought (Giannis' GigBag, Excellent, 0.0) for 54.0
+4228.036
+
+The customer is trying to buy Mandolin
+The customer tried to buy a Mandolin but we were out of stock, so they left.
+The customer is trying to buy Mandolin
+The customer tried to buy a Mandolin but we were out of stock, so they left.
+The customer is trying to buy Strings
+The customer tried to buy a Strings but we were out of stock, so they left.
+Customer wanted to sell a Saxophone but did not accept the offered deal.
+
+Customer took the first deal and sold a GigBag for 27.00 dollars
+
+Cleaning up the store!
+Store has been cleaned up!
+Shaggy has left the store
+Items arrived: 
+Type 64 Cable, Type 4 Cable, Type 70 Cable, number 55 mandolin, number 57 mandolin, number 29 mandolin, MP3 Player 30, MP3 Player 78, MP3 Player 37, 62 coil string, 41 coil string, 85 coil string, style 99 guitar, style 28 guitar, style 50 guitar, 27 coil string, 31 coil string, 48 coil string, number 64 mandolin, number 88 mandolin, number 42 mandolin, Random Amp 60, Random Amp 63, Random Amp 46, 
+Tracker: Day 23
+Clerk:   Items_Sold   Items_Purchased   Items_Damaged
+Shaggy:    19    12    20    
+Daphne:    32    18    0    
+Velma:    25    12    15    
+day 24, Thursday
+Shaggy has arrived at the store
+[1, 1, 1, 1, 1, 2, 1, 1, 3, 2, 2, 2, 2, 2, 2, 2, 1, 3, 1, 1, 3, 2, 3, 3, 3, 1, 1]
+$4201.036 left in the register
+Store is out of Guitar
+Store is out of Bass
+Store is out of CD
+Store is out of MP3Player
+Now tuning Cordae's CassettePlayer
+Now tuning Cordae's CassettePlayer
+Store is out of Mandolin
+Store is out of Flute
+Store is out of Strings
+Store is out of Cables
+Store is out of Shirts
+Store is out of PracticeAmps
+Store is out of Harmonica
+Store is out of CDPlayer
+Store is out of Saxophone
+Now tuning Ron's RecordPlayer
+Ron's RecordPlayer was damaged during tuning and is now in good condition.
+Total Inventory: 427.97427
+The store is now open!
+The customer is trying to buy Flute
+The customer tried to buy a Flute but we were out of stock, so they left.
+The customer is trying to buy RecordPlayer
+Shaggy sold a RecordPlayer to the customer for 29.44
+4230.476
+
+The customer is trying to buy Vinyl
+Shaggy sold a Vinyl to the customer for 38.00
+4268.476
+
+The customer is trying to buy Bandanas
+Shaggy sold a Bandanas to the customer with a 10% discount for 15.43
+4283.9097
+
+The customer is trying to buy Vinyl
+The customer tried to buy a Vinyl but we were out of stock, so they left.
+Customer wanted to sell a Shirts but store no longer supports them, so they left.
+
+Customer took the first deal and sold a PaperScore for 21.00 dollars
+
+Customer took the first deal and sold a CassettePlayer for 56.00 dollars
+
+Cleaning up the store!
+Store has been cleaned up!
+Shaggy has left the store
+Items arrived: 
+Type 50 Cable, Type 95 Cable, Type 58 Cable, style 84 guitar, style 34 guitar, style 17 guitar, Random Amp 36, Random Amp 78, Random Amp 71, Vinyl:14nodes for you, Vinyl:5nodes for you, Vinyl:39nodes for you, 49 sax, 77 sax, 80 sax, monkey CD 69, monkey CD 12, monkey CD 67, CD Player 77, CD Player 7, CD Player 75, 
+Tracker: Day 24
+Clerk:   Items_Sold   Items_Purchased   Items_Damaged
+Shaggy:    22    14    21    
+Daphne:    32    18    0    
+Velma:    25    12    15    
+day 25, Friday
+Daphne has arrived at the store
+[1, 1, 2, 1, 2, 1, 1, 1, 1, 1, 1, 1, 3, 1, 2, 1, 2, 2, 2, 1, 1, 1, 3, 2, 1, 2, 1, 3, 2, 2, 1, 1]
+$4206.9097 left in the register
+Store is out of Guitar
+Store is out of Bass
+Store is out of CD
+Store is out of Vinyl
+Store is out of MP3Player
+Now tuning Cordae's CassettePlayer
+Now tuning Cordae's CassettePlayer
+Now tuning Cordae's CassettePlayer
+Store is out of Mandolin
+Store is out of Flute
+Store is out of Strings
+Store is out of Cables
+Store is out of Shirts
+Store is out of PracticeAmps
+Store is out of Harmonica
+Store is out of CDPlayer
+Store is out of Bandanas
+Store is out of Saxophone
+Store is out of RecordPlayer
+Total Inventory: 454.40002
+The store is now open!
+The customer is trying to buy Hats
+Daphne sold a Hats to the customer with a 10% discount for 54.00
+4260.9097
+
+The customer is trying to buy Strings
+The customer tried to buy a Strings but we were out of stock, so they left.
+The customer is trying to buy Mandolin
+The customer tried to buy a Mandolin but we were out of stock, so they left.
+The customer is trying to buy CDPlayer
+The customer tried to buy a CDPlayer but we were out of stock, so they left.
+The customer is trying to buy Mandolin
+The customer tried to buy a Mandolin but we were out of stock, so they left.
+The customer is trying to buy Bandanas
+The customer tried to buy a Bandanas but they are no longer sold, so they left.
+Customer took the first deal and sold a Saxophone for 15.00 dollars
+
+Customer took the first deal and sold a Flute for 48.00 dollars
+
+Cleaning up the store!
+Store has been cleaned up!
+Daphne has left the store
+Items arrived: 
+Unpredictable Harmonica 35, Unpredictable Harmonica 68, Unpredictable Harmonica 35, MP3 Player 9, MP3 Player 42, MP3 Player 89, style 9 guitar, style 51 guitar, style 27 guitar, MP3 Player 7, MP3 Player 97, MP3 Player 24, 17 coil string, 42 coil string, 69 coil string, Unpredictable Harmonica 13, Unpredictable Harmonica 54, Unpredictable Harmonica 98, MP3 Player 45, MP3 Player 55, MP3 Player 51, 72 coil string, 95 coil string, 89 coil string, 77 sax, 23 sax, 50 sax, see 17 bass, see 84 bass, see 99 bass, number 13 mandolin, number 64 mandolin, number 50 mandolin, 19 coil string, 92 coil string, 34 coil string, CD Player 92, CD Player 50, CD Player 26, 
+Tracker: Day 25
+Clerk:   Items_Sold   Items_Purchased   Items_Damaged
+Shaggy:    22    14    21    
+Daphne:    33    20    0    
+Velma:    25    12    15    
+day 26, Saturday
+Daphne has arrived at the store
+[1, 1, 2, 1, 1, 1, 3, 2, 2, 1, 1, 1, 3, 1, 2, 3, 1, 1, 1, 2, 1, 3, 2, 3, 2, 2, 2, 1, 1, 1, 1, 2, 1]
+$4197.9097 left in the register
+Store is out of Guitar
+Store is out of Bass
+Store is out of CD
+Store is out of Vinyl
+Store is out of MP3Player
+Now tuning Cordae's CassettePlayer
+Now tuning Cordae's CassettePlayer
+Now tuning Cordae's CassettePlayer
+Store is out of Mandolin
+Now tuning Ann's Flute
+Store is out of Strings
+Store is out of Cables
+Store is out of Shirts
+Store is out of PracticeAmps
+Store is out of Harmonica
+Store is out of CDPlayer
+Store is out of Bandanas
+Now tuning Susies's Saxophone
+Store is out of RecordPlayer
+Total Inventory: 487.40002
+The store is now open!
+The customer is trying to buy GigBag
+Daphne sold a GigBag to the customer with a 10% discount for 53.46
+4251.3696
+
+The customer is trying to buy MP3Player
+The customer tried to buy a MP3Player but we were out of stock, so they left.
+The customer is trying to buy PaperScore
+Daphne sold a PaperScore to the customer with a 10% discount for 27.00
+4278.3696
+
+The customer is trying to buy Shirts
+The customer tried to buy a Shirts but they are no longer sold, so they left.
+The customer is trying to buy Bandanas
+The customer tried to buy a Bandanas but they are no longer sold, so they left.
+The customer is trying to buy Saxophone
+Daphne sold a Saxophone to the customer with a 10% discount for 27.00
+4305.3696
+
+Customer took the second deal and sold a Vinyl for 46.20 dollars
+
+Cleaning up the store!
+Store has been cleaned up!
+Daphne has left the store
+Items arrived: 
+MP3 Player 13, MP3 Player 44, MP3 Player 23, see 34 bass, see 45 bass, see 52 bass, Type 54 Cable, Type 20 Cable, Type 37 Cable, Random Amp 77, Random Amp 90, Random Amp 79, style 26 guitar, style 27 guitar, style 85 guitar, MP3 Player 53, MP3 Player 90, MP3 Player 73, Random Amp 82, Random Amp 35, Random Amp 59, 96 sax, 40 sax, 13 sax, see 62 bass, see 4 bass, see 51 bass, Type 32 Cable, Type 2 Cable, Type 36 Cable, Unpredictable Harmonica 46, Unpredictable Harmonica 69, Unpredictable Harmonica 55, Record Player 11, Record Player 51, Record Player 59, 
+Tracker: Day 26
+Clerk:   Items_Sold   Items_Purchased   Items_Damaged
+Shaggy:    22    14    21    
+Daphne:    36    21    0    
+Velma:    25    12    15    
+day 27, Sunday
+
+Tracker: Day 27
+Clerk:   Items_Sold   Items_Purchased   Items_Damaged
+Shaggy:    22    14    21    
+Daphne:    36    21    0    
+Velma:    25    12    15    
+day 28, Monday
+Velma has arrived at the store
+[1, 1, 1, 3, 1, 1, 1, 3, 2, 2, 1, 2, 3, 1, 2, 1, 1, 1, 1, 1, 1, 3, 3, 2, 1, 3, 1, 3, 3, 2, 2, 2, 2]
+$4259.1694 left in the register
+Store is out of Guitar
+Store is out of Bass
+Store is out of CD
+Store is out of MP3Player
+Now tuning Cordae's CassettePlayer
+Now tuning Cordae's CassettePlayer
+Now tuning Cordae's CassettePlayer
+Store is out of Mandolin
+Now tuning Ann's Flute
+Ann's Flute was damaged during tuning and is now in good condition.
+Store is out of Strings
+Store is out of Cables
+Store is out of Shirts
+Store is out of PracticeAmps
+Store is out of Harmonica
+Store is out of CDPlayer
+Store is out of Bandanas
+Store is out of Saxophone
+Store is out of RecordPlayer
+Total Inventory: 473.90002
+The store is now open!
+The customer is trying to buy Flute
+Velma sold a Flute to the customer for 76.80
+4335.969
+
+The customer is trying to buy Bass
+The customer tried to buy a Bass but we were out of stock, so they left.
+The customer is trying to buy GigBag
+Velma sold a GigBag to the customer for 103.40
+4439.369
+
+The customer is trying to buy Harmonica
+The customer tried to buy a Harmonica but we were out of stock, so they left.
+The customer is trying to buy Mandolin
+The customer tried to buy a Mandolin but we were out of stock, so they left.
+The customer is trying to buy CDPlayer
+The customer tried to buy a CDPlayer but we were out of stock, so they left.
+Customer wanted to sell a Shirts but store no longer supports them, so they left.
+
+Customer took the first deal and sold a Cassette for 29.00 dollars
+
+Cleaning up the store!
+Store has been cleaned up!
+Velma has left the store
+Items arrived: 
+see 23 bass, see 59 bass, see 67 bass, random flute 91, random flute 92, random flute 38, random flute 26, random flute 79, random flute 45, Unpredictable Harmonica 8, Unpredictable Harmonica 1, Unpredictable Harmonica 49, Unpredictable Harmonica 29, Unpredictable Harmonica 11, Unpredictable Harmonica 47, Vinyl:99nodes for you, Vinyl:12nodes for you, Vinyl:15nodes for you, number 94 mandolin, number 1 mandolin, number 73 mandolin, 88 coil string, 99 coil string, 28 coil string, CD Player 74, CD Player 10, CD Player 87, Vinyl:92nodes for you, Vinyl:61nodes for you, Vinyl:16nodes for you, number 52 mandolin, number 52 mandolin, number 14 mandolin, 
+Tracker: Day 28
+Clerk:   Items_Sold   Items_Purchased   Items_Damaged
+Shaggy:    22    14    21    
+Daphne:    36    21    0    
+Velma:    27    13    16    
+day 29, Tuesday
+Velma has arrived at the store
+[1, 3, 1, 3, 1, 1, 2, 2, 2, 1, 1, 1, 2, 2, 1, 3, 3, 2, 1, 1, 1, 1, 3, 2, 1, 1, 2, 2, 3, 2, 1, 3, 2, 3]
+$4410.369 left in the register
+Store is out of Guitar
+Store is out of Bass
+Store is out of CD
+Store is out of MP3Player
+Now tuning Cordae's CassettePlayer
+Now tuning Cordae's CassettePlayer
+Now tuning Cordae's CassettePlayer
+Store is out of Mandolin
+Store is out of Flute
+Store is out of Strings
+Store is out of Cables
+Store is out of Shirts
+Store is out of PracticeAmps
+Store is out of Harmonica
+Store is out of CDPlayer
+Store is out of Bandanas
+Store is out of Saxophone
+Store is out of RecordPlayer
+Total Inventory: 403.2
+The store is now open!
+The customer is trying to buy PracticeAmps
+The customer tried to buy a PracticeAmps but we were out of stock, so they left.
+The customer is trying to buy Harmonica
+The customer tried to buy a Harmonica but we were out of stock, so they left.
+The customer is trying to buy CassettePlayer
+Velma sold a CassettePlayer to the customer with a 10% discount for 47.52
+4457.889
+
+The customer is trying to buy MP3Player
+The customer tried to buy a MP3Player but we were out of stock, so they left.
+Customer wanted to sell a PaperScore but did not accept the offered deal.
+
+Customer took the first deal and sold a Mandolin for 45.00 dollars
+
+Customer took the second deal and sold a Vinyl for 63.80 dollars
+
+Cleaning up the store!
+Store has been cleaned up!
+Velma has left the store
+Items arrived: 
+Random Amp 41, Random Amp 67, Random Amp 0, Type 6 Cable, Type 88 Cable, Type 81 Cable, random flute 47, random flute 86, random flute 19, random flute 59, random flute 0, random flute 89, 54 sax, 5 sax, 75 sax, monkey CD 70, monkey CD 53, monkey CD 2, Random Amp 48, Random Amp 55, Random Amp 21, CD Player 55, CD Player 28, CD Player 48, monkey CD 19, monkey CD 45, monkey CD 41, Unpredictable Harmonica 7, Unpredictable Harmonica 80, Unpredictable Harmonica 80, 
+Tracker: Day 29
+Clerk:   Items_Sold   Items_Purchased   Items_Damaged
+Shaggy:    22    14    21    
+Daphne:    36    21    0    
+Velma:    28    15    16    
 Results!
 Items sold:
-CDplayer alpha, vertex cover, CIO Cable, forky, burpy bumper, coil string, SAM Cable, Horse Harmonica, top hats, blue ice, paper score 1, Volume Amp, Record Player01, crimson flame, shoe string, Echo Amp, cool shirt, clurpy clumper, stupendous flute, baseballs, banana, coloring, CDplayer beta, school shirt, flop caps, octopus, CDplayer omega, yellow snow, metal string, paper score 3, Jerry's PaperScore, Hippo Harmonica, tail swing, tree jumper, Claire's CD, pool shirt, depth first search for you, MP3 Player baby, Sam's Shirt, Record Player10, clop hats, sporky, durpy dumper, Hamster Harmonica, Chris' Harmonica, FoodnStuff Hat, Reverb Amp, Andy's PracticeAmp, happy flute, Record Player11, Ron's RecordPlayer, Leslie's CDPlayer, Benny's Bass, Jerry's PaperScore, MP3 Player teenager, Jerry's PaperScore, Leslie's CDPlayer, MP3 Player elderly, Ron's RecordPlayer, picky flute, Ron's RecordPlayer, Ron's RecordPlayer, Sam's Shirt, Bobby's Strings, SRS Cable, Benny's Bass, Benny's Bass, Ann's Flute, Benny's Bass, Leslie's CDPlayer, Chris' Harmonica, Donna's Vinyl, Sam's Shirt, forky sporky, Tom's MP3Player, Chris' Harmonica, Sales Total: 3926.6803482808023
-Money In Register: 2892.2812
+paper score 1, Blue CassettePlayer, burpy bumper, Kids Cassette, Golden Sax, stupendous flute, CIO Cable, forky, banana, Dirty CassettePlayer, Jazz CassettePlayer, octopus, SAM Cable, sporky, Bronze GigBag, Old Cassette, blue ice, tail swing, top hats, cool shirt, Volume Amp, crimson flame, happy flute, SRS Cable, coil string, Echo Amp, yellow snow, CDplayer alpha, paper score 3, Record Player01, forky sporky, Pokemon GigBag, Jerry's PaperScore, shoe string, Reverb Amp, Jake's Guitar, picky flute, Evil GigBag, metal string, clurpy clumper, MP3 Player baby, flop caps, Horse Harmonica, Andy's PracticeAmp, MP3 Player elderly, school shirt, Tom's MP3Player, Hippo Harmonica, Jazz Sax, Blues Sax, Tom's MP3Player, Cordae's CassettePlayer, Ann's Flute, Tom's MP3Player, Ann's Flute, Hamster Harmonica, Jazz Cassette, pool shirt, vertex cover, Andy's PracticeAmp, Candice's Cassette, Sam's Shirt, Liam's Mandolin, coloring, clop hats, depth first search for you, Record Player10, Record Player11, baseballs, Chris' Harmonica, trucks, Bobby's Strings, durpy dumper, Donna's Vinyl, Liam's Mandolin, Candice's Cassette, Ann's Flute, Susies's Saxophone, Susies's Saxophone, CDplayer beta, tree jumper, Liam's Mandolin, Giannis' GigBag, Benny's Bass, Ron's RecordPlayer, Donna's Vinyl, donuts, FoodnStuff Hat, Giannis' GigBag, Jerry's PaperScore, Susies's Saxophone, Ann's Flute, Giannis' GigBag, Cordae's CassettePlayer, Sales Total: 4990.08946668823
+Money In Register: 4349.0894
 Money Added From Bank: 1000.0
