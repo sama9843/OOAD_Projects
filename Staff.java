@@ -11,8 +11,6 @@ abstract class Staff{
     //attributes protected by encapsulation
     private String name;
     private int daysWorked;
-    // list for subscribed obervers
-    ArrayList<EventConsumer> subs = new ArrayList<EventConsumer>();
     //abstract methods
     abstract void arriveAtStore();
     abstract void leaveTheStore();
@@ -30,7 +28,8 @@ abstract class Staff{
 class Clerk extends Staff{
     private double carefulness;
     private TuneBehavior tuneBehavior;
-
+    // list for subscribed obervers
+    private ArrayList<EventConsumer> subs = new ArrayList<EventConsumer>();
     //constructor
     public Clerk(String name,int worked, double careful, TuneBehavior tuneBehavior){
         super(name, worked);
@@ -54,15 +53,16 @@ class Clerk extends Staff{
     // add new sub
     public void addSubscription(EventConsumer sub) {subs.add(sub);}
     // deletes oldest logger
-    public void removeLogger(Logger l) {
-        for (EventConsumer ec : subs) {
-            if (ec instanceof Logger) {
-                subs.remove(ec);
+    public void removeLogger() {
+        for (int i = 0; i < subs.size(); i++) {
+            if (subs.get(i) instanceof Logger) {
+                subs.remove(i);
+                break;
             }
         }
     }
     // updates all loggers
-    private void updateLoggers(String event_name, String info_str, Double info_dbl) {
+    public void updateLoggers(String event_name, String info_str, Double info_dbl) {
         for (EventConsumer lg : subs) {
             if (lg instanceof Logger) {
                 lg.update(event_name, info_str, info_dbl);
@@ -70,7 +70,7 @@ class Clerk extends Staff{
         }
     }
     // updates all trackers
-    private void updateTrackers(String tag, Double count) {
+    public void updateTrackers(String tag, Double count) {
         for (EventConsumer tr : subs) {
             if (tr instanceof Tracker) {
                 tr.update(this.toString(), tag, count);

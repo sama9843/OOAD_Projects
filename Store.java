@@ -250,11 +250,16 @@ public class Store {
             
             if (days % 7 != 6) {
                 Clerk clerk = this.getClerk();
-
+                // get a new logger for the day, and subscribe to the clerk
+                Logger log = new Logger(days);
+                clerk.removeLogger();
+                clerk.addSubscription(log);
                 // arrive at the store
                 clerk.arriveAtStore();
                 shipments.addAll(advance_day());
-                // UPDATE LOGGER HERE
+                // update logger for shipments
+                clerk.updateLoggers("ArriveAtStoreShipments", "", Double.valueOf(shipments.size()));
+                
                 // check that the register has money
                 if(this.money != clerk.checkRegister(this.money)){
                     this.money += 1000;

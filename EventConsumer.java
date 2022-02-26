@@ -33,14 +33,14 @@ class Logger implements EventConsumer {
                     log.write( info_str + " arrived at the store. \n");
                     break;
                 case "ArriveAtStoreShipments":
-                    log.write( info_str + " arrived at the store. \n");
+                    log.write( info_dbl.intValue() + " items were added to inventory. \n");
                     break;
                 case "CheckRegister":
                 case "GoToBank":
                     log.write("There is " + info_dbl + "$ in the register. \n");
                     break;
                 case "DoInventory":
-                    log.write("There are " + info_dbl.intValue() + info_str + ". \n");
+                    log.write("There are " + info_dbl.intValue() + " " + info_str + ". \n");
                     break;
                 case "PlaceAnOrder":
                     log.write( info_dbl + " items were ordered. \n");
@@ -49,7 +49,7 @@ class Logger implements EventConsumer {
                     log.write("In store opening, " + info_dbl.intValue() + " items were " + info_str + ".\n");
                     break;
                 case "CleanTheStore":
-                    log.write("During store cleaning, " + info_dbl.intValue() + "items were broken\n");
+                    log.write("During store cleaning, " + info_dbl.intValue() + " items were broken\n");
                     break;
                 case "LeaveTheStore":
                     log.write( info_str + " has left the store.\n");
