@@ -1,4 +1,5 @@
 import java.util.Random;
+//STRATEGY PATTERN
 //Manual
 public class Manual implements TuneBehavior{
     @Override

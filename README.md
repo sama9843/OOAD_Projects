@@ -4,18 +4,8 @@ java version "1.8.0_171"
 The Store class simulates the 30 days using its staff members, and Item collections.
 The Staff interacts with Customers to buy and sell Items
 
-OOAD Terms:
--Inheritance: example found in Item.java (line 42)
--Polymorphism: example found in Customer.java (line 58)
--Cohesion: example found in Customer.java (line 4)
--Identity: example found in Store.java (line 119)
--Encapsulation: example found in Item.java (line 4)
--Abstraction: example found in Item.java (line 1)
+Oberver Design Pattern: Found in EventConsumer.java(whole file) , Store.java(line 142) , Staff.java(line 55)
 
-Oberver Design Pattern:
-each observer implements the EventConsumer interface.
-obervers subscribe to clerks
-
-Important Files: Item.java , Customer.java , Staff.java  Store.java  Main.java , Output.txt , Proj2_UML_Updated.pdf
+Strategy Design Pattern: Found in TuneBehavior.java(whole file) , Manual.Java(whole file) , Haphazard.Java(whole file) , Electronic.Java(whole file) , Staff.java(line 82)
 
 Project 2: Can be found in the project2 branch
