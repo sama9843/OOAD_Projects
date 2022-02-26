@@ -1,4 +1,5 @@
 import java.util.Random;
+//STRATEGY PATTERN
 //Haphazard
 public class Haphazard implements TuneBehavior{
     @Override

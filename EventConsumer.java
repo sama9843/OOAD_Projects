@@ -5,6 +5,7 @@ import java.util.Arrays;
 import java.io.FileWriter;
 import java.io.IOException; 
 
+//OBSERVER PATTERN
 // adapted from https://www.baeldung.com/java-observer-pattern
 // The store will have a list of EventConsumers
 public interface EventConsumer {

@@ -11,6 +11,7 @@ abstract class Staff{
     //attributes protected by encapsulation
     private String name;
     private int daysWorked;
+    //OBSERVER PATTERN
     // list for subscribed obervers
     ArrayList<EventConsumer> subs = new ArrayList<EventConsumer>();
     //abstract methods
@@ -51,6 +52,7 @@ class Clerk extends Staff{
     //getter methods
     public double getCarefulness(){return carefulness;}
     // methods to manage subscriptions
+    //OBSERVER PATTERN
     // add new sub
     public void addSubscription(EventConsumer sub) {subs.add(sub);}
     // deletes oldest logger
@@ -77,7 +79,7 @@ class Clerk extends Staff{
             }
         }
     }
-    //strategy method
+    //STRATEGY PATTERN
     public Boolean performTune(Item item){
         return tuneBehavior.tune(item);
     }
@@ -129,6 +131,7 @@ class Clerk extends Staff{
                 }
             }
         }
+        //OBSERVER PATTERN
         // let the subscribers know whats happening
         updateLoggers("DoInventory", "items in inventory", Double.valueOf(inventory.size()));
         updateLoggers("DoInventory", "dollars worth of items in inventory", Double.valueOf(value));
@@ -192,6 +195,7 @@ class Clerk extends Staff{
             System.out.println();
 
         }
+        //OBSERVER PATTERN
         // update subscribers
         updateLoggers("OpenTheStore", "sold", sells);
         updateLoggers("OpenTheStore", "purchased", buys);
