@@ -24,11 +24,9 @@ public class Store {
 
     // list of employees
     List<Clerk> employees = new ArrayList<Clerk>();
-    //OBSERVER PATTERN
-    // tracker observer for store
-    Tracker tracker;
-    
 
+    // log book
+    List<String> log;
     public Store() {
         money = 0;
         orders = new ArrayList<List<Item>>();
@@ -102,22 +100,23 @@ public class Store {
         inventory.put("Strings", new ArrayList<Item>(Arrays.asList(new Strings("coil string", "A"),
                                                 new Strings("shoe string", "B"),
                                                 new Strings("metal string", "C")))); 
-        // Saxophone
-        inventory.put("Saxophone", new ArrayList<Item>(Arrays.asList(new Saxophone("Golden Sax", "Tenor"),
-                                                new Saxophone("Jazz Sax", "Alto"),
-                                                new Saxophone("Blues Sax", "Tenor")))); 
-        // Cassette
-        inventory.put("Cassette", new ArrayList<Item>(Arrays.asList(new Cassette("Kids Cassette", "Jamz","The Jamz"),
-                                                new Cassette("Old Cassette", "Old Head","1800's"),
-                                                new Cassette("Jazz Cassette", "Big Jazz","Smooth Tunes"))));  
-        // CassettePlayer
-        inventory.put("CassettePlayer", new ArrayList<Item>(Arrays.asList(new CassettePlayer("Blue CassettePlayer"),
-                                                new CassettePlayer("Dirty CassettePlayer"),
-                                                new CassettePlayer("Jazz CassettePlayer")))); 
+        // Cassette Players
+        inventory.put("CassettePlayer", new ArrayList<Item>(Arrays.asList(new CassettePlayer("cp1"),
+                                                            new CassettePlayer("cp2"),
+                                                            new CassettePlayer("cp3")))); 
+        // Saxaphones
+        inventory.put("Saxophone", new ArrayList<Item>(Arrays.asList(new Saxophone("sax1", "standard"),
+                                                                        new Saxophone("sax2", "alto"),
+                                                                        new Saxophone("sax3", "standard")))); 
+        // Cassettes
+        inventory.put("Cassette", new ArrayList<Item>(Arrays.asList(new Cassette("Cass1", "band1", "album1"),
+                                                                    new Cassette("Cass2", "band1", "album2"),
+                                                                    new Cassette("Cass3", "band2", "album2")))); 
+
         // GigBag
-        inventory.put("GigBag", new ArrayList<Item>(Arrays.asList(new GigBag("Bronze GigBag"),
-                                                new GigBag("Pokemon GigBag"),
-                                                new GigBag("Evil GigBag")))); 
+        inventory.put("GigBag", new ArrayList<Item>(Arrays.asList(new GigBag("gb1"),
+                                                                    new GigBag("gb2"),
+                                                                    new GigBag("gb3")))); 
         // prices
         Random rand = new Random();
         for (String s : inventory.keySet()) {
@@ -137,14 +136,7 @@ public class Store {
         //IDENTITY: employees shaggy and velma each have a unique identity
         employees.add(new Clerk("Shaggy", 0, 0.2,new Haphazard()));
         employees.add(new Clerk("Velma", 0, 0.05,new Manual()));
-        employees.add(new Clerk("Daphne", 0, 0.04,new Electronic()));
-        //OBSERVER PATTERN
-        // tie tracker to employees
-        tracker = new Tracker();
-        for (Clerk emp : employees) {
-            emp.addSubscription(tracker);
-            tracker.add(emp.toString());
-        }
+        employees.add(new Clerk("Daphne", 0, 0.01,new Electronic()));
     }
     // getters
     public Map<String, ArrayList<Item>> getInventory() {return this.inventory;}
@@ -157,6 +149,9 @@ public class Store {
 
     public void add_money(int diff) {
         this.money += diff;
+    }
+    public void log(String s) {
+        this.log.add(s);
     }
 
     // place an order, returns price
@@ -195,7 +190,7 @@ public class Store {
             switch (item_type) {
                 case "PaperScore": i.add(new PaperScore("PaperScore Symphony " + n, "random randies", "snowmen")); break;
                 case "CD": i.add(new CD("monkey CD " + n,"the" + n + " monkeys","junglevania")); break;
-                case "Vinyl": i.add(new Vinyl("Vinyl:" + n + "nodes for you", "mr. graph", "vertex romance")); break;
+                case "Vynil": i.add(new Vinyl("Vynil:" + n + "nodes for you", "mr. graph", "vertex romance")); break;
                 case "CDPlayer": i.add(new CDPlayer("CD Player " + n)); break;
                 case "RecordPlayer": i.add(new RecordPlayer("Record Player " + n)); break;
                 case "MP3Player": i.add(new MP3Player("MP3 Player " + n)); break;
@@ -248,25 +243,20 @@ public class Store {
     }
 
     public void simulate(int total_days) {
-
+        // Random rand = new Random();
         List<Item> shipments = new ArrayList<Item>();
         System.out.println("initializing world...");
         for (int days = 0; days < total_days; days++) {
             // store doesnt operate on sundays
             System.out.println("day " + days + ", " + get_week_day(days));
-            
+
             if (days % 7 != 6) {
                 Clerk clerk = this.getClerk();
-                // get a new logger for the day, and subscribe to the clerk
-                Logger log = new Logger(days);
-                clerk.removeLogger();
-                clerk.addSubscription(log);
+
                 // arrive at the store
                 clerk.arriveAtStore();
                 shipments.addAll(advance_day());
-                // update logger for shipments
-                clerk.updateLoggers("ArriveAtStoreShipments", "", Double.valueOf(shipments.size()));
-                
+
                 // check that the register has money
                 if(this.money != clerk.checkRegister(this.money)){
                     this.money += 1000;
@@ -293,11 +283,10 @@ public class Store {
                 shipments.clear();
                 // order placed if needed
                 // clerk does stuff here after too pls
+                
 
             } 
             else System.out.println();
-            // print tracker for the day
-            tracker.print(days);
         }
         System.out.println("Results!");
         System.out.println("Items sold:");
