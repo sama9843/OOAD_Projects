@@ -112,21 +112,22 @@ class Clerk extends Staff{
                 if (s == "Hats" || s == "Shirts" || s == "Bandanas") continue;
                 outOfStock.add(s);
             } else {
-                for(Item i : inventory.get(s)) {
-                    if(i.getClass().getSuperclass().getName() == "Players" ||
-                    i.getClass().getSuperclass().getName() == "Strings" || 
-                    i.getClass().getSuperclass().getName() == "Wind") {
-                    System.out.println("Now tuning " + i.getName());
-                    if(performTune(i)) {
-                        Random rand = new Random();
-                        if(rand.nextDouble() < 1) {
-                            //System.out.println("Unfortunately, " + i.getName() + " was damaged during tuning and is now in " + i.getCondition() + " condition.");
-                            damageItem(inventory, i);
-                            damage_count++;
-                        }
-                    };
+                for(int i = 0; i < inventory.get(s).size(); i++) {
+                    if(inventory.get(s).get(i).getClass().getSuperclass().getName() == "Players" ||
+                    inventory.get(s).get(i).getClass().getSuperclass().getName() == "Stringed" || 
+                    inventory.get(s).get(i).getClass().getSuperclass().getName() == "Wind") {
+                        System.out.println("Now tuning " + inventory.get(s).get(i).getName());
+                        if(performTune(inventory.get(s).get(i))) {
+                            Random rand = new Random();
+                            if(rand.nextDouble() < 1) {
+                                //System.out.println("Unfortunately, " + i.getName() + " was damaged during tuning and is now in " + i.getCondition() + " condition.");
+                                damageItem(inventory, inventory.get(s).get(i));
+                                damage_count++;
+                            }
+                        };
                     }
-                    value += i.getPurchasePrice();
+                    if(i < inventory.get(s).size())
+                        value += inventory.get(s).get(i).getPurchasePrice();
                 }
             }
         }
@@ -176,12 +177,14 @@ class Clerk extends Staff{
 
         // sell the items to the buyers
         for(Buyer b : buyers){
-            Item sold = this.sell(b, inventory);
-            if(sold != null) {
-                itemsSold.add(sold);
-                register += sold.getSalePrice();
-                System.out.println(register);
-                System.out.println();
+            ArrayList<Item> sold = this.sell(b, inventory);
+            if(sold.size() > 0 ) {
+                itemsSold.addAll(sold);
+                // System.out.println(itemsSold);
+                for(Item i : sold) {
+                    register += i.getSalePrice();
+                }
+                System.out.println(register + "\n");
                 sells++;
             }
         }
@@ -209,6 +212,7 @@ class Clerk extends Staff{
             switch (item.getCondition()) {
                 case "Poor":
                 System.out.println(item + " was damaged beyond repair!");
+                inventory.get(item.getClass().getName()).remove(inventory.get(item.getClass().getName()).indexOf(item));
                 break;
             case "Fair":;
                 System.out.println(item.getName() + " was damaged during tuning and is now in poor condition.");
@@ -283,39 +287,58 @@ class Clerk extends Staff{
         System.out.println("Store has been cleaned up!");
     }
 
-    public Item sell(Buyer b, Map<String, ArrayList<Item>> inventory){
+    public ArrayList<Item> sell(Buyer b, Map<String, ArrayList<Item>> inventory){
         // get type of item to sell
         String itemToBuy = b.getItem().thisIs();
+
+        // in case we sell accessories, we want to return all the bought items
+        ArrayList<Item> items = new ArrayList<Item>();
 
         System.out.println("The customer is trying to buy " + itemToBuy);
 
         // get all the items of the type to buy
         ArrayList<Item> typeMatches = inventory.get(itemToBuy);
 
+        // System.out.println(typeMatches);
         // no items of type
         if(typeMatches.size() == 0){
             if (itemToBuy == "Hats" || itemToBuy == "Shirts" || itemToBuy == "Bandanas") {
                 System.out.println("The customer tried to buy a " + itemToBuy + " but they are no longer sold, so they left.");
             } else 
             System.out.println("The customer tried to buy a " + itemToBuy + " but we were out of stock, so they left.");
-        }else{
+        }else {
             if(b.getDeal1()){
                 //50% chance customer accepts deal1
                 //sets saleprice and removes from inventory
                 System.out.println(this + " sold a " + itemToBuy + " to the customer for " + df.format(typeMatches.get(0).getListPrice()));
+
                 inventory.get(itemToBuy).get(0).setSalePrice(inventory.get(itemToBuy).get(0).getListPrice());
-                return inventory.get(itemToBuy).remove(0);
+
+
+                if(typeMatches.get(0).getClass().getSuperclass().getName() == "Stringed") {
+                    StringedDecorator stringedDecorator = new StringedDecorator((Stringed) typeMatches.get(0));
+                    items.addAll(stringedDecorator.sellAccessory(inventory));
+                }
+                items.add(inventory.get(itemToBuy).remove(0));
+                return items;
             } else if(b.getDeal2()){
                 //75% chance customer accepts deal2
                 //sets saleprice with 10% discount and removes from inventory
+                // System.out.println(inventory.get(itemToBuy).get(0).getClass().getName());
                 System.out.println(this + " sold a " + itemToBuy + " to the customer with a 10% discount for " + df.format(typeMatches.get(0).getListPrice()*0.9));
                 inventory.get(itemToBuy).get(0).setSalePrice(inventory.get(itemToBuy).get(0).getListPrice() * 0.9);
-                return inventory.get(itemToBuy).remove(0);
+
+                if(typeMatches.get(0).getClass().getSuperclass().getName() == "Stringed") {
+                    StringedDecorator stringedDecorator = new StringedDecorator((Stringed) typeMatches.get(0));
+                    items.addAll(stringedDecorator.sellAccessory(inventory));
+                }
+                items.add(inventory.get(itemToBuy).remove(0));
+                return items;
             } else {
-                System.out.println("The customer did not want to pay " + df.format(typeMatches.get(0).getListPrice()) + " for " + typeMatches.get(0).thisIs());
+                System.out.println("The customer did not want to pay " + df.format(typeMatches.get(0).getListPrice()) + " for " + typeMatches.get(0).thisIs() + "\n");
             }
         }
-        return null;
+        return items;
     }
 
     public float buy(Item customerItem, Customer c, Map<String, ArrayList<Item>> inventory){
