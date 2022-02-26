@@ -59,7 +59,6 @@ class Logger implements EventConsumer {
                     log.write(info_dbl + info_str);
             }
             log.close();
-            System.out.println("Successfully wrote to the log.");
           } catch (IOException e) {
             System.out.println("An error occurred in file write.");
             e.printStackTrace();

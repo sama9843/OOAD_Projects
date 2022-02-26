@@ -202,7 +202,7 @@ public class Store {
                 case "Guitar": i.add(new Guitar("style " + n + " guitar", rand.nextBoolean())); break;
                 case "Bass": i.add(new Bass("see " + n + " bass", rand.nextBoolean())); break;
                 case "Mandolin": i.add(new Guitar("number " + n + " mandolin", rand.nextBoolean())); break;
-                case "Flute": inventory.get("Flute").add(new Flute("random flute " + n, "type" + rand.nextInt())); break;
+                case "Flute": i.add(new Flute("random flute " + n, "type" + rand.nextInt())); break;
                 case "Harmonica": i.add(new Harmonica("Unpredictable Harmonica " + n, "key " + rand.nextInt())); break;
                 case "Hats": i.add(new Hats("number " + n + " hats", "size: " + rand.nextInt())); break;
                 case "Shirt": i.add(new Shirts("highway " + n + n +  " shirt", "size: " + rand.nextInt())); break;
@@ -214,12 +214,17 @@ public class Store {
                 case "Cassette": i.add(new Cassette(n + " cassette" , "band: " + rand.nextInt(9), "album: " + rand.nextInt(9))); break;
                 case "CassettePlayer": i.add(new CassettePlayer(n + " cassetteplayer")); break;
                 case "GigBag": i.add(new GigBag(n + " gigbag")); break;
-                default: break;
+                default: 
+                    System.out.println("ITEM NOT FOUND!!!!!!!" + item_type);
+                    break;
             }
 
         }
         for (Item it : i) {
-            it.setPrice(rand.nextDouble()*50);
+            it.setPrice(rand.nextDouble()*49 + 1);
+            // set the condition of the item
+            String[] conds = {"Poor", "Fair", "Good", "Very Good", "Excellent"};
+            it.setCondition(conds[rand.nextInt(conds.length)]);
         }
         return i;
         
@@ -268,9 +273,10 @@ public class Store {
                     this.debt += 1000;
                 }
 
-                // check the inventory
-                clerk.doInventory(inventory);
-
+                // check the inventory and order out of stock items
+                ArrayList<String> OutOfStock = clerk.doInventory(inventory);
+                for (String item : OutOfStock) placeOrder(item);
+                
                 // open the store for the day
                 money = clerk.openTheStore(this.inventory, this.money, this.itemsSold);
                 // clean the store
