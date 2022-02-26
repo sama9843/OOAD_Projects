@@ -8,4 +8,6 @@ Oberver Design Pattern: Found in EventConsumer.java(whole file) , Store.java(lin
 
 Strategy Design Pattern: Found in TuneBehavior.java(whole file) , Manual.Java(whole file) , Haphazard.Java(whole file) , Electronic.Java(whole file) , Staff.java(line 82)
 
+Decorator Design Pattern: Found in EventConsumer.java(whole file)
+
 Project 2: Can be found in the project2 branch
