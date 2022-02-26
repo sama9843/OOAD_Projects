@@ -111,21 +111,22 @@ class Clerk extends Staff{
                 if (s == "Hats" || s == "Shirts" || s == "Bandanas") continue;
                 outOfStock.add(s);
             } else {
-                for(Item i : inventory.get(s)) {
-                    if(i.getClass().getSuperclass().getName() == "Players" ||
-                    i.getClass().getSuperclass().getName() == "Stringed" || 
-                    i.getClass().getSuperclass().getName() == "Wind") {
-                    System.out.println("Now tuning " + i.getName());
-                    if(performTune(i)) {
-                        Random rand = new Random();
-                        if(rand.nextDouble() < 1) {
-                            //System.out.println("Unfortunately, " + i.getName() + " was damaged during tuning and is now in " + i.getCondition() + " condition.");
-                            damageItem(inventory, i);
-                            damage_count++;
-                        }
-                    };
+                for(int i = 0; i < inventory.get(s).size(); i++) {
+                    if(inventory.get(s).get(i).getClass().getSuperclass().getName() == "Players" ||
+                    inventory.get(s).get(i).getClass().getSuperclass().getName() == "Stringed" || 
+                    inventory.get(s).get(i).getClass().getSuperclass().getName() == "Wind") {
+                        System.out.println("Now tuning " + inventory.get(s).get(i).getName());
+                        if(performTune(inventory.get(s).get(i))) {
+                            Random rand = new Random();
+                            if(rand.nextDouble() < 1) {
+                                //System.out.println("Unfortunately, " + i.getName() + " was damaged during tuning and is now in " + i.getCondition() + " condition.");
+                                damageItem(inventory, inventory.get(s).get(i));
+                                damage_count++;
+                            }
+                        };
                     }
-                    value += i.getPurchasePrice();
+                    if(i < inventory.get(s).size())
+                        value += inventory.get(s).get(i).getPurchasePrice();
                 }
             }
         }
@@ -208,7 +209,7 @@ class Clerk extends Staff{
             switch (item.getCondition()) {
                 case "Poor":
                 System.out.println(item + " was damaged beyond repair!");
-                inventory.get(item.getClass().getSuperclass().getName()).remove(item);
+                inventory.get(item.getClass().getName()).remove(inventory.get(item.getClass().getName()).indexOf(item));
                 break;
             case "Fair":
                 System.out.println(item.getName() + " was damaged during tuning and is now in poor condition.");
