@@ -11,3 +11,5 @@ Strategy Design Pattern: Found in TuneBehavior.java(whole file) , Manual.Java(wh
 Decorator Design Pattern: Found in EventConsumer.java(whole file)
 
 Project 2: Can be found in the project2 branch
+
+Project 3: Can be found in the project3 branch
