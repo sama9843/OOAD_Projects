@@ -135,9 +135,9 @@ public class Store {
         }
         // employees
         //IDENTITY: employees shaggy and velma each have a unique identity
-        employees.add(new Clerk("Shaggy", 0, 0.2,new Haphazard()));
-        employees.add(new Clerk("Velma", 0, 0.05,new Manual()));
-        employees.add(new Clerk("Daphne", 0, 0.04,new Electronic()));
+        employees.add(new Clerk("Shaggy", 0.2,new Haphazard()));
+        employees.add(new Clerk("Velma", 0.05,new Manual()));
+        employees.add(new Clerk("Daphne", 0.04,new Electronic()));
         //OBSERVER PATTERN
         // tie tracker to employees
         tracker = new Tracker();

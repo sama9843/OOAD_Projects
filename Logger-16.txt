@@ -1,9 +1,9 @@
-Daphne arrived at the store. 
-24 items were added to inventory. 
-There is 2713.000732421875$ in the register. 
+Velma arrived at the store. 
+18 items were added to inventory. 
+There is 3715.933349609375$ in the register. 
 There are 21 items in inventory. 
-There are 735 dollars worth of items in inventory. 
-There are 0 items damaged in tuning. 
-In store opening, 3 items were sold.
+There are 581 dollars worth of items in inventory. 
+There are 2 items damaged in tuning. 
+In store opening, 1 items were sold.
 In store opening, 3 items were purchased.
-Daphne has left the store.
+Velma has left the store.

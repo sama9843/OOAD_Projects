@@ -15,9 +15,9 @@ abstract class Staff{
     abstract void arriveAtStore();
     abstract void leaveTheStore();
     //constructor
-    public Staff(String name, int worked){
+    public Staff(String name){
         this.name = name;
-        daysWorked = worked;
+        daysWorked = 0;
     }
     //getter method
     public double getDaysWorked(){return daysWorked;}
@@ -31,8 +31,8 @@ class Clerk extends Staff{
     // list for subscribed obervers
     private ArrayList<EventConsumer> subs = new ArrayList<EventConsumer>();
     //constructor
-    public Clerk(String name,int worked, double careful, TuneBehavior tuneBehavior){
-        super(name, worked);
+    public Clerk(String name, double careful, TuneBehavior tuneBehavior){
+        super(name);
         this.carefulness = careful;
         this.tuneBehavior = tuneBehavior;
     }

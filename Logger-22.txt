@@ -1,9 +1,9 @@
-Daphne arrived at the store. 
-21 items were added to inventory. 
-There is 3119.84326171875$ in the register. 
+Shaggy arrived at the store. 
+27 items were added to inventory. 
+There is 3702.96240234375$ in the register. 
 There are 21 items in inventory. 
-There are 672 dollars worth of items in inventory. 
-There are 0 items damaged in tuning. 
-In store opening, 3 items were sold.
+There are 602 dollars worth of items in inventory. 
+There are 5 items damaged in tuning. 
+In store opening, 2 items were sold.
 In store opening, 1 items were purchased.
-Daphne has left the store.
+Shaggy has left the store.

@@ -1,9 +1,9 @@
-Shaggy arrived at the store. 
-12 items were added to inventory. 
-There is 2547.150634765625$ in the register. 
+Velma arrived at the store. 
+0 items were added to inventory. 
+There is 2694.3505859375$ in the register. 
 There are 21 items in inventory. 
-There are 705 dollars worth of items in inventory. 
-There are 4 items damaged in tuning. 
-In store opening, 2 items were sold.
-In store opening, 1 items were purchased.
-Shaggy has left the store.
+There are 1011 dollars worth of items in inventory. 
+There are 3 items damaged in tuning. 
+In store opening, 3 items were sold.
+In store opening, 2 items were purchased.
+Velma has left the store.
