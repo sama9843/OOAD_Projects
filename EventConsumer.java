@@ -13,8 +13,11 @@ public interface EventConsumer {
 }
 
 class Logger implements EventConsumer {
-    String filename;
-    public Logger(int day) {
+    // singleton instance with lazy instantiation
+    private static Logger singleInstance;
+    private String filename;
+    private Logger() {};
+    public void setdays(int day) {
         filename = "Logger-" + day + ".txt";
         // clears file if it exists
         try {
@@ -24,6 +27,13 @@ class Logger implements EventConsumer {
             e.printStackTrace();
         }
     }
+    // ensure only one instance
+    public static Logger getInstance() {
+        if (singleInstance == null) {
+            singleInstance = new Logger();
+        }
+        return singleInstance;
+    } 
     public void update(String event_str, String info_str, Double info_dbl) {
         // open log file
         // https://www.w3schools.com/java/java_files_create.asp
@@ -69,17 +79,20 @@ class Logger implements EventConsumer {
 }
 
 class Tracker implements EventConsumer {
+    // singleton instance with eager instantiaition
+    private static Tracker singleInstance = new Tracker();
+
     // map employee names to their data: Items Sold, Items Purchased, Items Damaged
-    Map<String, ArrayList<Integer>> data = new HashMap<String, ArrayList<Integer>> ();
+    private Map<String, ArrayList<Integer>> data = new HashMap<String, ArrayList<Integer>> ();
     // string to keep track of the current clerk performing the events
-    String clerk;
+    private String clerk;
     // initialize all values as zero for each employee
-    public Tracker() {};
-    public Tracker(ArrayList<String> names) {
-        for (String name : names) {
-            data.put(name, new ArrayList<Integer>( Arrays.asList(0,0,0)));
-        }
+    private Tracker() {};
+    // ensure onlt one instance
+    public static Tracker getInstance() {
+        return singleInstance;
     }
+
     public void update(String clerk, String tag, Double count) {
         // update clerk if needed
         if (this.clerk != clerk) this.clerk = clerk;

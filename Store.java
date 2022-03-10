@@ -140,7 +140,7 @@ public class Store {
         employees.add(new Clerk("Daphne", 0.04,new Electronic()));
         //OBSERVER PATTERN
         // tie tracker to employees
-        tracker = new Tracker();
+        tracker = Tracker.getInstance();
         for (Clerk emp : employees) {
             emp.addSubscription(tracker);
             tracker.add(emp.toString());
@@ -258,7 +258,8 @@ public class Store {
             if (days % 7 != 6) {
                 Clerk clerk = this.getClerk();
                 // get a new logger for the day, and subscribe to the clerk
-                Logger log = new Logger(days);
+                Logger log = Logger.getInstance();
+                log.setdays(days);
                 clerk.removeLogger();
                 clerk.addSubscription(log);
                 // arrive at the store
