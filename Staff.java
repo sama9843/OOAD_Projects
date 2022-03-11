@@ -40,11 +40,11 @@ class Clerk extends Staff{
     //implement abstract methods
     void arriveAtStore() {
         System.out.println(this + " has arrived at the store");
-        updateLoggers("ArriveAtStore", this.toString(), 0.0);
+        updateLoggers("ArriveAtStore", this.toString(), 0f);
     }
     void leaveTheStore(){ 
         System.out.println(this + " has left the store");
-        updateLoggers("LeaveTheStore", this.toString(), 0.0);
+        updateLoggers("LeaveTheStore", this.toString(), 0f);
     }
 
     //getter methods
@@ -63,7 +63,7 @@ class Clerk extends Staff{
         }
     }
     // updates all loggers
-    public void updateLoggers(String event_name, String info_str, Double info_dbl) {
+    public void updateLoggers(String event_name, String info_str, float info_dbl) {
         for (EventConsumer lg : subs) {
             if (lg instanceof Logger) {
                 lg.update(event_name, info_str, info_dbl);
@@ -71,7 +71,7 @@ class Clerk extends Staff{
         }
     }
     // updates all trackers
-    public void updateTrackers(String tag, Double count) {
+    public void updateTrackers(String tag, float count) {
         for (EventConsumer tr : subs) {
             if (tr instanceof Tracker) {
                 tr.update(this.toString(), tag, count);
@@ -90,8 +90,8 @@ class Clerk extends Staff{
         // if not enough money, go to the bank and pick up money
         if(reg < 75) {
             reg+= this.goToBank();
-            updateLoggers("GoToBank", "", Double.valueOf(reg));
-        } else updateLoggers("CheckRegister", "", Double.valueOf(reg));
+            updateLoggers("GoToBank", "", reg);
+        } else updateLoggers("CheckRegister", "", reg);
         return reg;
     }
 
@@ -133,10 +133,10 @@ class Clerk extends Staff{
         }
         //OBSERVER PATTERN
         // let the subscribers know whats happening
-        updateLoggers("DoInventory", "items in inventory", Double.valueOf(inventory.size()));
-        updateLoggers("DoInventory", "dollars worth of items in inventory", Double.valueOf(value));
-        updateLoggers("DoInventory", "items damaged in tuning", Double.valueOf(damage_count));
-        updateTrackers("damaged", Double.valueOf(damage_count));
+        updateLoggers("DoInventory", "items in inventory", Float.valueOf(inventory.size()));
+        updateLoggers("DoInventory", "dollars worth of items in inventory", value);
+        updateLoggers("DoInventory", "items damaged in tuning", Float.valueOf(damage_count));
+        updateTrackers("damaged", Float.valueOf(damage_count));
         System.out.println("Total Inventory: " + value);
         return outOfStock;
     }
@@ -160,8 +160,8 @@ class Clerk extends Staff{
         ArrayList<Buyer> buyers = new ArrayList<Buyer>();
         ArrayList<Seller> sellers = new ArrayList<Seller>();
         // track buys and sales
-        Double buys = 0.0;
-        Double sells = 0.0;
+        float buys = 0f;
+        float sells = 0f;
         Random rand = new Random();
 
         int k = getPoisson();
@@ -280,8 +280,8 @@ class Clerk extends Staff{
         System.out.println("Cleaning up the store!");
         if(rand.nextDouble() <= this.carefulness) {
             // FIX THIS NO OTEMS ARE DAMAGED
-            updateTrackers("damaged", 1.0);
-            updateLoggers("CleanTheStore", "", 1.0);
+            updateTrackers("damaged", 1f);
+            updateLoggers("CleanTheStore", "", 1f);
             damageItem(inventory, null);
         }
         System.out.println("Store has been cleaned up!");

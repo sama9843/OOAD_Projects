@@ -7,6 +7,8 @@ import java.util.Random;
 
 
 public class Store {
+    // name of store
+    private String name;
     // inventory is a Dictionary of a list of items
     Map<String, ArrayList<Item>> inventory = new HashMap<String, ArrayList<Item>> ();
     // orders are lists of items, order_days tracks the days left of each order index
@@ -145,6 +147,7 @@ public class Store {
             emp.addSubscription(tracker);
             tracker.add(emp.toString());
         }
+        name = "";
     }
     // getters
     public Map<String, ArrayList<Item>> getInventory() {return this.inventory;}
@@ -158,6 +161,7 @@ public class Store {
     public void add_money(int diff) {
         this.money += diff;
     }
+    public void set_name(String name) {this.name = name;}
 
     // place an order, returns price
     public int placeOrder(String item_type) {
@@ -250,7 +254,7 @@ public class Store {
     public void simulate(int total_days) {
 
         List<Item> shipments = new ArrayList<Item>();
-        System.out.println("initializing world...");
+        //System.out.println("initializing world...");
         for (int days = 0; days < total_days; days++) {
             // store doesnt operate on sundays
             System.out.println("day " + days + ", " + get_week_day(days));
@@ -266,7 +270,7 @@ public class Store {
                 clerk.arriveAtStore();
                 shipments.addAll(advance_day());
                 // update logger for shipments
-                clerk.updateLoggers("ArriveAtStoreShipments", "", Double.valueOf(shipments.size()));
+                clerk.updateLoggers("ArriveAtStoreShipments", "", Float.valueOf(shipments.size()));
                 
                 // check that the register has money
                 if(this.money != clerk.checkRegister(this.money)){
@@ -311,6 +315,59 @@ public class Store {
         System.out.println("Money In Register: " + getMoney());
         System.out.println("Money Added From Bank: " + getDebt());
     }
+
+    // runs the store for a day, and reports to the passed observer objects
+    public void simulate_day(int days, Tracker tracker, Logger log, List<Item> shipments) {
+        // store doesnt operate on sundays
+        System.out.println("day " + days + ", " + get_week_day(days));
+            
+        if (days % 7 != 6) {
+            Clerk clerk = this.getClerk();
+            // get a new logger for the day, and subscribe to the clerk
+            // LOG START WAS HERE
+            log.setdays(days);
+            log.update("Store: ", this.name + "\n" , 0f);
+            clerk.removeLogger();
+            clerk.addSubscription(log);
+            // arrive at the store
+            clerk.arriveAtStore();
+            shipments.addAll(advance_day());
+            // update logger for shipments
+            clerk.updateLoggers("ArriveAtStoreShipments", "", Float.valueOf(shipments.size()));
+            
+            // check that the register has money
+            if(this.money != clerk.checkRegister(this.money)){
+                this.money += 1000;
+                this.debt += 1000;
+            }
+
+            // check the inventory and order out of stock items
+            ArrayList<String> OutOfStock = clerk.doInventory(inventory);
+            for (String item : OutOfStock) placeOrder(item);
+            
+            // open the store for the day
+            money = clerk.openTheStore(this.inventory, this.money, this.itemsSold);
+            // clean the store
+            clerk.cleanTheStore(inventory);
+
+            // close store
+            clerk.leaveTheStore();
+
+            // orders
+            System.out.println("Items arrived: ");
+            for (Item p : shipments) System.out.print(p.getName()+ ", ");
+            System.out.println();
+            // clerk consumes shipments here
+            shipments.clear();
+            // order placed if needed
+            // clerk does stuff here after too pls
+
+        } 
+        else System.out.println();
+        // print tracker for the day
+        tracker.print(days);
+    }
+
     //returns day of the week it is
     private  String get_week_day(int day) {
         switch (day % 7) {
