@@ -1,9 +1,20 @@
+import java.util.Scanner;
+
 // all commands
 public abstract class Command {
     protected Clerk clerk;
     public Command() {}
     public void execute() {};
     public void setClerk(Clerk clerk) {this.clerk = clerk;} 
+}
+
+// switch Stores
+class switchStores extends Command {
+    Owner owner;
+    public switchStores(Owner owner) {this.owner = owner;}
+    public void execute() {
+        owner.switchStores();
+    }
 }
 
 // ask for clerk name
@@ -47,6 +58,15 @@ class buyItem extends Command {
 
 class getKit extends Command {
     public void execute() {};
+}
+
+class ExitCommand extends Command {
+    Scanner s;
+    public ExitCommand(Scanner s) {this.s = s;}
+    public void execute() {
+        s.close();
+        System.exit(0);
+    }
 }
 
 class NullCommand extends Command {

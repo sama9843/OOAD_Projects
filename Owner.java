@@ -1,22 +1,25 @@
-import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
 
 // the owner owns and controls two stores
 // theyll manage the staff pool as well
 public class Owner {
-    private ArrayList<Command> commandlist;
     private Store north;
     private Store south;
-    private Clerk commanded; // refers to the clerk that recieves commands
+    private Clerk north_c;
+    private Clerk south_c;
+    private boolean commandNorth; // refers to the clerk that recieves commands
     private StaffPool pool = new StaffPool();
+    private Scanner s;
+
     public Owner() {
-        this.commandlist = new ArrayList<Command>();
         this.north = new Store();
         north.set_name("North Store");
         this.south = new Store();
         south.set_name("South Store");
     }
+    // switch stores
+    public void switchStores() {this.commandNorth = ! this.commandNorth;}
 
     // run function
     public void run() {
@@ -29,26 +32,24 @@ public class Owner {
         simulate(sim_days);
         System.out.println("simulation complete");
         // prompt the user here
-        Scanner s = new Scanner(System.in);
+        this.s = new Scanner(System.in);
         while (true) {
             System.out.println("input commands: ");
             Command c = get_command(s.next());
             c.execute();
-            break;
         }
-        s.close();
     }
     // runs n days for both stores
     public void simulate(int days) {
         int day = 0;
         while (day < days) {
             // run each store for the day, pass in a Tracker object and logger object to both
-            Clerk c1 = pool.get();
-            Clerk c2 = pool.get();
-            north.simulate_day(day,c1);
-            south.simulate_day(day,c2);
-            pool.release(c1);
-            pool.release(c2);
+            this.north_c = pool.get();
+            this.south_c = pool.get();
+            north.simulate_day(day,this.north_c);
+            south.simulate_day(day,this.south_c);
+            pool.release(this.north_c);
+            pool.release(this.south_c);
             // print tracker for the day
             Tracker.getInstance().print(day);
             day++;
@@ -66,23 +67,30 @@ public class Owner {
     private Command get_command(String s) {
         Command c;
         switch (s) {
-            case "ask_name":
+            case "switch":
+                c = new switchStores(this);
+                break;
+            case "name":
                 c = new askName();
                 break;
-            case "ask_time":
+            case "time":
                 c = new askTime();
                 break;
-            case "sell_item":
+            case "sell":
                 c = new sellItem(new Vinyl("Up Up and Away", "Erectyle Dysfunctional", "Viagra"));
                 break;
-            case "buy_item":
+            case "buy":
                 c = new buyItem(new Guitar("Morning Wood", false));
+                break;
+            case "exit":
+                c = new ExitCommand(this.s);
                 break;
             default:
                 c = new NullCommand();
                 break;
         }
-        c.setClerk(this.commanded);
+        if (this.commandNorth) c.setClerk(this.north_c);
+        else c.setClerk(this.south_c);
         return c;
     }
 }
