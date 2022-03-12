@@ -1,9 +1,10 @@
-Velma arrived at the store. 
-30 items were added to inventory. 
-There is 4407.060546875$ in the register. 
-There are 21 items in inventory. 
-There are 268 dollars worth of items in inventory. 
-There are 0 items damaged in tuning. 
-In store opening, 3 items were sold.
-In store opening, 1 items were purchased.
-Velma has left the store.
+Scrappy arrived at the store. 
+12.0 items were added to inventory. 
+There is 4610.7046$ in the register. 
+There are 21.0 items in inventory. 
+There are 2683.4949 dollars worth of items in inventory. 
+There are 26.0 items damaged in tuning. 
+In store opening, 4.0 items were sold.
+In store opening, 4.0 items were purchased.
+During store cleaning, 1.0 items were broken
+Scrappy has left the store.

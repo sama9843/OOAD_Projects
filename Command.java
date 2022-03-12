@@ -6,6 +6,7 @@ public abstract class Command {
         this.store = store;
     }
     public void execute() {};
+    public void setStore(Store store) {this.store = store;} 
 }
 
 // ask for clerk name

@@ -1,12 +1,10 @@
 public class Main{
     public static void main(String[] args){
         //run main
-        //create store
-        Store str = new Store();
-        //runs simulation
-        str.simulate(30);
-        
-        /* staff tests
+        Owner god = new Owner();
+        god.run();
+        /* s
+        taff tests
         StaffPool pool = new StaffPool();
         Clerk c1 = pool.get();
         System.out.println(c1.toString());
