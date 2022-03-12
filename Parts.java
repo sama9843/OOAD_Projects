@@ -1,7 +1,6 @@
 //Parts
 public abstract class Parts{
-    double price;
-    public double getPrice(){return price;}
+    public double price;
     public String thisIs(){return this.getClass().getSimpleName();}
 }
 //Bridges

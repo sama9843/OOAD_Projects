@@ -13,9 +13,9 @@ public class Owner {
     private Scanner s;
 
     public Owner() {
-        this.north = new Store();
+        this.north = new Store(new NorthsideGuitarKitFactory());
         north.set_name("North Store");
-        this.south = new Store();
+        this.south = new Store(new SouthsideGuitarKitFactory());
         south.set_name("South Store");
     }
     // switch stores
