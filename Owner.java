@@ -54,28 +54,4 @@ public class Owner {
             day++;
         }
     }
-
-    private Command get_command(String s) {
-        Command c;
-        switch (s) {
-            case "ask_name":
-                c = new askName();
-                break;
-            case "ask_time":
-                c = new askTime();
-                break;
-            case "sell_item":
-                c = new sellItem(this.commanded, new Vinyl("Up Up and Away", "Erectyle Dysfunctional", "Viagra"));
-                break;
-            case "buy_item":
-                c = new buyItem(this.commanded, new Guitar("Morning Wood", false));
-                break;
-            default:
-                c = new NullCommand();
-                break;
-        }
-        c.setStore(this.commanded);
-        return c;
-    }
-
 }

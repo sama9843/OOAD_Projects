@@ -1,18 +1,15 @@
 // all commands
 public abstract class Command {
-    protected Store store;
+    protected Clerk clerk;
     public Command() {}
-    public Command(Store store) {
-        this.store = store;
-    }
     public void execute() {};
-    public void setStore(Store store) {this.store = store;} 
+    public void setClerk(Clerk clerk) {this.clerk = clerk;} 
 }
 
 // ask for clerk name
 class askName extends Command {
     public void execute() {
-        //System.out.println(this.store.getClerk().toString());
+        System.out.println(this.clerk.toString());
     }
 }
 // ask for clerk time
@@ -24,8 +21,7 @@ class askTime extends Command {
 // sell an item
 class sellItem extends Command {
     private Item item;
-    public sellItem(Store store, Item item) {
-        this.store = store;
+    public sellItem(Item item) {
         this.item = item;
     }
     public void execute() {
@@ -38,8 +34,7 @@ class sellItem extends Command {
 // buy an item
 class buyItem extends Command {
     Item item;
-    public buyItem(Store store, Item item) {
-        this.store = store;
+    public buyItem(Item item) {
         this.item = item;
     }
     public void execute() {
