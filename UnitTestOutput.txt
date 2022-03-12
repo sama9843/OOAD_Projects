@@ -1,0 +1,80 @@
+loggerCreationTest success!
+loggerCreationTest finished!
+
+Daphne
+askNameTest success!
+askNameTest finished!
+
+createOwnerTest success!
+createOwnerTest finished!
+
+$0.0 left in the register
+Putting $1,000 in the register.
+$0.0 left in the register
+Putting $1,000 in the register.
+goToBankTest success!
+goToBankTest finished!
+
+trackerCreationTest success!
+trackerCreationTest finished!
+
+Now tuning Dirty CassettePlayer
+Now tuning Jazz CassettePlayer
+Now tuning forky
+Now tuning sporky
+Now tuning forky sporky
+Now tuning stupendous flute
+Now tuning happy flute
+Now tuning picky flute
+Now tuning Horse Harmonica
+Now tuning Hippo Harmonica
+Now tuning Hamster Harmonica
+Now tuning CDplayer alpha
+Now tuning CDplayer beta
+Now tuning CDplayer omega
+Now tuning Golden Sax
+Now tuning Jazz Sax
+Now tuning Blues Sax
+Now tuning Record Player01
+Now tuning Record Player10
+Now tuning Record Player11
+Total Inventory: 1500.4287
+doInventoryTest success!
+doInventoryTest finished!
+
+removeStaffTest success!
+removeStaffTest finished!
+
+Customer took the first deal and sold a CD for 19.00 dollars
+Customer took the second deal and sold a CDPlayer for 31.90 dollars
+buyTest success!
+buyTest finished!
+
+addLoggerTest success!
+addLoggerTest finished!
+
+storesTest success!
+storesTest finished!
+
+storesInitTest success!
+storesInitTest finished!
+
+getEmployeesTest success!
+getEmployeesTest finished!
+
+The customer is trying to buy CD
+The customer did not want to pay 28.37 for CD
+
+The customer is trying to buy RecordPlayer
+The customer did not want to pay 39.91 for RecordPlayer
+
+sellTest success!
+sellTest finished!
+
+removeLoggerTest success!
+removeLoggerTest finished!
+
+blue ice was damaged during tuning and is now in poor condition.
+blue ice was damaged during tuning and is now in good condition.
+damageItemTest success!
+damageItemTest finished!
