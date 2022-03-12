@@ -24,8 +24,6 @@ public class Store {
     // debt to bank
     float debt = 0;
 
-    // list of employees
-    List<Clerk> employees = new ArrayList<Clerk>();
     //OBSERVER PATTERN
     // tracker observer for store
     Tracker tracker;
@@ -135,19 +133,16 @@ public class Store {
                 i.setCondition(conds[rand.nextInt(conds.length)]);
             }
         }
-        // employees
-        //IDENTITY: employees shaggy and velma each have a unique identity
-        employees.add(new Clerk("Shaggy", 0.2,new Haphazard()));
-        employees.add(new Clerk("Velma", 0.05,new Manual()));
-        employees.add(new Clerk("Daphne", 0.04,new Electronic()));
         //OBSERVER PATTERN
         // tie tracker to employees
+        //change to work with new staffpool
+        /*
         tracker = Tracker.getInstance();
         for (Clerk emp : employees) {
             emp.addSubscription(tracker);
             tracker.add(emp.toString());
         }
-        name = "";
+        name = "";*/
     }
     // getters
     public Map<String, ArrayList<Item>> getInventory() {return this.inventory;}
@@ -233,32 +228,14 @@ public class Store {
         return i;
         
     }
-    //gets clerk who is working that day
-    public Clerk getClerk() {
-        Random rand = new Random();
-        int sick = rand.nextInt(10);
-        int emp = rand.nextInt(employees.size()); // changed from 2 to size to account for daphne and future clerks
-        int sickemp = -1;
-        // if someone is sick, find the sick employee and report it
-        if (sick == 1)  {
-            sickemp = rand.nextInt(employees.size());
-            System.out.println(employees.get(sick).toString() +  " was sick today!");
-        }
-        // find a random employee untill the one found is not sick and hasnt worked 3 days in a row.
-        while (emp == sickemp || employees.get(emp).getDaysWorked() > 3) {
-            emp = rand.nextInt(employees.size());
-        }
-        return employees.get(emp);
-    }
 
     // runs the store for a day, and reports to the passed observer objects
-    public void simulate_day(int days) {
+    public void simulate_day(int days, Clerk clerk) {
         List<Item> shipments = new ArrayList<Item>();
         // store doesnt operate on sundays
         System.out.println("day " + days + ", " + get_week_day(days));
             
         if (days % 7 != 6) {
-            Clerk clerk = this.getClerk();
             // get a new logger for the day, and subscribe to the clerk
             Logger log = Logger.getInstance();
             log.setdays(days);
