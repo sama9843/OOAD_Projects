@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.Random;
+import java.util.Scanner;
 
 // the owner owns and controls two stores
 // theyll manage the staff pool as well
@@ -27,7 +28,14 @@ public class Owner {
         simulate(sim_days);
         System.out.println("simulation complete");
         // prompt the user here
-
+        Scanner s = new Scanner(System.in);
+        while (true) {
+            System.out.println("input commands: ");
+            Command c = get_command(s.next());
+            c.execute();
+            break;
+        }
+        s.close();
     }
     // runs n days for both stores
     public void simulate(int days) {
@@ -40,6 +48,29 @@ public class Owner {
             Tracker.getInstance().print(day);
             day++;
         }
+    }
+
+    private Command get_command(String s) {
+        Command c;
+        switch (s) {
+            case "ask_name":
+                c = new askName();
+                break;
+            case "ask_time":
+                c = new askTime();
+                break;
+            case "sell_item":
+                c = new sellItem(this.commanded, new Vinyl("Up Up and Away", "Erectyle Dysfunctional", "Viagra"));
+                break;
+            case "buy_item":
+                c = new buyItem(this.commanded, new Guitar("Morning Wood", false));
+                break;
+            default:
+                c = new NullCommand();
+                break;
+        }
+        c.setStore(this.commanded);
+        return c;
     }
 
 }
