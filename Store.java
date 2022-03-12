@@ -218,7 +218,7 @@ public class Store {
                 case "GigBag": i.add(new GigBag(n + " gigbag")); break;
                 default: 
                     System.out.println("item unkown: " + item_type);
-                    return null;
+                    return i;
             }
 
         }
