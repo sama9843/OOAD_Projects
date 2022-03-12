@@ -217,8 +217,8 @@ public class Store {
                 case "CassettePlayer": i.add(new CassettePlayer(n + " cassetteplayer")); break;
                 case "GigBag": i.add(new GigBag(n + " gigbag")); break;
                 default: 
-                    System.out.println("ITEM NOT FOUND!!!!!!!" + item_type);
-                    break;
+                    System.out.println("item unkown: " + item_type);
+                    return null;
             }
 
         }
@@ -319,6 +319,7 @@ public class Store {
             // check the inventory and order out of stock items
             ArrayList<String> OutOfStock = clerk.doInventory(inventory);
             for (String item : OutOfStock) placeOrder(item);
+            System.out.println("The store is now open!");
         }
     }
 

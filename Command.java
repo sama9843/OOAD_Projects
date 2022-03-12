@@ -59,6 +59,7 @@ class buyItem extends Command {
         //Clerk clerk = this.store.getClerk();
         System.out.println("What kind of item are you trying to buy?");
         Scanner name = new Scanner(System.in);
+        if (store.random3Items(name.next()) == null) return;
         Item item = store.random3Items(name.next()).get(0);
         Buyer user = new Buyer();
         user.setItem(item);

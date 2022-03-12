@@ -33,7 +33,7 @@ public class Owner {
         System.out.println("simulation complete");
         // prompt the user here
         while (true) {
-            System.out.println("input commands: ");
+            System.out.println( "Store(" + (this.commandNorth ? "North" : "South") + ") input commands: ");
             this.s = new Scanner(System.in);
             Command c = get_command(s.next());
             c.execute();
