@@ -5,8 +5,10 @@ public class Main{
         Store str = new Store();
         //runs simulation
         str.simulate(30);
-        
-        /* staff tests
+        //Owner god = new Owner();
+        //god.simulate(2);
+        /* s
+        taff tests
         StaffPool pool = new StaffPool();
         Clerk c1 = pool.get();
         System.out.println(c1.toString());

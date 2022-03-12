@@ -9,7 +9,7 @@ import java.io.IOException;
 // adapted from https://www.baeldung.com/java-observer-pattern
 // The store will have a list of EventConsumers
 public interface EventConsumer {
-    public void update(String event_str, String info_str, Double info_dbl);
+    public void update(String event_str, String info_str, Float info_flt);
 }
 
 class Logger implements EventConsumer {
@@ -34,7 +34,7 @@ class Logger implements EventConsumer {
         }
         return singleInstance;
     } 
-    public void update(String event_str, String info_str, Double info_dbl) {
+    public void update(String event_str, String info_str, Float info_flt) {
         // open log file
         // https://www.w3schools.com/java/java_files_create.asp
         try {
@@ -44,29 +44,29 @@ class Logger implements EventConsumer {
                     log.write( info_str + " arrived at the store. \n");
                     break;
                 case "ArriveAtStoreShipments":
-                    log.write( info_dbl.intValue() + " items were added to inventory. \n");
+                    log.write( info_flt + " items were added to inventory. \n");
                     break;
                 case "CheckRegister":
                 case "GoToBank":
-                    log.write("There is " + info_dbl + "$ in the register. \n");
+                    log.write("There is " + info_flt + "$ in the register. \n");
                     break;
                 case "DoInventory":
-                    log.write("There are " + info_dbl.intValue() + " " + info_str + ". \n");
+                    log.write("There are " + info_flt + " " + info_str + ". \n");
                     break;
                 case "PlaceAnOrder":
-                    log.write( info_dbl + " items were ordered. \n");
+                    log.write( info_flt + " items were ordered. \n");
                     break;
                 case "OpenTheStore":
-                    log.write("In store opening, " + info_dbl.intValue() + " items were " + info_str + ".\n");
+                    log.write("In store opening, " + info_flt + " items were " + info_str + ".\n");
                     break;
                 case "CleanTheStore":
-                    log.write("During store cleaning, " + info_dbl.intValue() + " items were broken\n");
+                    log.write("During store cleaning, " + info_flt + " items were broken\n");
                     break;
                 case "LeaveTheStore":
                     log.write( info_str + " has left the store.\n");
                     break;
                 default:
-                    log.write(info_dbl + info_str);
+                    log.write(event_str + info_str);
             }
             log.close();
           } catch (IOException e) {
@@ -93,7 +93,7 @@ class Tracker implements EventConsumer {
         return singleInstance;
     }
 
-    public void update(String clerk, String tag, Double count) {
+    public void update(String clerk, String tag, Float count) {
         // update clerk if needed
         if (this.clerk != clerk) this.clerk = clerk;
         // update any data relating to current clerk

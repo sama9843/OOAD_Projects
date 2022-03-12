@@ -271,7 +271,16 @@ public class Store {
                 shipments.addAll(advance_day());
                 // update logger for shipments
                 clerk.updateLoggers("ArriveAtStoreShipments", "", Float.valueOf(shipments.size()));
-                
+                // orders
+                System.out.println("Items arrived: ");
+                for (Item i : shipments) {
+                    System.out.print(i.getName()+ ", ");
+                    this.inventory.get(i.thisIs()).add(i);
+                }
+                System.out.println();
+                // clerk consumes shipments here
+                shipments.clear();
+
                 // check that the register has money
                 if(this.money != clerk.checkRegister(this.money)){
                     this.money += 1000;
@@ -289,13 +298,6 @@ public class Store {
 
                 // close store
                 clerk.leaveTheStore();
-
-                // orders
-                System.out.println("Items arrived: ");
-                for (Item p : shipments) System.out.print(p.getName()+ ", ");
-                System.out.println();
-                // clerk consumes shipments here
-                shipments.clear();
                 // order placed if needed
                 // clerk does stuff here after too pls
 
@@ -317,14 +319,16 @@ public class Store {
     }
 
     // runs the store for a day, and reports to the passed observer objects
-    public void simulate_day(int days, Tracker tracker, Logger log, List<Item> shipments) {
+    public void simulate_day(int days, List<Item> shipments) {
         // store doesnt operate on sundays
+        Tracker tracker = Tracker.getInstance();
         System.out.println("day " + days + ", " + get_week_day(days));
             
         if (days % 7 != 6) {
             Clerk clerk = this.getClerk();
             // get a new logger for the day, and subscribe to the clerk
             // LOG START WAS HERE
+            Logger log = Logger.getInstance();
             log.setdays(days);
             log.update("Store: ", this.name + "\n" , 0f);
             clerk.removeLogger();

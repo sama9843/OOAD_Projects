@@ -1,22 +1,30 @@
 import java.util.ArrayList;
 
 // the owner owns and controls two stores
+// theyll manage the staff pool as well
 public class Owner {
     private ArrayList<Command> commandlist;
-    private ArrayList<Store> stores;
-    private int active_index;
+    private Store north;
+    private Store south;
+    private Store commanded; // refers to the store that recieves commands
     public Owner() {
         this.commandlist = new ArrayList<Command>();
-        this.stores = new ArrayList<Store>();
-        this.active_index = 0;
-        // add commands
+        north = new Store();
+        north = new Store();
     }
-    // add a store
-    public void addStore(Store store) {this.stores.add(store);}
 
     // run function
     public void run() {
 
+    }
+    // runs n days for both stores
+    public void simulate(int days) {
+        int day = 0;
+        while (day < days) {
+            // run each store for the day, pass in a Tracker object and logger object to both
+            //north.simulate_day(day, shipments);
+            day++;
+        }
     }
 
 }
