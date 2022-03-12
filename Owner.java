@@ -8,7 +8,7 @@ public class Owner {
     private ArrayList<Command> commandlist;
     private Store north;
     private Store south;
-    private Store commanded; // refers to the store that recieves commands
+    private Clerk commanded; // refers to the clerk that recieves commands
     private StaffPool pool = new StaffPool();
     public Owner() {
         this.commandlist = new ArrayList<Command>();
@@ -53,5 +53,36 @@ public class Owner {
             Tracker.getInstance().print(day);
             day++;
         }
+    }
+
+    protected Store getStore(boolean s) {
+        return s == true ? this.north : this.south;
+    }
+
+    protected StaffPool getPool() {
+        return pool;
+    }
+
+    private Command get_command(String s) {
+        Command c;
+        switch (s) {
+            case "ask_name":
+                c = new askName();
+                break;
+            case "ask_time":
+                c = new askTime();
+                break;
+            case "sell_item":
+                c = new sellItem(new Vinyl("Up Up and Away", "Erectyle Dysfunctional", "Viagra"));
+                break;
+            case "buy_item":
+                c = new buyItem(new Guitar("Morning Wood", false));
+                break;
+            default:
+                c = new NullCommand();
+                break;
+        }
+        c.setClerk(this.commanded);
+        return c;
     }
 }
