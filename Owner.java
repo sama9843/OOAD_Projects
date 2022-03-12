@@ -8,6 +8,7 @@ public class Owner {
     private Store north;
     private Store south;
     private Store commanded; // refers to the store that recieves commands
+    private StaffPool pool = new StaffPool();
     public Owner() {
         this.commandlist = new ArrayList<Command>();
         this.north = new Store();
@@ -34,8 +35,12 @@ public class Owner {
         int day = 0;
         while (day < days) {
             // run each store for the day, pass in a Tracker object and logger object to both
-            north.simulate_day(day);
-            south.simulate_day(day);
+            Clerk c1 = pool.get();
+            Clerk c2 = pool.get();
+            north.simulate_day(day,c1);
+            south.simulate_day(day,c2);
+            pool.release(c1);
+            pool.release(c2);
             // print tracker for the day
             Tracker.getInstance().print(day);
             day++;

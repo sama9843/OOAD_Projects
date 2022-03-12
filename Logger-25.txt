@@ -1,9 +1,9 @@
-Velma arrived at the store. 
-30 items were added to inventory. 
-There is 3991.98046875$ in the register. 
-There are 21 items in inventory. 
-There are 491 dollars worth of items in inventory. 
-There are 2 items damaged in tuning. 
-In store opening, 3 items were sold.
-In store opening, 2 items were purchased.
-Velma has left the store.
+Scooby arrived at the store. 
+9.0 items were added to inventory. 
+There is 4471.8413$ in the register. 
+There are 21.0 items in inventory. 
+There are 2650.7307 dollars worth of items in inventory. 
+There are 5.0 items damaged in tuning. 
+In store opening, 4.0 items were sold.
+In store opening, 2.0 items were purchased.
+Scooby has left the store.
