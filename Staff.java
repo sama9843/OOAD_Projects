@@ -310,6 +310,26 @@ class Clerk extends Staff{
             } else 
             System.out.println("The customer tried to buy a " + itemToBuy + " but we were out of stock, so they left.");
         }else {
+            // the user is the customer! dont get nervous!
+        if (b.getUserFlag()) {
+            Scanner s = new Scanner(System.in);
+            double price = typeMatches.get(0).getListPrice();
+            System.out.println("We have a " + itemToBuy + " for " + df.format(price) + " dollars do you want to buy it?");
+            System.out.println("enter: yes, no");
+            if (! s.next().equals("yes")) {
+                price *= 0.9;
+                System.out.println("I'll give you a special discount. What about " + df.format(price) + " dollars?");
+                if (! s.next().equals("yes")) {
+                    System.out.println("Thats the best I can offer. See you next time!");
+                }
+            }
+            // sell like to a normal customer here
+            System.out.println(this + " sold a " + itemToBuy + " to the customer for " + df.format(typeMatches.get(0).getListPrice()));
+
+            inventory.get(itemToBuy).get(0).setSalePrice(inventory.get(itemToBuy).get(0).getListPrice());
+            items.add(inventory.get(itemToBuy).remove(0));
+            return items;
+        }
             if(b.getDeal1()){
                 //50% chance customer accepts deal1
                 //sets saleprice and removes from inventory
@@ -376,7 +396,7 @@ class Clerk extends Staff{
             Scanner s = new Scanner(System.in);
             double p= customerItem.getPurchasePrice();
             customerItem.setListPrice(p*2);
-            System.out.println("How does " + p + " dollars sound?");
+            System.out.println("How does " + df.format(p) + " dollars sound?");
             System.out.println("enter: yes, no");
             if (s.next().equals("yes")) {
                 System.out.println( customerItem.getName() + " Sold!! Hahaha sucker...");
@@ -386,7 +406,7 @@ class Clerk extends Staff{
             customerItem.setPurchasePrice(customerItem.getPurchasePrice() * 1.1);
             p= customerItem.getPurchasePrice();
             customerItem.setListPrice(p*2);
-            System.out.println("Ok what about " + p + " dollars?");
+            System.out.println("Ok what about " + df.format(p) + " dollars?");
             System.out.println("enter: yes, no");
             if (s.next().equals("yes")) {
                 System.out.println( customerItem.getName() + " Sold!");

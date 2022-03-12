@@ -54,6 +54,11 @@ public class Owner {
             Tracker.getInstance().print(day);
             day++;
         }
+        // last day is for the user
+        this.north_c = pool.get();
+        this.south_c = pool.get();
+        north.prep_day(day,this.north_c);
+        south.prep_day(day,this.south_c);
     }
 
     protected Store getStore(boolean s) {
@@ -78,10 +83,12 @@ public class Owner {
                 c = new askTime();
                 break;
             case "sell":
-                c = new sellItem(new Vinyl("Up Up and Away", "Erectyle Dysfunctional", "Viagra"),this.north);
+                if (this.commandNorth) c = new sellItem(this.north);
+                else c = new sellItem(this.south);
                 break;
             case "buy":
-                c = new buyItem(new Guitar("Morning Wood", false),this.north);
+                 if (this.commandNorth) c = new buyItem(this.north);
+                else c = new buyItem(this.south);
                 break;
             case "exit":
                 c = new ExitCommand(this.s);

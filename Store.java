@@ -188,7 +188,7 @@ public class Store {
     }
 
     //generates 3 random items of a certain item type
-    private List<Item> random3Items(String item_type) {
+    public List<Item> random3Items(String item_type) {
         List<Item> i = new ArrayList<Item>();
         Random rand = new Random();
         int n = rand.nextInt(100);
@@ -281,6 +281,45 @@ public class Store {
 
         } 
         else System.out.println();
+    }
+
+    // preps the day for the user
+    public void prep_day(int days, Clerk clerk) {
+        List<Item> shipments = new ArrayList<Item>();
+        // store doesnt operate on sundays
+        System.out.println("day " + days + ", " + get_week_day(days));
+            
+        if (days % 7 != 6) {
+            // get a new logger for the day, and subscribe to the clerk
+            Logger log = Logger.getInstance();
+            log.setdays(days);
+            clerk.removeLogger();
+            clerk.addSubscription(log);
+            // arrive at the store
+            clerk.arriveAtStore(this.name);
+            shipments.addAll(advance_day());
+            // update logger for shipments
+            clerk.updateLoggers("ArriveAtStoreShipments", "", Float.valueOf(shipments.size()));
+            // orders
+            System.out.println("Items arrived: ");
+            for (Item i : shipments) {
+                System.out.print(i.getName()+ ", ");
+                this.inventory.get(i.thisIs()).add(i);
+            }
+            System.out.println();
+            // clerk consumes shipments here
+            shipments.clear();
+
+            // check that the register has money
+            if(this.money != clerk.checkRegister(this.money)){
+                this.money += 1000;
+                this.debt += 1000;
+            }
+
+            // check the inventory and order out of stock items
+            ArrayList<String> OutOfStock = clerk.doInventory(inventory);
+            for (String item : OutOfStock) placeOrder(item);
+        }
     }
 
     //returns day of the week it is
