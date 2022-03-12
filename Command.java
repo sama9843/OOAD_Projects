@@ -12,7 +12,7 @@ public abstract class Command {
 // ask for clerk name
 class askName extends Command {
     public void execute() {
-        System.out.println(store.getClerk().toString());
+        System.out.println(this.store.getClerk().toString());
     }
 }
 // ask for clerk time
@@ -51,5 +51,9 @@ class buyItem extends Command {
 }
 
 class getKit extends Command {
+    public void execute() {};
+}
+
+class NullCommand extends Command {
     public void execute() {};
 }
