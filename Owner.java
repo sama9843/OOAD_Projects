@@ -32,9 +32,9 @@ public class Owner {
         simulate(sim_days);
         System.out.println("simulation complete");
         // prompt the user here
-        this.s = new Scanner(System.in);
         while (true) {
             System.out.println("input commands: ");
+            this.s = new Scanner(System.in);
             Command c = get_command(s.next());
             c.execute();
         }
@@ -77,10 +77,10 @@ public class Owner {
                 c = new askTime();
                 break;
             case "sell":
-                c = new sellItem(new Vinyl("Up Up and Away", "Erectyle Dysfunctional", "Viagra"));
+                c = new sellItem(new Vinyl("Up Up and Away", "Erectyle Dysfunctional", "Viagra"),this.north);
                 break;
             case "buy":
-                c = new buyItem(new Guitar("Morning Wood", false));
+                c = new buyItem(new Guitar("Morning Wood", false),this.north);
                 break;
             case "exit":
                 c = new ExitCommand(this.s);

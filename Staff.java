@@ -2,6 +2,7 @@ import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Map;
 import java.util.Random;
+import java.util.Scanner;
 
 
 //abstract class for all staff
@@ -370,7 +371,31 @@ class Clerk extends Staff{
             case "Very Good": customerItem.setPurchasePrice(price+15); break;
             case "Excellent": customerItem.setPurchasePrice(price+20); break;
         }
-
+        // the user is the customer! dont get nervous!
+        if (c.getUserFlag()) {
+            Scanner s = new Scanner(System.in);
+            double p= customerItem.getPurchasePrice();
+            customerItem.setListPrice(p*2);
+            System.out.println("How does " + p + " dollars sound?");
+            System.out.println("enter: yes, no");
+            if (s.next().equals("yes")) {
+                System.out.println( customerItem.getName() + " Sold!! Hahaha sucker...");
+                inventory.get(customerItem.thisIs()).add(customerItem);
+                return (float)p;
+            }
+            customerItem.setPurchasePrice(customerItem.getPurchasePrice() * 1.1);
+            p= customerItem.getPurchasePrice();
+            customerItem.setListPrice(p*2);
+            System.out.println("Ok what about " + p + " dollars?");
+            System.out.println("enter: yes, no");
+            if (s.next().equals("yes")) {
+                System.out.println( customerItem.getName() + " Sold!");
+                inventory.get(customerItem.thisIs()).add(customerItem);
+                return (float)p;
+            }
+            System.out.println("Whatever that " + customerItem.thisIs() + " was lame anyways.");
+            return (float)p;
+        }
         //50% chance customer takes first deal
         //sets price and adds to inventory
         if(c.getDeal1()){

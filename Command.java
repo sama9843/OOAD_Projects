@@ -32,27 +32,40 @@ class askTime extends Command {
 // sell an item
 class sellItem extends Command {
     private Item item;
-    public sellItem(Item item) {
+    private Store store;
+    public sellItem(Item item, Store store) {
         this.item = item;
+        this.store = store;
     }
     public void execute() {
         //Clerk clerk = this.store.getClerk();
         Seller user = new Seller();
+        //user.setItem(item);
+        System.out.println("You have a " + user.getItem().thisIs() + " to sell. What do you want to name it?");
+        Scanner name = new Scanner(System.in);
+        user.getItem().setName(name.next());
+        user.setUserFlag(true);
         // ask user what the want to sell
-        //clerk.buy(this.item, user, this.store.getInventory());
+        // sell item, and update register
+        float diff = clerk.buy(user.getItem(), user, this.store.getInventory());
+        this.store.add_money((int)diff);
     }
 }
 // buy an item
 class buyItem extends Command {
     Item item;
-    public buyItem(Item item) {
+    private Store store;
+    public buyItem(Item item, Store store) {
         this.item = item;
+        this.store = store;
     }
     public void execute() {
         //Clerk clerk = this.store.getClerk();
         Buyer user = new Buyer();
+        user.setItem(item);
+        user.setUserFlag(true);
         // can ask user stuff here
-        //clerk.sell(user, this.store.getInventory());
+        clerk.sell(user, this.store.getInventory());
     }
 }
 

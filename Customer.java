@@ -8,6 +8,8 @@ abstract class Customer{
     //used for the deals
     private int deal1;
     private int deal2;
+    // is user or not
+    private boolean userFlag;
     //constructor
     public Customer(){
         //set item to buy/sell
@@ -41,6 +43,7 @@ abstract class Customer{
             case 19: this.item = new CassettePlayer("Cordae's CassettePlayer"); break;
             case 20: this.item = new GigBag("Giannis' GigBag"); break;
         }
+        userFlag = false;
     }
     //getter methods for deals
     //converts the rand num into boolean
@@ -53,9 +56,13 @@ abstract class Customer{
         else{return false;}
     }
     public Item getItem(){return this.item;}
+    public boolean getUserFlag(){return this.userFlag;}
     //public String thisIs(){return this.getClass().getSimpleName();}
     //POLYMORPHISM: is overwriten later in subclasses
     public String thisIs(){return "Customer";}
+    // set item
+    public void setItem(Item item) {this.item = item;}
+    public void setUserFlag(boolean userFlag) {this.userFlag = userFlag;}
 }
 //Buyer implements Customer
 class Buyer extends Customer{
