@@ -1,9 +1,0 @@
-Shaggy arrived at the store. 
-9.0 items were added to inventory. 
-There is 4009.0737$ in the register. 
-There are 21.0 items in inventory. 
-There are 2604.608 dollars worth of items in inventory. 
-There are 23.0 items damaged in tuning. 
-In store opening, 3.0 items were sold.
-In store opening, 2.0 items were purchased.
-Shaggy has left the store.

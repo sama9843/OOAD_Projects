@@ -1,9 +1,0 @@
-Scooby arrived at the store. 
-0.0 items were added to inventory. 
-There is 1266.2627$ in the register. 
-There are 21.0 items in inventory. 
-There are 1426.0697 dollars worth of items in inventory. 
-There are 5.0 items damaged in tuning. 
-In store opening, 5.0 items were sold.
-In store opening, 1.0 items were purchased.
-Scooby has left the store.

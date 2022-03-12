@@ -1,9 +1,0 @@
-Fred arrived at the store. 
-6.0 items were added to inventory. 
-There is 3449.91$ in the register. 
-There are 21.0 items in inventory. 
-There are 2183.4827 dollars worth of items in inventory. 
-There are 0.0 items damaged in tuning. 
-In store opening, 4.0 items were sold.
-In store opening, 1.0 items were purchased.
-Fred has left the store.
