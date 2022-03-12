@@ -11,6 +11,8 @@ Abstract Factory Design Pattern: Found in GuitaKitFactory.java(whole file) , Par
 
 Command Design Pattern: Found in Command.java(whole file) , Owner(line 67)
 
+Unit Testing: Found in UnitTest.java (whole file)
+
 Project 2: Can be found in the project2 branch
 
 Project 3: Can be found in the project3 branch
