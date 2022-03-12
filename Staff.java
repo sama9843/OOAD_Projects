@@ -53,6 +53,8 @@ class Clerk extends Staff{
     //OBSERVER PATTERN
     // add new sub
     public void addSubscription(EventConsumer sub) {subs.add(sub);}
+
+    protected ArrayList<EventConsumer> getSubs() {return subs;}
     // deletes oldest logger
     public void removeLogger() {
         for (int i = 0; i < subs.size(); i++) {
