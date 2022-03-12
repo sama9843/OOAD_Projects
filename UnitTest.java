@@ -3,13 +3,14 @@ import org.junit.rules.TestWatcher;
 import org.junit.runner.Description;
 
 import static org.junit.Assert.*;
+
 /*
 USING JUNIT VERSION 4.13.2 FOR ALL UNIT TESTS
 */
-
-
 public class UnitTest {
     private static Owner owner = new Owner();
+    private static Store north = UnitTest.owner.getStore(true);
+    private static Store south = UnitTest.owner.getStore(false);
 
     // create a TestWatcher to print the output of the tests
     @Rule
@@ -45,32 +46,33 @@ public class UnitTest {
     }
 
     // 2
-    // test that the stores are initialized and have inventories
+    // test Store initialization
+    @Test
+    public void storesInitTest() {
+        assertNotNull(UnitTest.north);
+        assertNotNull(UnitTest.south);
+    }
+
+    // 3
+    // test that the stores' inventories are initialized
     @Test
     public void storesTest() {
-        Store north = owner.getStore(true);
-        Store south = owner.getStore(false);
-
-        // both stores should exist
-        assertNotNull(north);
-        assertNotNull(south);
-
-        for(String s : north.inventory.keySet()) {
-            for(Item i : north.inventory.get(s)) {
+        for(String s : UnitTest.north.inventory.keySet()) {
+            for(Item i : UnitTest.north.inventory.get(s)) {
                 // check that all items are initialized
                 assertNotNull(i);
             }
         }
 
-        for(String s : south.inventory.keySet()) {
-            for(Item i : south.inventory.get(s)) {
+        for(String s : UnitTest.south.inventory.keySet()) {
+            for(Item i : UnitTest.south.inventory.get(s)) {
                 // check that all items are initialized
                 assertNotNull(i);
             }
         }
     }
 
-    // 3
+    // 4
     // check that we can get employees for the stores
     @Test
     public void getEmployeesTest() {
@@ -79,7 +81,7 @@ public class UnitTest {
         assertNotNull(emps.get());
     }
 
-    // 4
+    // 5
     // check that we correctly create a Tracker
     // should be a Singleton
     @Test
@@ -88,7 +90,7 @@ public class UnitTest {
         assertNotNull(log);
     }
 
-    // 5
+    // 6
     // check that we correctly create a Tracker
     // should be a Singleton
     @Test
@@ -97,7 +99,7 @@ public class UnitTest {
         assertNotNull(tracker);
     }
 
-    // 6
+    // 7
     // check that we can add Logger subscription to clerk
     @Test
     public void addLoggerTest() {
@@ -117,7 +119,7 @@ public class UnitTest {
 
     }
 
-    // 7
+    // 8
     // can remove Logger subscriptions from clerk
     @Test
     public void removeLoggerTest() {
@@ -136,7 +138,8 @@ public class UnitTest {
             System.out.println(e);
         }
     }
-    // 7 
+
+    // 9
     // check that we can shutdown the pool
     @Test
     public void removeStaffTest() {
@@ -145,24 +148,74 @@ public class UnitTest {
         assertTrue(emps.isEmpty());
     }
 
-    // 8
+    // 10
     // make sure we can go to the bank and check the register
     @Test
     public void goToBankTest() {
         StaffPool emps = UnitTest.owner.getPool();
         Clerk c = emps.get();
-        Store north = owner.getStore(true);
-        Store south = owner.getStore(false);
-
-        // both stores should exist
-        assertNotNull(north);
-        assertNotNull(south);
 
         // both stores need to go to the bank on the first day
-        assertFalse(north.getMoney() == c.checkRegister(north.getMoney()));
-        assertFalse(south.getMoney() == c.checkRegister(south.getMoney()));
+        assertFalse(UnitTest.north.getMoney() == c.checkRegister(UnitTest.north.getMoney()));
+        assertFalse(UnitTest.south.getMoney() == c.checkRegister(UnitTest.south.getMoney()));
     }
 
-    // 9
+    // 11
+    // verify that we are doing inventory correctly
+    // (we should return an empty list on the first day)
+    @Test
+    public void doInventoryTest() {
+        Clerk c = UnitTest.owner.getPool().get();
+        assertTrue(c.doInventory(UnitTest.owner.getStore(true).getInventory()).isEmpty());
+        assertTrue(c.doInventory(UnitTest.owner.getStore(false).getInventory()).isEmpty());
+    }
+
+    // 12
+    // check if damaging items works
+    @Test
+    public void damageItemTest() {
+         //get clerks for the test
+        Clerk c1 = UnitTest.owner.getPool().get();
+        Clerk c2 = UnitTest.owner.getPool().get();
+
+        String inven = UnitTest.north.inventory.get("Guitar").get(0).getCondition();
+        c1.damageItem(UnitTest.north.inventory, UnitTest.north.inventory.get("Guitar").get(0));
+        assertFalse(UnitTest.north.inventory.get("Guitar").get(0).getCondition() ==  inven);
+
+        inven = UnitTest.south.inventory.get("Guitar").get(0).getCondition();
+        c2.damageItem(UnitTest.south.inventory, UnitTest.south.inventory.get("Guitar").get(0));
+        assertFalse(UnitTest.south.inventory.get("Guitar").get(0).getCondition() ==  inven);
+    }
+
+    // 13
+    // verify that we are trying to sell items
+    @Test
+    public void sellTest() {
+        //get clerks for the test
+        Clerk c1 = UnitTest.owner.getPool().get();
+        Clerk c2 = UnitTest.owner.getPool().get();
+        
+        assertNotNull(c1.sell(new Buyer(), UnitTest.north.inventory));
+        assertNotNull(c2.sell(new Buyer(), UnitTest.south.inventory));
+    }
+
+    // 14
+    // verify that we are trying to buy items
+    @Test
+    public void buyTest() {
+        //get clerks for the test
+        Clerk c1 = UnitTest.owner.getPool().get();
+        Clerk c2 = UnitTest.owner.getPool().get();
+        Seller s1 = new Seller();
+        Seller s2 = new Seller();
+        assertNotNull(c1.buy(s1.getItem(), s1, UnitTest.north.inventory));
+        assertNotNull(c2.buy(s2.getItem(), s2, UnitTest.south.inventory));
+    }
+
+    // 15
     // 
+    @Test
+    public void testSomething() {
+        
+    }
 }
