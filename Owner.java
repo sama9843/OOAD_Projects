@@ -47,4 +47,11 @@ public class Owner {
         }
     }
 
+    protected Store getStore(boolean s) {
+        return s == true ? this.north : this.south;
+    }
+
+    protected StaffPool getPool() {
+        return pool;
+    }
 }

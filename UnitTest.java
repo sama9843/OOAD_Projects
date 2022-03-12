@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Map;
 
 public class UnitTest {
-    private static Store store = new Store();
+    private static Owner owner = new Owner();
     @Rule
     public TestWatcher watchman = new TestWatcher() {
 
@@ -35,22 +35,33 @@ public class UnitTest {
     };
 
     // 1
-    // test store initialization
+    // test Owner initialization
     @Test
-    public void createStoreTest() {
+    public void createOwnerTest() {
         // verify that the store is not null
-        assertNotNull(UnitTest.store);
+        assertNotNull(UnitTest.owner);
     }
 
     // 2
-    // test that the items are initialized correctly within the store
+    // test that the stores are initialized and have inventories
     @Test
-    public void checkInventoryTest() {
-        Map<String, ArrayList<Item>> inventory = UnitTest.store.inventory;
-        // inventory should be full
-        assertTrue(!inventory.isEmpty());
-        for(String s : inventory.keySet()) {
-            for(Item i : inventory.get(s)) {
+    public void checkStoresTest() {
+        Store north = owner.getStore(true);
+        Store south = owner.getStore(false);
+
+        // both stores should exist
+        assertNotNull(north);
+        assertNotNull(south);
+
+        for(String s : north.inventory.keySet()) {
+            for(Item i : north.inventory.get(s)) {
+                // check that all items are initialized
+                assertNotNull(i);
+            }
+        }
+
+        for(String s : south.inventory.keySet()) {
+            for(Item i : south.inventory.get(s)) {
                 // check that all items are initialized
                 assertNotNull(i);
             }
@@ -58,15 +69,13 @@ public class UnitTest {
     }
 
     // 3
-    // check that there are clerks 
+    // check that we can get employees for the stores
     @Test
     public void checkEmployeesTest() {
-        List<Clerk> emps = UnitTest.store.employees;
+        StaffPool emps = UnitTest.owner.getPool();
         // there should be employees
-        assertTrue(!emps.isEmpty());
-        for(Clerk s : emps) {
-            assertNotNull(s);;
-        }
+        Clerk c = emps.find();
+        assertNotNull(c);
     }
 
     // 4
@@ -92,8 +101,9 @@ public class UnitTest {
     @Test
     public void checkAddRemoveLogger() {
         // can print "'name' was sick today" and choose another employee
-        Clerk c = UnitTest.store.getClerk();
-
+        StaffPool emps = UnitTest.owner.getPool();
+        Clerk c = emps.find();
+        
         // there should not be a logger in the subs
         assertFalse(c.getSubs().contains(Logger.getInstance()));
 
@@ -104,6 +114,5 @@ public class UnitTest {
         // remove subscription
         c.removeLogger();
         assertFalse(c.getSubs().contains(Logger.getInstance()));
-
     }
 }
