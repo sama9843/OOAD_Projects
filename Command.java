@@ -111,3 +111,11 @@ class ExitCommand extends Command {
 class NullCommand extends Command {
     public void execute() {};
 }
+
+class HelpCommand extends Command {
+    public void execute() {
+        System.out.println("List of Commands: ");
+        System.out.println(
+            "switch: switches between North and South stores \n name: gets name of the clerk \n time: gets current time \n sell: sell an item to selected store \n buy: buy an item from selected store \n custom: buy a custom guitar kit \n exit: close both stores and show simulation results \n");
+    };
+}

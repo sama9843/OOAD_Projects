@@ -36,7 +36,7 @@ public class Owner {
         // prompt the user here
         while (true) {
             System.out.println( "Store(" + (this.commandNorth ? "North" : "South") + ") input commands: ");
-            System.out.println("commands: switch,name,time,sell,buy,custom,exit");
+            System.out.println("type 'help' to see a list of commands");
             this.s = new Scanner(System.in);
             Command c = get_command(s.next());
             c.execute();
@@ -99,6 +99,9 @@ public class Owner {
                 break;
             case "exit":
                 c = new ExitCommand(this);
+                break;
+            case "help":
+                c = new HelpCommand();
                 break;
             default:
                 c = new NullCommand();
