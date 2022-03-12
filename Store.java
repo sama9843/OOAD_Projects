@@ -251,6 +251,7 @@ public class Store {
         return employees.get(emp);
     }
 
+    // FUNCTION IS DEPREICATED
     public void simulate(int total_days) {
 
         List<Item> shipments = new ArrayList<Item>();
@@ -267,7 +268,7 @@ public class Store {
                 clerk.removeLogger();
                 clerk.addSubscription(log);
                 // arrive at the store
-                clerk.arriveAtStore();
+                clerk.arriveAtStore(this.name);
                 shipments.addAll(advance_day());
                 // update logger for shipments
                 clerk.updateLoggers("ArriveAtStoreShipments", "", Float.valueOf(shipments.size()));
@@ -319,26 +320,34 @@ public class Store {
     }
 
     // runs the store for a day, and reports to the passed observer objects
-    public void simulate_day(int days, List<Item> shipments) {
-        // store doesnt operate on sundays
+    public void simulate_day(int days) {
+        List<Item> shipments = new ArrayList<Item>();
         Tracker tracker = Tracker.getInstance();
+        // store doesnt operate on sundays
         System.out.println("day " + days + ", " + get_week_day(days));
             
         if (days % 7 != 6) {
             Clerk clerk = this.getClerk();
             // get a new logger for the day, and subscribe to the clerk
-            // LOG START WAS HERE
             Logger log = Logger.getInstance();
             log.setdays(days);
-            log.update("Store: ", this.name + "\n" , 0f);
             clerk.removeLogger();
             clerk.addSubscription(log);
             // arrive at the store
-            clerk.arriveAtStore();
+            clerk.arriveAtStore(this.name);
             shipments.addAll(advance_day());
             // update logger for shipments
             clerk.updateLoggers("ArriveAtStoreShipments", "", Float.valueOf(shipments.size()));
-            
+            // orders
+            System.out.println("Items arrived: ");
+            for (Item i : shipments) {
+                System.out.print(i.getName()+ ", ");
+                this.inventory.get(i.thisIs()).add(i);
+            }
+            System.out.println();
+            // clerk consumes shipments here
+            shipments.clear();
+
             // check that the register has money
             if(this.money != clerk.checkRegister(this.money)){
                 this.money += 1000;
@@ -356,20 +365,11 @@ public class Store {
 
             // close store
             clerk.leaveTheStore();
-
-            // orders
-            System.out.println("Items arrived: ");
-            for (Item p : shipments) System.out.print(p.getName()+ ", ");
-            System.out.println();
-            // clerk consumes shipments here
-            shipments.clear();
             // order placed if needed
             // clerk does stuff here after too pls
 
         } 
         else System.out.println();
-        // print tracker for the day
-        tracker.print(days);
     }
 
     //returns day of the week it is

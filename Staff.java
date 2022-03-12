@@ -12,7 +12,7 @@ abstract class Staff{
     private String name;
     private int daysWorked;
     //abstract methods
-    abstract void arriveAtStore();
+    abstract void arriveAtStore(String store_name);
     abstract void leaveTheStore();
     //constructor
     public Staff(String name){
@@ -38,8 +38,8 @@ class Clerk extends Staff{
     }
 
     //implement abstract methods
-    void arriveAtStore() {
-        System.out.println(this + " has arrived at the store");
+    void arriveAtStore(String store_name) {
+        System.out.println(this + " has arrived at " + store_name);
         updateLoggers("ArriveAtStore", this.toString(), 0f);
     }
     void leaveTheStore(){ 
