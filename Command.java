@@ -100,10 +100,10 @@ class getKit extends Command {
 }
 
 class ExitCommand extends Command {
-    Scanner s;
-    public ExitCommand(Scanner s) {this.s = s;}
+    Owner o;
+    public ExitCommand(Owner o) {this.o = o;}
     public void execute() {
-        s.close();
+        o.closing_time();
         System.exit(0);
     }
 }

@@ -354,5 +354,16 @@ public class Store {
         return order;
 
     }
-
+    // show results for the store
+    public void show_results() {
+         System.out.println("Items sold:");
+         double sales_worth = 0;
+         for (Item p : itemsSold) {
+             System.out.print(p.getName()+ ", ");
+             sales_worth += p.getSalePrice();
+         }
+         System.out.println("Sales Total: " + sales_worth);
+         System.out.println("Money In Register: " + getMoney());
+         System.out.println("Money Added From Bank: " + getDebt());
+    }
 }

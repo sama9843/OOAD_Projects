@@ -11,6 +11,7 @@ public class Owner {
     private boolean commandNorth; // refers to the clerk that recieves commands
     private StaffPool pool = new StaffPool();
     private Scanner s;
+    private int last_day = 0;
 
     public Owner() {
         this.north = new Store(new NorthsideGuitarKitFactory());
@@ -30,10 +31,12 @@ public class Owner {
         else sim_days = 10;
         System.out.println("simulating both stores for " + sim_days + " days....");
         simulate(sim_days);
+        last_day = sim_days;
         System.out.println("simulation complete");
         // prompt the user here
         while (true) {
             System.out.println( "Store(" + (this.commandNorth ? "North" : "South") + ") input commands: ");
+            System.out.println("commands: switch,name,time,sell,buy,custom,exit");
             this.s = new Scanner(System.in);
             Command c = get_command(s.next());
             c.execute();
@@ -95,7 +98,7 @@ public class Owner {
                 else c = new getKit(this.south);
                 break;
             case "exit":
-                c = new ExitCommand(this.s);
+                c = new ExitCommand(this);
                 break;
             default:
                 c = new NullCommand();
@@ -104,5 +107,26 @@ public class Owner {
         if (this.commandNorth) c.setClerk(this.north_c);
         else c.setClerk(this.south_c);
         return c;
+    }
+
+    // closes both stores
+    public void closing_time() {
+        // close scanner
+        this.s.close();
+        // clean up time!
+        this.north_c.cleanTheStore(this.north.getInventory());
+        this.south_c.cleanTheStore(this.south.getInventory());
+        // time to leave
+        this.north_c.leaveTheStore();
+        this.south_c.leaveTheStore();
+        pool.release(this.north_c);
+        pool.release(this.south_c);
+        // now that everyones gone, get the results
+        Tracker.getInstance().print(last_day);
+        System.out.println("Results!");
+        System.out.println("For Northside: ");
+        this.north.show_results();
+        System.out.println("For Southside: ");
+        this.south.show_results();
     }
 }
