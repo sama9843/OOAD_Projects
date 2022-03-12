@@ -1,4 +1,6 @@
 import java.util.Scanner;
+import java.time.LocalTime;
+
 //COMMAND DESIGN PATTERN
 // all commands
 public abstract class Command {
@@ -26,7 +28,7 @@ class askName extends Command {
 // ask for clerk time
 class askTime extends Command {
     public void execute() {
-        // todo
+        System.out.println(LocalTime.now());
     }
 }
 // sell an item
@@ -47,8 +49,11 @@ class sellItem extends Command {
         // sell item, and update register
         float diff = clerk.buy(user.getItem(), user, this.store.getInventory());
         this.store.add_money((int)diff);
+        Logger.getInstance().update("OpenTheStore", "purchased", 1f);
+        Tracker.getInstance().update(this.clerk.toString(), "purchased", 1f);
     }
 }
+
 // buy an item
 class buyItem extends Command {
     private Store store;
@@ -67,11 +72,31 @@ class buyItem extends Command {
         // can ask user stuff here
         clerk.sell(user, this.store.getInventory());
         this.store.add_money((int)user.getItem().getPurchasePrice());
+        Logger.getInstance().update("OpenTheStore", "sold", 1f);
+        Tracker.getInstance().update(this.clerk.toString(), "sold", 1f);
     }
 }
 
 class getKit extends Command {
-    public void execute() {};
+    private Store store;
+    public getKit(Store store) {
+        this.store = store;
+    }
+    public void execute() {
+        System.out.println("Enter six digits from 1-3 (no spaces) to specify your custom guitar kit.");
+        Scanner name = new Scanner(System.in);
+        String digits = name.next();
+        // verify
+        if (digits.length()!=6) {
+            System.out.println("invalid string length");
+            return;
+        }
+        String kit = this.store.makeKit(
+            digits.codePointAt(0)-48, digits.codePointAt(1)-48, digits.codePointAt(2)-48, digits.codePointAt(3)-48, digits.codePointAt(4)-48, digits.codePointAt(5)-48).get(0);
+            System.out.println("Customer purchased kit: " + kit);
+        Logger.getInstance().update("OpenTheStore", "sold", 1f);
+        Tracker.getInstance().update(this.clerk.toString(), "sold", 1f);
+    }
 }
 
 class ExitCommand extends Command {

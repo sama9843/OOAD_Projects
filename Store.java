@@ -337,6 +337,7 @@ public class Store {
         return "What";
     }
     //ABSTRACT FACTORY DESIGN PATTERN
+    // returns arraylist (names, prices)
     public ArrayList<String> makeKit(int c1,int c2,int c3,int c4,int c5,int c6){
         ArrayList<String> order = new ArrayList<String>();
         Bridge bridge = kitFactory.createBridge(c1);
@@ -349,6 +350,7 @@ public class Store {
         order.add(bridge.thisIs()+", "+knobset.thisIs()+", "+covers.thisIs()+", "+neck.thisIs()+", "+pickguards.thisIs()+", "+pickups.thisIs());
         //price
         order.add(String.valueOf(bridge.price + knobset.price + covers.price + neck.price + pickguards.price + pickups.price));
+        money -= bridge.price + knobset.price + covers.price + neck.price + pickguards.price + pickups.price;
         return order;
 
     }

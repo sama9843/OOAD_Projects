@@ -67,19 +67,25 @@ class Clerk extends Staff{
     }
     // updates all loggers
     public void updateLoggers(String event_name, String info_str, float info_dbl) {
+        Logger.getInstance().update(event_name, info_str, info_dbl);
+        /*
         for (EventConsumer lg : subs) {
             if (lg instanceof Logger) {
                 lg.update(event_name, info_str, info_dbl);
             }
         }
+        */
     }
     // updates all trackers
     public void updateTrackers(String tag, float count) {
+        Tracker.getInstance().update(this.toString(), tag, count);
+        /*
         for (EventConsumer tr : subs) {
             if (tr instanceof Tracker) {
                 tr.update(this.toString(), tag, count);
             }
         }
+        */
     }
     //STRATEGY PATTERN
     public Boolean performTune(Item item){

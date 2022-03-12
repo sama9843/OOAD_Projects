@@ -90,6 +90,10 @@ public class Owner {
                  if (this.commandNorth) c = new buyItem(this.north);
                 else c = new buyItem(this.south);
                 break;
+            case "custom":
+                if (this.commandNorth) c = new getKit(this.north);
+                else c = new getKit(this.south);
+                break;
             case "exit":
                 c = new ExitCommand(this.s);
                 break;

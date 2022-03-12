@@ -20,7 +20,9 @@ public class StaffPool implements Pool{
         this.staff.add(new Clerk("Fred", 0.02,new Electronic()));
         this.staff.add(new Clerk("Scooby", 0.1,new Manual()));
         this.staff.add(new Clerk("Scrappy", 0.3,new Haphazard()));
-
+        for (Clerk c : staff) {
+            Tracker.getInstance().add(c.toString());
+        }
     }
     //get staff
     @Override
