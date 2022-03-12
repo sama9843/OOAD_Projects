@@ -4,6 +4,9 @@ import org.junit.runner.Description;
 
 import static org.junit.Assert.*;
 
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
+
 /*
 USING JUNIT VERSION 4.13.2 FOR ALL UNIT TESTS
 */
@@ -18,12 +21,12 @@ public class UnitTest {
 
         @Override
         protected void succeeded(Description description) {
-            System.out.println(description.getMethodName() + " success!\n");
+            System.out.println(description.getMethodName() + " success!");
         }
     
         @Override
         protected void failed(Throwable e, Description description) {
-            System.out.println(description.getMethodName() + " failed because " + e + " !\n");
+            System.out.println(description.getMethodName() + " failed because " + e + " !");
         }
     
         @Override
@@ -154,7 +157,8 @@ public class UnitTest {
     public void goToBankTest() {
         StaffPool emps = UnitTest.owner.getPool();
         Clerk c = emps.get();
-
+        Logger.getInstance().setdays(31);
+        // c.arriveAtStore(UnitTest.north.toString());
         // both stores need to go to the bank on the first day
         assertFalse(UnitTest.north.getMoney() == c.checkRegister(UnitTest.north.getMoney()));
         assertFalse(UnitTest.south.getMoney() == c.checkRegister(UnitTest.south.getMoney()));
@@ -166,8 +170,11 @@ public class UnitTest {
     @Test
     public void doInventoryTest() {
         Clerk c = UnitTest.owner.getPool().get();
-        assertTrue(c.doInventory(UnitTest.owner.getStore(true).getInventory()).isEmpty());
-        assertTrue(c.doInventory(UnitTest.owner.getStore(false).getInventory()).isEmpty());
+        Store north1 = UnitTest.owner.getStore(true);
+        Store south1 = UnitTest.owner.getStore(false);
+        Logger.getInstance().setdays(31);
+        assertNotNull(c.doInventory(north1.getInventory()));
+        assertTrue(c.doInventory(south1.getInventory()).isEmpty());
     }
 
     // 12
@@ -213,9 +220,24 @@ public class UnitTest {
     }
 
     // 15
-    // 
+    // verify that we can send the ask name command correctly
     @Test
-    public void testSomething() {
-        
+    public void askNameTest() {
+        // method adopted from https://stackoverflow.com/questions/1119385/junit-test-for-system-out-println
+        // check that the System.out.println() in askName is the same as the clerk's name
+        final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+        final PrintStream originalOut = System.out;
+        System.setOut(new PrintStream(outContent));
+
+        System.setOut(originalOut);
+
+        Clerk c = UnitTest.owner.getPool().get();
+        Command command = new askName();
+        command.setClerk(c);
+        command.execute();
+        for(int i = 0; i < outContent.toString().length(); i++) {
+            assertEquals(outContent.toString().charAt(i), c.toString().charAt(i));
+        }
+
     }
 }
