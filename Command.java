@@ -12,7 +12,7 @@ public abstract class Command {
 // ask for clerk name
 class askName extends Command {
     public void execute() {
-        System.out.println(this.store.getClerk().toString());
+        //System.out.println(this.store.getClerk().toString());
     }
 }
 // ask for clerk time
@@ -29,10 +29,10 @@ class sellItem extends Command {
         this.item = item;
     }
     public void execute() {
-        Clerk clerk = this.store.getClerk();
+        //Clerk clerk = this.store.getClerk();
         Seller user = new Seller();
         // ask user what the want to sell
-        clerk.buy(this.item, user, this.store.getInventory());
+        //clerk.buy(this.item, user, this.store.getInventory());
     }
 }
 // buy an item
@@ -43,10 +43,10 @@ class buyItem extends Command {
         this.item = item;
     }
     public void execute() {
-        Clerk clerk = this.store.getClerk();
+        //Clerk clerk = this.store.getClerk();
         Buyer user = new Buyer();
         // can ask user stuff here
-        clerk.sell(user, this.store.getInventory());
+        //clerk.sell(user, this.store.getInventory());
     }
 }
 

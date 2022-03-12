@@ -1,6 +1,0 @@
-Velma arrived at the store. 
-0.0 items were added to inventory. 
-There is 2400.3555$ in the register. 
-There are 21.0 items in inventory. 
-There are 1562.85 dollars worth of items in inventory. 
-There are 11.0 items damaged in tuning. 
