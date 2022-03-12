@@ -64,4 +64,8 @@ public class StaffPool implements Pool{
         }
         return staff.get(emp);
     }
+
+    public boolean isEmpty() {
+        return staff.size() == 0 ? true : false;
+    }
 }
