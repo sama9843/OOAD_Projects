@@ -1,0 +1,20 @@
+Store: Northside
+Daphne arrived at the store. 
+0.0 items were added to inventory. 
+There is 1109.2877$ in the register. 
+There are 21.0 items in inventory. 
+There are 1465.4706 dollars worth of items in inventory. 
+There are 0.0 items damaged in tuning. 
+In store opening, 4.0 items were sold.
+In store opening, 2.0 items were purchased.
+Daphne has left the store.
+Store: Southside
+Fred arrived at the store. 
+0.0 items were added to inventory. 
+There is 1222.4719$ in the register. 
+There are 21.0 items in inventory. 
+There are 1396.7692 dollars worth of items in inventory. 
+There are 0.0 items damaged in tuning. 
+In store opening, 5.0 items were sold.
+In store opening, 3.0 items were purchased.
+Fred has left the store.

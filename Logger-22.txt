@@ -1,0 +1,20 @@
+Store: Northside
+Velma arrived at the store. 
+18.0 items were added to inventory. 
+There is 4001.799$ in the register. 
+There are 21.0 items in inventory. 
+There are 2445.9995 dollars worth of items in inventory. 
+There are 5.0 items damaged in tuning. 
+In store opening, 3.0 items were sold.
+In store opening, 1.0 items were purchased.
+Velma has left the store.
+Store: Southside
+Daphne arrived at the store. 
+6.0 items were added to inventory. 
+There is 4647.487$ in the register. 
+There are 21.0 items in inventory. 
+There are 2262.6238 dollars worth of items in inventory. 
+There are 0.0 items damaged in tuning. 
+In store opening, 2.0 items were sold.
+In store opening, 2.0 items were purchased.
+Daphne has left the store.

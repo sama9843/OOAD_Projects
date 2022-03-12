@@ -1,0 +1,20 @@
+Store: Northside
+Fred arrived at the store. 
+0.0 items were added to inventory. 
+There is 1719.8372$ in the register. 
+There are 21.0 items in inventory. 
+There are 1410.731 dollars worth of items in inventory. 
+There are 0.0 items damaged in tuning. 
+In store opening, 5.0 items were sold.
+In store opening, 2.0 items were purchased.
+Fred has left the store.
+Store: Southside
+Scooby arrived at the store. 
+3.0 items were added to inventory. 
+There is 2210.1914$ in the register. 
+There are 21.0 items in inventory. 
+There are 994.3759 dollars worth of items in inventory. 
+There are 1.0 items damaged in tuning. 
+In store opening, 4.0 items were sold.
+In store opening, 2.0 items were purchased.
+Scooby has left the store.

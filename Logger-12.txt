@@ -1,0 +1,20 @@
+Store: Northside
+Scooby arrived at the store. 
+9.0 items were added to inventory. 
+There is 2704.9287$ in the register. 
+There are 21.0 items in inventory. 
+There are 1783.673 dollars worth of items in inventory. 
+There are 2.0 items damaged in tuning. 
+In store opening, 3.0 items were sold.
+In store opening, 2.0 items were purchased.
+Scooby has left the store.
+Store: Southside
+Velma arrived at the store. 
+9.0 items were added to inventory. 
+There is 3257.7507$ in the register. 
+There are 21.0 items in inventory. 
+There are 1438.2867 dollars worth of items in inventory. 
+There are 6.0 items damaged in tuning. 
+In store opening, 3.0 items were sold.
+In store opening, 0.0 items were purchased.
+Velma has left the store.

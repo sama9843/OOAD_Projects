@@ -1,0 +1,21 @@
+Store: Northside
+Shaggy arrived at the store. 
+0.0 items were added to inventory. 
+There is 1269.201$ in the register. 
+There are 21.0 items in inventory. 
+There are 1351.7883 dollars worth of items in inventory. 
+There are 12.0 items damaged in tuning. 
+In store opening, 4.0 items were sold.
+In store opening, 2.0 items were purchased.
+During store cleaning, 1.0 items were broken
+Shaggy has left the store.
+Store: Southside
+Fred arrived at the store. 
+0.0 items were added to inventory. 
+There is 1329.2605$ in the register. 
+There are 21.0 items in inventory. 
+There are 1393.3156 dollars worth of items in inventory. 
+There are 0.0 items damaged in tuning. 
+In store opening, 4.0 items were sold.
+In store opening, 2.0 items were purchased.
+Fred has left the store.

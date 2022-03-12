@@ -1,0 +1,20 @@
+Store: Northside
+Scrappy arrived at the store. 
+6.0 items were added to inventory. 
+There is 2962.3418$ in the register. 
+There are 21.0 items in inventory. 
+There are 1767.3021 dollars worth of items in inventory. 
+There are 9.0 items damaged in tuning. 
+In store opening, 9.0 items were sold.
+In store opening, 2.0 items were purchased.
+Scrappy has left the store.
+Store: Southside
+Shaggy arrived at the store. 
+12.0 items were added to inventory. 
+There is 3616.0554$ in the register. 
+There are 21.0 items in inventory. 
+There are 1585.0474 dollars worth of items in inventory. 
+There are 11.0 items damaged in tuning. 
+In store opening, 3.0 items were sold.
+In store opening, 2.0 items were purchased.
+Shaggy has left the store.

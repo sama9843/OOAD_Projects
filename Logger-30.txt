@@ -1,0 +1,8 @@
+Fred arrived at the store. 
+3.0 items were added to inventory. 
+There is 5842.2476$ in the register. 
+There are 21.0 items in inventory. 
+There are 2647.364 dollars worth of items in inventory. 
+There are 0.0 items damaged in tuning. 
+Velma has left the store.
+Fred has left the store.

@@ -1,0 +1,20 @@
+Store: Northside
+Shaggy arrived at the store. 
+6.0 items were added to inventory. 
+There is 2798.5688$ in the register. 
+There are 21.0 items in inventory. 
+There are 1757.5615 dollars worth of items in inventory. 
+There are 11.0 items damaged in tuning. 
+In store opening, 5.0 items were sold.
+In store opening, 1.0 items were purchased.
+Shaggy has left the store.
+Store: Southside
+Velma arrived at the store. 
+9.0 items were added to inventory. 
+There is 3384.9666$ in the register. 
+There are 21.0 items in inventory. 
+There are 1542.1035 dollars worth of items in inventory. 
+There are 3.0 items damaged in tuning. 
+In store opening, 4.0 items were sold.
+In store opening, 3.0 items were purchased.
+Velma has left the store.
