@@ -49,7 +49,10 @@ public class Owner {
             // run each store for the day, pass in a Tracker object and logger object to both
             this.north_c = pool.get();
             this.south_c = pool.get();
+            Logger.getInstance().setdays(day);
+            Logger.getInstance().update("Store: ", "Northside\n", 1f);
             north.simulate_day(day,this.north_c);
+            Logger.getInstance().update("Store: ", "Southside\n", 1f);
             south.simulate_day(day,this.south_c);
             pool.release(this.north_c);
             pool.release(this.south_c);

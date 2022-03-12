@@ -241,7 +241,7 @@ public class Store {
         if (days % 7 != 6) {
             // get a new logger for the day, and subscribe to the clerk
             Logger log = Logger.getInstance();
-            log.setdays(days);
+            //log.setdays(days);
             clerk.removeLogger();
             clerk.addSubscription(log);
             // arrive at the store
