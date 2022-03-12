@@ -1,3 +1,5 @@
+//ABSTRACT FACTORY DESIGN PATTERN
+//structure used from class slides
 public interface GuitarKitFactory{
     public Bridge createBridge(int choice);
     public KnobSet createKnobSet(int choice);

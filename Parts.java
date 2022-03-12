@@ -1,3 +1,5 @@
+//ABSTRACT FACTORY DESIGN PATTERN
+//structure used from class slides
 //Parts
 public abstract class Parts{
     public double price;

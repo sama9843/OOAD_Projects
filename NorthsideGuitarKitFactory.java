@@ -1,3 +1,5 @@
+//ABSTRACT FACTORY DESIGN PATTERN
+//structure used from class slides
 public class NorthsideGuitarKitFactory implements GuitarKitFactory{
     public Bridge createBridge(int choice){
         switch(choice){

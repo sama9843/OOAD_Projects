@@ -1,5 +1,5 @@
 import java.util.Scanner;
-
+//COMMAND DESIGN PATTERN
 // all commands
 public abstract class Command {
     protected Clerk clerk;

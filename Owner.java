@@ -64,6 +64,7 @@ public class Owner {
         return pool;
     }
 
+    //COMMAND DESIGN PATTERN
     private Command get_command(String s) {
         Command c;
         switch (s) {

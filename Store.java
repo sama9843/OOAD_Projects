@@ -296,7 +296,7 @@ public class Store {
         }
         return "What";
     }
-
+    //ABSTRACT FACTORY DESIGN PATTERN
     public ArrayList<String> makeKit(int c1,int c2,int c3,int c4,int c5,int c6){
         ArrayList<String> order = new ArrayList<String>();
         Bridge bridge = kitFactory.createBridge(c1);
@@ -305,12 +305,8 @@ public class Store {
         Neck neck = kitFactory.createNeck(c4);
         Pickguard pickguards = kitFactory.createPickguard(c5);
         Pickups pickups = kitFactory.createPickups(c6);
-        order.add(bridge.thisIs());
-        order.add(knobset.thisIs());
-        order.add(covers.thisIs());
-        order.add(neck.thisIs());
-        order.add(pickguards.thisIs());
-        order.add(pickups.thisIs());
+        //name
+        order.add(bridge.thisIs()+", "+knobset.thisIs()+", "+covers.thisIs()+", "+neck.thisIs()+", "+pickguards.thisIs()+", "+pickups.thisIs());
         //price
         order.add(String.valueOf(bridge.price + knobset.price + covers.price + neck.price + pickguards.price + pickups.price));
         return order;
