@@ -55,7 +55,6 @@ public class Owner {
         }
     }
 
-<<<<<<< HEAD
     protected Store getStore(boolean s) {
         return s == true ? this.north : this.south;
     }
@@ -63,7 +62,7 @@ public class Owner {
     protected StaffPool getPool() {
         return pool;
     }
-=======
+
     private Command get_command(String s) {
         Command c;
         switch (s) {
@@ -86,6 +85,4 @@ public class Owner {
         c.setStore(this.commanded);
         return c;
     }
-
->>>>>>> a7b52d722e1ba38d53444cea250e80ba06bc3e4c
 }
