@@ -3,13 +3,15 @@ import org.junit.rules.TestWatcher;
 import org.junit.runner.Description;
 
 import static org.junit.Assert.*;
+/*
+USING JUNIT VERSION 4.13.2 FOR ALL UNIT TESTS
+*/
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
 
 public class UnitTest {
     private static Owner owner = new Owner();
+
+    // create a TestWatcher to print the output of the tests
     @Rule
     public TestWatcher watchman = new TestWatcher() {
 
@@ -20,7 +22,7 @@ public class UnitTest {
     
         @Override
         protected void failed(Throwable e, Description description) {
-            System.out.println(description.getMethodName() + " failed!\n");
+            System.out.println(description.getMethodName() + " failed because " + e + " !\n");
         }
     
         @Override
@@ -45,7 +47,7 @@ public class UnitTest {
     // 2
     // test that the stores are initialized and have inventories
     @Test
-    public void checkStoresTest() {
+    public void storesTest() {
         Store north = owner.getStore(true);
         Store south = owner.getStore(false);
 
@@ -71,18 +73,17 @@ public class UnitTest {
     // 3
     // check that we can get employees for the stores
     @Test
-    public void checkEmployeesTest() {
+    public void getEmployeesTest() {
         StaffPool emps = UnitTest.owner.getPool();
         // there should be employees
-        Clerk c = emps.find();
-        assertNotNull(c);
+        assertNotNull(emps.get());
     }
 
     // 4
     // check that we correctly create a Tracker
     // should be a Singleton
     @Test
-    public void checkLoggerCreation() {
+    public void loggerCreationTest() {
         Logger log = Logger.getInstance();
         assertNotNull(log);
     }
@@ -91,28 +92,77 @@ public class UnitTest {
     // check that we correctly create a Tracker
     // should be a Singleton
     @Test
-    public void checkTrackerCreation() {
+    public void trackerCreationTest() {
         Tracker tracker = Tracker.getInstance();
         assertNotNull(tracker);
     }
 
     // 6
-    // check that we can add and remove Logger subscriptions to clerk
+    // check that we can add Logger subscription to clerk
     @Test
-    public void checkAddRemoveLogger() {
+    public void addLoggerTest() {
         // can print "'name' was sick today" and choose another employee
         StaffPool emps = UnitTest.owner.getPool();
-        Clerk c = emps.find();
-        
-        // there should not be a logger in the subs
-        assertFalse(c.getSubs().contains(Logger.getInstance()));
+        try {
+            Clerk c = emps.get();
+            // there should not be a logger in the subs
+            assertFalse(c.getSubs().contains(Logger.getInstance()));
 
-        // add subscription
-        c.addSubscription(Logger.getInstance());
-        assertTrue(c.getSubs().contains(Logger.getInstance()));
+            // add subscription
+            c.addSubscription(Logger.getInstance());
+            assertTrue(c.getSubs().contains(Logger.getInstance()));
+        } catch (IllegalStateException e) {
+            System.out.println(e);
+        }
 
-        // remove subscription
-        c.removeLogger();
-        assertFalse(c.getSubs().contains(Logger.getInstance()));
     }
+
+    // 7
+    // can remove Logger subscriptions from clerk
+    @Test
+    public void removeLoggerTest() {
+
+        StaffPool emps = UnitTest.owner.getPool();
+
+        try {
+            Clerk c = emps.get();
+            c.addSubscription(Logger.getInstance());
+            // there should not be a logger in the subs
+            assertTrue(c.getSubs().contains(Logger.getInstance()));
+            // remove subscription
+            c.removeLogger();
+            assertFalse(c.getSubs().contains(Logger.getInstance()));
+        } catch (IllegalStateException e) {
+            System.out.println(e);
+        }
+    }
+    // 7 
+    // check that we can shutdown the pool
+    @Test
+    public void removeStaffTest() {
+        StaffPool emps = UnitTest.owner.getPool();
+        emps.shutdown();
+        assertTrue(emps.isEmpty());
+    }
+
+    // 8
+    // make sure we can go to the bank and check the register
+    @Test
+    public void goToBankTest() {
+        StaffPool emps = UnitTest.owner.getPool();
+        Clerk c = emps.get();
+        Store north = owner.getStore(true);
+        Store south = owner.getStore(false);
+
+        // both stores should exist
+        assertNotNull(north);
+        assertNotNull(south);
+
+        // both stores need to go to the bank on the first day
+        assertFalse(north.getMoney() == c.checkRegister(north.getMoney()));
+        assertFalse(south.getMoney() == c.checkRegister(south.getMoney()));
+    }
+
+    // 9
+    // 
 }

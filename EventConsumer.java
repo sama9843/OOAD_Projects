@@ -13,6 +13,7 @@ public interface EventConsumer {
 }
 
 class Logger implements EventConsumer {
+    //SINGLETON DESIGN PATTERN
     // singleton instance with lazy instantiation
     private static Logger singleInstance;
     private String filename;
@@ -79,6 +80,7 @@ class Logger implements EventConsumer {
 }
 
 class Tracker implements EventConsumer {
+    //SINGLETON DESIGN PATTERN
     // singleton instance with eager instantiaition
     private static Tracker singleInstance = new Tracker();
 

@@ -27,9 +27,12 @@ public class Store {
     //OBSERVER PATTERN
     // tracker observer for store
     Tracker tracker;
+    //ABSTRACT FACTORY PATTERN
+    GuitarKitFactory kitFactory;
     
 
-    public Store() {
+    public Store(GuitarKitFactory kitFactory) {
+        this.kitFactory = kitFactory;
         money = 0;
         orders = new ArrayList<List<Item>>();
         order_days = new ArrayList<Integer>();
@@ -292,6 +295,22 @@ public class Store {
             case 6: return "Sunday";
         }
         return "What";
+    }
+    //ABSTRACT FACTORY DESIGN PATTERN
+    public ArrayList<String> makeKit(int c1,int c2,int c3,int c4,int c5,int c6){
+        ArrayList<String> order = new ArrayList<String>();
+        Bridge bridge = kitFactory.createBridge(c1);
+        KnobSet knobset = kitFactory.createKnobSet(c2);
+        Covers covers = kitFactory.createCovers(c3);
+        Neck neck = kitFactory.createNeck(c4);
+        Pickguard pickguards = kitFactory.createPickguard(c5);
+        Pickups pickups = kitFactory.createPickups(c6);
+        //name
+        order.add(bridge.thisIs()+", "+knobset.thisIs()+", "+covers.thisIs()+", "+neck.thisIs()+", "+pickguards.thisIs()+", "+pickups.thisIs());
+        //price
+        order.add(String.valueOf(bridge.price + knobset.price + covers.price + neck.price + pickguards.price + pickups.price));
+        return order;
+
     }
 
 }
